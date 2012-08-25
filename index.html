@@ -1,8 +1,230 @@
-<html>
-	<head>
-		<title>Joe Politz</title>
-	</head>
-	<body>
-	Under construction.
-	</body>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Joe Gibbs Politz</title>
+<style>
+li {
+  margin-bottom: 1em;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #1f1180;
+  border-bottom: 1px dotted;
+}
+
+a:hover {
+  text-decoration: none;
+  color:green; 
+  background-color:#eee;
+}
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src='wisdom.js'></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25748313-1']);
+      _gaq.push(['_trackPageview']);
+
+       (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+</script>
+</head>
+
+<body>
+
+
+<div style='min-width: 66em;'>
+  <div style='border-right: 1px dotted gray; float:left; padding-left:
+5em; padding-right: 2em; font-family: sans-serif; min-width: 30em;
+max-width: 58%;'>
+  <h1 style='font-family: sans-serif;font-size: 3em; text-align: left;'>JOE GIBBS POLITZ</h1>
+
+<h3>Activities & News</h3>
+
+<ul>
+  <li>Up to date research can always be found on our <a target="_blank" href="http://brownplt.github.com">blog</a>.</li>
+  <li>I'm the Grad TA for <a
+href="http://www.cs.brown.edu/courses/cs173/">CSCI 173</a> in fall 2012.
+We're excited to provide an <a
+href="https://plus.google.com/u/0/117185293319274359863/posts/9rfginQ3w82">on-line
+offering</a>.</li>
+  <li>I'm attending the <a
+href="http://www.dagstuhl.de/en/program/calendar/semhp/?semnr=12401">Dagstuhl Seminar on Web Security</a> in October 2012.</li>
+  <li>I'm presenting <a href="http://www.cs.brown.edu/research/plt/dl/progressive-types">Progressive
+Types</a> at <a href="http://splashcon.org/2012/">SPLASH/Onward!</a> in October 2012.</li>
+  <li>I'm presenting <a href="http://www.cs.brown.edu/research/plt/dl/s5">S5</a> at the <a href="http://www.dynamic-languages-symposium.org/dls-12/cfp/index.html">Dynamic Languages Symposium</a> in October 2012.</li>
+  
+</ul>
+
+
+<h3>Systems & Software</h3>
+
+    <div style='line-height: 1.5em'>
+
+    <ul>
+			<li>
+			<a
+href="http://brownplt.github.com/2011/11/11/s5-javascript-semantics.html">S5</a>
+is a JavaScript implementation designed for exploration.  <a
+target="_blank"
+href="http://www.youtube.com/watch?v=Pd7Fra8vPok&feature=player_embedded"
+id="s5-show">This video</a> shows a bit of S5 in action.  With Matt
+Carroll, Ben Lerner, and Justin Pombrio.
+<div style="background-color:#eee;display:none;padding:1em" id="s5-video">
+<a style="float:right;" href="javascript:void(0);" id="hide-s5">(hide)</a>
+<iframe width="640" height="390" src="http://www.youtube.com/embed/Pd7Fra8vPok" frameborder="0" allowfullscreen></iframe>
+<br/>
+</div>
+<script>
+$(function() {
+  $('#s5-show').hover(function() {
+    $('#s5-video').fadeIn(1000);
+  });
+  $('#s5-show').click(function() {
+    $('#s5-video').toggle();
+  });
+  $('#hide-s5').click(function() {
+    $('#s5-video').fadeOut(500);
+  });
+});
+</script>
+</li>
+			<li>
+			<a href="https://sites.google.com/site/belayresearchproject/">Google Belay</a>
+			is exploring secure sharing and identity management in the cloud.  The <a href="http://code.google.com/p/google-belay/">code</a> for our
+      <a id="belay-show" target="_blank" href="https://sites.google.com/site/belayresearchproject/team-blog/demovideo">demo</a>
+			is open source and available.  With Arjun Guha, Mark Lentczner, and &#218;lfar Erlingsson.
+<div width="440" style="background-color:#eee;display:none;padding:1em" id="belay-video">
+<a style="float:right;" href="javascript:void(0);" id="hide-belay">(hide)</a>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/2_5p6S2eW8s" frameborder="0" allowfullscreen></iframe>
+<br/>
+</div>
+<script>
+$(function() {
+  $('#belay-show').hover(function() {
+    $('#belay-video').fadeIn(1000);
+  });
+  $('#belay-show').click(function() {
+    $('#belay-video').toggle();
+  });
+  $('#hide-belay').click(function() {
+    $('#belay-video').fadeOut(500);
+  });
+});
+</script>
+			</li>
+
+      <li> I designed a <a
+href="http://www.cs.brown.edu/research/plt/dl/adsafety/v1">novel type-checking
+strategy</a> for the verification of reference monitors.  I used it to mechanically verify <a
+href="http://www.adsafe.org">ADsafe</a>, a web sandboxing framework, with
+Arjun Guha, Spiridon Eliopoulos, and Shriram Krishnamurthi.  </li>
+
+      <li>
+        <a href="http://www.assistment.org">Assistment</a> is tutoring
+        and assessment software for middle school math students, and
+        part of learning sciences research
+        at <a href="http://www.cs.wpi.edu">WPI CS</a>
+        with <a href="http://www.cs.wpi.edu/~nth">Neil Heffernan</a> and
+	many others.  A pile of JavaScript I wrote has been running parts of
+	Assistment's interactive tutor since 2009.
+      </li>
+
+    </ul>
+
+</p>
+
+</div>
+
+  <h3>Reports &amp; Publications</h3>
+  
+  <div style='line-height:1.5em'>
+    
+    <ul>
+	    <li>
+      <b><em>(New!)</em> A Tested Semantics for Getters, Setters, and Eval in JavaScript</b>.
+        Joe Gibbs Politz, Matthew J. Carroll, Benjamin S. Lerner, Justin Pombrio, and Shriram Krishnamurthi.
+        <a target="_blank" href="http://www.dynamic-languages-symposium.org/dls-12/cfp/index.html">DLS 2012</a> <em>(to appear)</em>.<br/>
+		    <a href="http://cs.brown.edu/research/plt/dl/s5/"target="_blank">(preprint, code, & test results)</a>
+      </li>
+      <li> 
+	    <b><em>(New!)</em> Progressive Types</b>. Joe Gibbs Politz, Hannah Quay-de la Vallee, and Shriram Krishnamurthi.  <a target="_blank" href="http://splashcon.org/2012/cfp/380">Onward! 2012</a> <em>(to appear)</em>.<br/>
+		<a href="http://cs.brown.edu/research/plt/dl/progressive-types/"target="_blank">(preprint, code, & proofs)</a>
+	    </li>
+	    <li>
+	    <b>Web API Verification: Results and Challenges</b> <em>(Extended Abstract)</em>.
+	    Arjun Guha, Ben Lerner, Joe Gibbs Politz, and Shriram Krishnamurthi. <a target="_blank" href="http://www.lsv.ens-cachan.fr/~steel/asa6/">Analysis of Security APIs 2012</a>.<br/>
+	    <a href="docs/asa-workshop-2012-submission.pdf">(pdf)</a>
+	    </li>
+	    <li><b>ADsafety: Type-based Verification of JavaScript Sandboxing</b>.
+	    Joe Gibbs Politz, Spiridon Aristides Eliopoulos, Arjun Guha, and Shriram Krishnamurthi.   <a target="_blank" href="http://static.usenix.org/events/sec11/index.html">USENIX Security 2011</a>. <br/>
+	    <a href="http://www.cs.brown.edu/research/plt/dl/adsafety/v1/">(paper, code, & proofs)</a>
+	    <a href="docs/adsafety.txt">(bib)</a>
+	    <a href="https://www.usenix.org/conference/usenix-security-11/adsafety-type-based-verification-javascript-sandboxing">(talk video [USENIX Security])</a>
+	    <a href="http://vid.ly/6v3o0n">(talk video [Mozilla])</a>
+	</li>
+      <li><b>Scalability and Robustness in the Domain of Web
+          Based Tutoring</b>.
+        Jozsef Patvarczki, Joe Gibbs Politz, and Neil
+	Heffernan.   <a target="_blank" href="http://alelo.com/aied2009/workshop.html">Scalability Issues in Artificial Intelligence in Education (Workshop)</a>.
+        2009. <br/>
+        <a href="http://www.cs.brown.edu/%7Ejoe/docs/aied-scalibility.pdf">(pdf)</a>
+	<a href="http://www.cs.brown.edu/%7Ejoe/docs/aied.txt">(bib)</a>
+      </li>
+      <li> <b>Modeling and Analyzing
+	      Security Requirements for Java</b>.
+        Joe Gibbs Politz and James Cialdea.  WPI Senior Thesis 2008. <br/>
+        <a href="http://www.wpi.edu/Pubs/E-project/Available/E-project-121908-155533/">
+	  (paper & code)
+        </a>
+      </li>
+    </ul>
+    
+  </div>
+
+      
+  </div>
+  <div style='float: left; text-align: left; font-family: sans-serif; padding-top: 2em; padding-right: 2em; padding-left: 2em; width: 16em;'>
+    <div style='background-color:black;float:left;background-image:url(face.png); height:11em;width:11em;background-position:-3em -2em; margin-bottom: 2em;'></div>
+    <p>joe@cs.brown.edu</p>
+    <p>774.262.5198</p>
+    <p>Office 451, <a href="http://g.co/maps/zx79a">CIT</a></p>
+    <p>
+      <a href='http://brownplt.github.com'>Brown PLT Blog</a>
+      <a href='http://brownplt.github.com/feed.xml'>
+	      <img src='public/feed-icon-14x14.png'></img>
+      </a>
+    </p>
+    <p>
+      <a href='http://github.com/brownplt'>Brown PLT Github</a><br/>
+      <a href='http://github.com/jpolitz'>Personal Github</a>
+    </p>
+    
+<a style='outline: 0;text-decoration: none; color: black;' href="javascript:;" onclick="newWisdom()">
+  <div class="main-content" style='border: 1px solid black; border-radius: 5px; text-align: left; width: 14em; margin-top: 1em;padding: .5em; background-color: #eee;'>
+    <div id="wisdom-content">
+  <p>Brian W. Kernigan on programming:</p>
+	<p><i>"Debugging is twice as hard as writing the code in the
+	first place.  Therefore, if you write the code as cleverly as
+	possible, you are, by definition, not smart enough to debug
+	it."</i></p>
+    </div>
+    <p style='font-size: small;text-align: right;'>(Click for more wisdom)</p>
+  </div>
+    </div>
+  </a>
+      
+</div>
+</div>
+
+</body>
+
 </html>
