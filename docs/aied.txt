@@ -1,0 +1,10 @@
+@INPROCEEDINGS{AIED2009,
+author = {Joszef Patvarckzi and Joseph Politz and Neil Heffernan},
+title = {Scalability and Robustness in the Domain of Web-Based Tutoring},
+booktitle = {14th
+International Conference on Artificial Intelligence in Education,
+Workshop Proceedings Volume 4, Scalability Issues in AIED},
+location = {Brighton, UK},
+year = {2009},
+pages = {20--29}
+}

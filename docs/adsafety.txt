@@ -1,0 +1,6 @@
+@INPROCEEDINGS{USENIX2011,
+author = {Joe Gibbs Politz and Spiridon Aristides Eliopoulos and Arjun Guha and Shriram Krishnamurthi},
+title = {ADsafety: Type-Based Verification of JavaScript Sandboxing},
+booktitle = {USENIX Security},
+year = {2011},
+}
