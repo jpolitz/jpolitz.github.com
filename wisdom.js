@@ -49,7 +49,14 @@
 'but by the completeness of their case analysis."</i></p>',
 
 '<p>Sarah Politz on restraint:</p>' +
-'<p><i>Just because you can, don\'t.</i></p>'
+'<p><i>Just because you can, don\'t.</i></p>',
+
+'<p>Michael A. Jackson on the rules of optimization:</p>' +
+'<p><ol>' +
+'<li>Don\'t do it.</li>' +
+'<li>(For experts only). Don\'t do it yet.</li>' +
+'</ol></p>'
+
   ]; 
 
   var wisCount = Math.floor(Math.random() * wisdoms.length);
