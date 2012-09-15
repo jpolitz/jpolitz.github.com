@@ -52,8 +52,8 @@
 '<p><i>Just because you can, don\'t.</i></p>',
 
 '<p>Michael A. Jackson on the rules of optimization:</p>' +
-'<p>1. Don\'t do it.</p>' +
-'<p>2. (For experts only). Don\'t do it yet.</p>'
+'<p><i>1. Don\'t do it.</i></p>' +
+'<p><i>2. (For experts only). Don\'t do it yet.</i></p>'
 
   ]; 
 
