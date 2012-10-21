@@ -49,11 +49,11 @@
 'but by the completeness of their case analysis."</i></p>',
 
 '<p>Sarah Politz on restraint:</p>' +
-'<p><i>Just because you can, don\'t.</i></p>',
+'<p><i>"Just because you can, don\'t."</i></p>',
 
 '<p>Michael A. Jackson on the rules of optimization:</p>' +
-'<p><i>1. Don\'t do it.</i></p>' +
-'<p><i>2. (For experts only). Don\'t do it yet.</i></p>'
+'<p><i>"1. Don\'t do it.</i></p>' +
+'<p><i>2. (For experts only). Don\'t do it yet."</i></p>'
 
   ]; 
 
@@ -62,5 +62,6 @@
     wisCount = (wisCount + 1) % wisdoms.length;
     document.getElementById('wisdom-content').innerHTML = wisdoms[wisCount]
   };
+  window.newWisdom();
 })();
 
