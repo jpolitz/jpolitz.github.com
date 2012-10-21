@@ -23,8 +23,6 @@ a:hover {
 
 
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src='wisdom.js'></script>
 <script type="text/javascript">
   var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-25748313-1']);
@@ -74,50 +72,33 @@ href="http://brownplt.github.com/2011/11/11/s5-javascript-semantics.html">S5</a>
 is a JavaScript implementation designed for exploration.  <a
 target="_blank"
 href="http://www.youtube.com/watch?v=Pd7Fra8vPok&feature=player_embedded"
+class="video-toggle"
+data-video="s5-video"
+data-hide="s5-hide"
 id="s5-show">This video</a> shows a bit of S5 in action.  With Matt
 Carroll, Ben Lerner, and Justin Pombrio.
 <div style="background-color:#eee;display:none;padding:1em" id="s5-video">
-<a style="float:right;" href="javascript:void(0);" id="hide-s5">(hide)</a>
+<a style="float:right;" href="javascript:void(0);" id="s5-hide">(hide)</a>
 <iframe width="640" height="390" src="http://www.youtube.com/embed/Pd7Fra8vPok" frameborder="0" allowfullscreen></iframe>
 <br/>
 </div>
-<script>
-$(function() {
-  $('#s5-show').hover(function() {
-    $('#s5-video').fadeIn(1000);
-  });
-  $('#s5-show').click(function() {
-    $('#s5-video').toggle();
-  });
-  $('#hide-s5').click(function() {
-    $('#s5-video').fadeOut(500);
-  });
-});
-</script>
 </li>
+
 			<li>
 			<a href="https://sites.google.com/site/belayresearchproject/">Google Belay</a>
 			is exploring secure sharing and identity management in the cloud.  The <a href="http://code.google.com/p/google-belay/">code</a> for our
-      <a id="belay-show" target="_blank" href="https://sites.google.com/site/belayresearchproject/team-blog/demovideo">demo</a>
+      <a id="belay-show"
+class="video-toggle"
+data-video="belay-video"
+data-hide="belay-hide"
+target="_blank"
+href="https://sites.google.com/site/belayresearchproject/team-blog/demovideo">demo</a>
 			is open source and available.  With Arjun Guha, Mark Lentczner, and &#218;lfar Erlingsson.
 <div width="440" style="background-color:#eee;display:none;padding:1em" id="belay-video">
-<a style="float:right;" href="javascript:void(0);" id="hide-belay">(hide)</a>
+<a style="float:right;" href="javascript:void(0);" id="belay-hide">(hide)</a>
 <iframe width="420" height="315" src="http://www.youtube.com/embed/2_5p6S2eW8s" frameborder="0" allowfullscreen></iframe>
 <br/>
 </div>
-<script>
-$(function() {
-  $('#belay-show').hover(function() {
-    $('#belay-video').fadeIn(1000);
-  });
-  $('#belay-show').click(function() {
-    $('#belay-video').toggle();
-  });
-  $('#hide-belay').click(function() {
-    $('#belay-video').fadeOut(500);
-  });
-});
-</script>
 			</li>
 
       <li> I designed a <a
@@ -223,6 +204,21 @@ href="http://www.cs.uwm.edu/~boyland/fool2012/">FOOL 2012</a> <em>(to appear)</e
 </div>
 </div>
 
+<script src="jquery.min.js"></script>
+<script src='wisdom.js'></script>
+<script>
+"use strict";
+$(function() {
+  $(".video-toggle").each(function(ix, elt) {
+    elt = $(elt);
+    var video = $("#" + elt.data("video"));
+    var hider = $("#" + elt.data("hide"));
+    elt.hover(function() { video.fadeIn(1000); });
+    elt.click(function() { video.toggle(); });
+    hider.click(function() { video.fadeOut(1000); });
+  });
+});
+</script>
 </body>
 
 </html>
