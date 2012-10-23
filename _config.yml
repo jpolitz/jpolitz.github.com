@@ -1,0 +1,7 @@
+safe: true
+source: .
+destination: _site
+lsi: false
+webbase: "http://localhost:8000"
+#webbase: "http://jpolitz.github.com"
+:pygments: true
