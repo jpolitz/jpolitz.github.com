@@ -53,7 +53,11 @@
 
 '<p>Michael A. Jackson on the rules of optimization:</p>' +
 '<p><i>"1. Don\'t do it.</i></p>' +
-'<p><i>2. (For experts only). Don\'t do it yet."</i></p>'
+'<p><i>2. (For experts only). Don\'t do it yet."</i></p>',
+
+'<p>Derman and Wilmott on modelling responsibly:</p>' +
+'<p><i>"I will never sacrifice reality for elegance without explaining why ' +
+'I have done so."</i></p>'
 
   ]; 
 
