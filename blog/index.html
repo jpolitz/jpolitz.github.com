@@ -1,0 +1,9 @@
+---
+layout: default
+title: Dirigiblog
+---
+
+{% for post in site.posts limit:3 %}
+{{ post.content }}
+{% endfor %}
+

@@ -1,7 +1,7 @@
 safe: true
+title: "Dirigiblog"
 source: .
 destination: _site
 lsi: false
-#webbase: "http://localhost:8000"
-webbase: "http://jpolitz.github.com"
+url: "http://jpolitz.github.com"
 :pygments: true
