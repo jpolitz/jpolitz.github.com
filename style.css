@@ -117,8 +117,6 @@ a.oldpost:hover {
   border-left: 1px solid gray;
   float: left;
   width: 38em;
-  position: relative;
-  left: 47em;
 }
 
 #posts-content {
@@ -172,8 +170,9 @@ h3 {
 h1 {
   hyphens: none;
   font-family: "Garamond MT Std", "Garamond", "Times New Roman", serif;
-  font-size: 18pt;
+  font-size: 24pt;
   font-weight: normal;
+  text-align: right;
 }
 
 h2 {
