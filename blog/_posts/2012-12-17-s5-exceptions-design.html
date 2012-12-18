@@ -110,7 +110,7 @@ o[x] = 5
 
 // becomes
 
-if (o[x<#writable>]) o[x] = 52
+if (o[x<#writable>]) o[x] = 5
 else %TypeError("unwritable field")
 {% endhighlight %}
 
@@ -153,7 +153,7 @@ o[x] = 5
 
 // becomes
 
-try { o[x] } catch %ErrorDispatch
+try { o[x] = 5 } catch %ErrorDispatch
 {% endhighlight %}
 
 
