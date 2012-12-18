@@ -59,6 +59,10 @@
 '<p><i>"I will never sacrifice reality for elegance without explaining why ' +
 'I have done so."</i></p>'
 
+'<p>Mark Miller on the economics of programming:</p>' +
+'<p><i>"In an <a href="http://en.wikipedia.org/wiki/Agoric_computing">agoric</a>' +
+' LISP, money is the root of all eval."</i></p>'
+
   ]; 
 
   var wisCount = Math.floor(Math.random() * wisdoms.length);
