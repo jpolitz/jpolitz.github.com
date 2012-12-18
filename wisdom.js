@@ -57,7 +57,7 @@
 
 '<p>Derman and Wilmott on modelling responsibly:</p>' +
 '<p><i>"I will never sacrifice reality for elegance without explaining why ' +
-'I have done so."</i></p>'
+'I have done so."</i></p>',
 
 '<p>Mark Miller on the economics of programming:</p>' +
 '<p><i>"In an <a href="http://en.wikipedia.org/wiki/Agoric_computing">agoric</a>' +
