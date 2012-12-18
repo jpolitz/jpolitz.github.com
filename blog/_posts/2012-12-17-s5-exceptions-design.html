@@ -1,0 +1,214 @@
+---
+layout: blog
+title: "S5: Desugaring Exceptions"
+---
+
+<h2><a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a></h2>
+
+<em style="color: gray; font-size: smaller">
+  Posted on {{ page.date | date_to_long_string }}.</em>
+
+<p> During our development of <a
+href="http://brownplt.github.com/2011/11/11/s5-javascript-semantics.html">S5</a>
+(start there if you have no idea what S5 is, as this post assumes some
+background), our implementation hit several pain points.  These are
+useful points in the specification to highlight, because our
+implementation is designed to give an unambiguous, precise,
+understandable account of the language that we can use to make formal
+claims.</p>
+
+<p>This post touches on one such pain point, which is balancing the
+creation of exceptions objects between the core semantics and the
+desugaring to the core.  This split highlights some of the invariants we
+try to maintain in our core language, and where they are broken by the
+specification.  I don't think this is pointing out any flaw in either;
+rather, it's an example of a case where traditional models for semantics
+face difficulty with real-world language features.  There is a real
+design tradeoff here, and S5 currently sits somewhere in the middle
+between two ends of the spectrum.</p>
+
+<h3>Implicit Creation of Exceptions Objects</h3>
+
+<p><a href="http://es5.github.com/#x10.2.1.2.4">Several</a>
+<a href="http://es5.github.com/#x10.5">points</a>
+<a href="http://es5.github.com/#x11.2.2">in the</a>
+<a href="http://es5.github.com/#x11.2.3">spec</a> mandate throwing an
+exception of a particular class.
+</p>
+
+<p>As with any feature in the specification, we have two choices for how
+to handle these exceptions.  We can:</p>
+
+<ul>
+  <li>Make them a part of the semantics, or</li>
+  <li>Desugar them away into existing parts of the semantics.</li>
+</ul>
+
+<p>In some cases, this is straightforward.  For example, when
+<code>defineOwnProperty</code> is called and tries to change a property
+from non-writable to writable on a non-<code>configurable</code> field,
+an exception object needs to be created with the built-in
+<code>TypeError</code> as its internal <code>proto</code> field.  </p>
+
+<p>In this case, we use different exceptions we've defined in a <a
+href="https://github.com/brownplt/LambdaS5/blob/master/envs/es5.env#L55">core
+semantics implementation</a>, and provide an <a
+href="https://github.com/brownplt/LambdaS5/blob/master/envs/es5.env#L653">implementation of
+<code>defineOwnProperty</code></a> in the core that instantiates the correct
+kind of exception.  The same pattern is used in a number of built-in
+functions, and is straightforward and uncontroversial.</p>
+
+<h3>Even More Implicit Creations</h3>
+
+<p>This works just fine for a number of cases, especially built-in
+functions.  Others cause some head-scratching.  For example, setting an
+unwritable field also throws a <code>TypeError</code>.  The semantics is
+aware of the writability of fields, and will thus refuse to perform
+assignment on one.  But the semantics still isn't, and I argue
+<em>shouldn't</em>, be in charge of allocating a new exception object
+and knowing about <code>TypeError</code>s.  There are at least two
+reasons:</p>
+
+<ol>
+<li>
+
+  <p> We have kept the creation of objects to a minimum in our core
+semantics.  Only object literal expressions and object key extraction
+expressions are capable of adding new locations on the heap for objects.
+All other creations of objects in the spec are desugared into these two
+operations.  This aids proofs over the core, because more of the
+operations in the semantics enjoy the invariant that they cannot change
+the object store in any way.  </p>
+
+</li>
+
+<li>
+
+  <p>The core semantics and interpreter start evaluation with an empty
+heap that contains no objects, and an empty environment that contains no
+bindings.  This isn't what I'd recommend for a blazingly <em>fast</em>
+implementation of JavaScript, but it is a clean model: because of (1),
+this means that all object references come from some allocation in the
+code. Expecting that something named <code>TypeError</code> would be
+available at the level of the semantics time would require violating
+this property, and would complicate the clean model of evaluation.
+
+</p>
+
+</li>
+</ol>
+
+<p>
+So, it seems like the natural thing to do for assignment to unwritable
+fields is to desugar field assignment to check for writability and throw
+the correct exception if the field isn't writable.  That is, we would
+transform:
+</p>
+
+{% highlight javascript %}
+o[x] = 5
+
+// becomes
+
+if (o[x<#writable>]) o[x] = 52
+else %TypeError("unwritable field")
+{% endhighlight %}
+
+<p>This works correctly, though the actual implementation would be a bit
+longer, because it would also need to check for extensibility.  There
+are two drawbacks, however:</p>
+
+<ol>
+<li><p>
+
+The desugared code is <em>much</em> less readable, because a field
+assignment at the surface is nearly unrecognizable (imagine what a
+nested assignment like <code>o[x] = o[y] = 4</code>).
+
+</p></li>
+
+<li><p>
+
+From an engineering point of view, we now have the desugared code
+checking for writability, <em>and</em> the interpreter
+<a href="https://github.com/brownplt/LambdaS5/blob/master/src/ljs/ljs_eval.ml#L280">
+checking for it</a>, with presumably, but not actually guaranteed, dead
+code in the exception case.
+
+</p></li>
+</ol>
+
+<h3>One Alternate Approach</h3>
+
+<p>
+
+We've started experimenting with another appraoch as a result of being
+somewhat dissatisfied with the pure desugaring approach above.  We let
+the interpreter's checks happen, and have the interpreter throw
+exceptions as primitive values that can be caught by the desugared code.
+Our desugaring becomes:</p>
+
+{% highlight javascript %}
+o[x] = 5
+
+// becomes
+
+try { o[x] } catch %ErrorDispatch
+{% endhighlight %}
+
+
+<p>
+This is less desugared cruft than before, and relies on two tricks for
+defining <code>%ErrorDispatch</code> and tidying up the interaction with
+the rest of desugaring.
+</p>
+
+<ul>
+<li><p>
+
+We embed all user-thrown values one level deep in an object data
+structure with a tagged field that lets us tell user-thrown values
+from interpreter-thrown exceptions.  If we didn't do this, actual
+JavaScript code might be able to act like the trusted interpreter.  We
+do this in the <a
+href="https://github.com/brownplt/LambdaS5/blob/master/src/exprjs/exprjs_to_ljs.ml#L359">desugaring
+of throw expressions</a>.
+
+</p></li>
+
+<li><p>
+
+The catch block, <code>%ErrorDispatch</code>, checks the thrown value to
+see if it is a user-thrown or interpreter-thrown exception.  It passes
+on user-thrown exceptions, and converts interpreter-thrown exceptions to
+the appropriate type.  For example, in this case, it <a
+href="https://github.com/brownplt/LambdaS5/blob/master/envs/es5.env#L110">recognizes
+the string <code>"unwritable field"</code> and creates a
+<code>TypeError</code></a>.
+
+</p></li>
+</ul>
+
+<h3>Tradeoffs</h3>
+
+<p>
+
+There are pros and cons to this pattern.
+
+</p>
+
+<p>
+
+It moves the desugaring burden from the checks around uses of built-in
+forms to the definition of <code>%ErrorDispatch</code>, which makes
+desugared code clearer.  It also maintains all the invariants we want
+about the interpreter itself.  On the other hand, it adds an extra
+implicit dependency between the strings used in the interpreter.  It
+also makes the desugared code less explicit in exchange for removing
+some noise.  We'll see how well we like this, and if certain classes of
+exceptions should use different strategies.  Function application and
+lookup on <code>undefined</code> and <code>null</code> could also use
+this treatment to clarify desugared code, but it's probably not worth it
+for built-in functions.
+
+</p>
