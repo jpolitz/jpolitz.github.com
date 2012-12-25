@@ -1,0 +1,554 @@
+---
+layout: blog
+title: "Scoring Go, from First Principles"
+published: false
+---
+
+<script src="{{ site.url }}/go.js"></script>
+
+
+<h2><a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a></h2>
+
+<em style="color: gray; font-size: smaller">
+  Posted on {{ page.date | date_to_long_string }}.</em>
+
+<h3>Scoring in Go</h3>
+
+<em>Disclaimer:  I am not a Go expert.  I haven't done much research on
+the topic I'm writing about, so my intent really is to build this up
+from my intuitions about the game.  I'd be happy to hear if these
+definitions have already been written down by someone somewhere
+else.</em>
+
+<p>
+
+Go is a complicated game.  It’s so complicated that determining who has
+won is a nontrivial task.
+Scores in games played by humans are arrived at by consensus and seldom
+seem controversial, but the complex cases can be quite puzzling.  The
+problem is hard for computers, too.
+  <a
+href="http://www.online-go.com/faq.php?name=rules">Simplified
+versions</a> of both so-called Japanese and Chinese rules are used by
+online Go services, and the OGS even has a disclaimer:
+
+<blockquote> Some sekis contain false eyes that cannot be removed - this
+count as points in Chinese rules but not in Japanese rules. OGS
+implements a complex algorithm to detects those situation (sic). Since
+it’s quite tricky situation to detects, the scoring algorithm might have
+some flaw and wrongly detects false eyes. If this happens in one of your
+games please raise a support ticket and we will get the game resolved.
+</blockquote>
+
+To me, this quote sounds an awful lot like amateur attempts at sound
+program analyses and type-checking.  “We wrote something that’s really
+hard and complicated; if you find something that it lets happen that you
+don’t like, that’s a bug and you should let us know.”  But there’s no
+actual truth to compare against other than a sequence of
+counterexamples.  That is, it’s not clear if we could prove the
+algorithm correct, or if a correct but inefficient version exists.
+
+</p>
+
+<p>
+
+I think it’s fascinating that there isn’t a canonical algorithm for
+determining the score of a Go game, or even if the game is finished.
+While I can’t hope to settle scoring for all of Go in a single post,
+it’s a fun exercise to see what happens if we try to develop
+<em>one</em> unambiguous definition of scoring for Go.  Note that coming
+up with such a definition isn't likely to change the outcome of any Go
+tournaments, past or future.  It's simply an attempt to make
+well-defined an arcane part of the game that is based on experience,
+history, and best practice.
+
+</p>
+
+<h3>Go’s “Simple” Rules</h3>
+
+<p>
+
+Everyone who has taught me Go has touted the simplicity and elegance of
+the rules.  I've passed this sentiment on to those I've taught, but in
+reality the rules are anything but.  Go games most closely resemble
+something like cellular automata à la the Game of Life: local
+relationships decide whether stones remain on the board or leave, and
+small differences in nearby board states can result in vastly different
+global outcomes.  If existing similar models are any indication, this
+should lead to complex traces through the game indeed.
+
+</p>
+
+<p>
+
+I'm going to introduce the rules of Go with a special eye towards what
+can get complicated.  As always, we play on the vertices of the board
+(whose size is fixed in a given game, but may vary depending on the
+desired length and complexity of the game), using black and white
+pieces.  Players can play on most of the vertices most of the time.  In
+the beginning of the game, there are no restrictions.  Play might
+proceed like this:
+
+<div>
+<canvas id='firstExample1' width=200 height=200></canvas>
+<canvas id='firstExample2' width=200 height=200></canvas>
+<canvas id='firstExample3' width=200 height=200></canvas>
+</div>
+<div>
+<canvas id='firstExample4' width=200 height=200></canvas>
+<canvas id='firstExample5' width=200 height=200></canvas>
+<canvas id='firstExample6' width=200 height=200></canvas>
+<script>
+drawBoardAt('firstExample1', [[K,K,K],
+                              [B,K,K],
+                              [K,K,K]]);
+drawBoardAt('firstExample2', [[K,K,K],
+                              [B,W,K],
+                              [K,K,K]]);
+drawBoardAt('firstExample3', [[K,B,K],
+                              [B,W,K],
+                              [K,K,K]]);
+drawBoardAt('firstExample4', [[K,B,K],
+                              [B,W,K],
+                              [W,K,K]]);
+drawBoardAt('firstExample5', [[K,B,K],
+                              [B,W,K],
+                              [W,B,K]]);
+drawBoardAt('firstExample6', [[W,B,K],
+                              [B,W,K],
+                              [W,B,K]]);
+</script>
+
+</div>
+
+So far, not much exciting has happened; merely alternating turns and
+playing stones.  We can get our first excitement if black plays to
+completely surround the center white stone:
+
+</p>
+
+<div>
+<canvas id='firstExample7' width=200 height=200></canvas>
+</div>
+<script>
+drawBoardAt('firstExample7', [[W,B,K],
+                              [B,W,B],
+                              [W,B,K]]);
+</script>
+
+<p>
+
+This is usually the first rule taught: a completely stone is
+<em>captured</em> when there are no empty spaces around it.  So the
+center white stone would be removed:
+</p>
+
+<div>
+<canvas id='firstExample8' width=200 height=200></canvas>
+</div>
+<script>
+drawBoardAt('firstExample8', [[W,B,K],
+                              [B,K,B],
+                              [W,B,K]]);
+</script>
+
+<p>Depending on the scoring system being used, this might award points
+to the black player.  For our purposes, it’s enough to keep track of the
+fact that a stone was captured, and we'll use the information later if
+we need to.
+</p>
+
+<p>
+We also now have our first interesting <em>constraint</em> on the moves
+white can make next.  White <em>is not</em> allowed to play into the
+empty space in the center in a valiant attempt to commit suicide.
+From white’s point of view, the board looks more like:
+</p>
+
+<div>
+<canvas id='firstExample9' width=200 height=200></canvas>
+</div>
+<script>
+drawBoardAt('firstExample9', [[W,B,K],
+                              [B,M,B],
+                              [W,B,K]]);
+</script>
+
+<p>Constraints like this are useful because they tell us what the board
+might have to look like for white to have <em>no</em> allowed moves,
+which would suggest some sort of end state for the game.</p>
+
+<h4>Groups</h4>
+
+<p>That first example was a simple capture of a single stone.  Stones
+that touch form groups and live or die together.  So if the board looked
+like:</p>
+
+<div>
+<canvas id='groups1' width=200 height=200></canvas>
+</div>
+<script>
+drawBoardAt('groups1', [[W,B,B,K],
+                        [B,W,W,K],
+                        [W,B,B,K]]);
+</script>
+
+<p>Then black could capture <em>both</em> center white stones:</p>
+
+<div>
+<canvas id='groups2' width=300 height=200></canvas>
+<canvas id='groups3' width=200 height=200></canvas>
+</div>
+<script>
+drawBoardAt('groups2', [[W,B,B,K],
+                        [B,W,W,B],
+                        [W,B,B,K]]);
+drawBoardAt('groups3', [[W,B,B,K],
+                        [B,K,K,B],
+                        [W,B,B,K]]);
+</script>
+
+<p>As far as constraints on the next play go, white it isn't suicide for
+white to play in the spots that were just taken, so playing there is
+allowed (though not necessarily strategic):</p>
+
+<div>
+<canvas id='groups4' width=300 height=200></canvas>
+</div>
+<script>
+drawBoardAt('groups4', [[W,B,B,K],
+                        [B,W,K,B],
+                        [W,B,B,K]]);
+</script>
+
+<p>But on future moves, white has restricted itself, as moving again in
+the inner space would be suicide:</p>
+
+<div>
+<canvas id='groups5' width=300 height=200></canvas>
+</div>
+<script>
+drawBoardAt('groups5', [[W,B,B,K],
+                        [B,W,M,B],
+                        [W,B,B,K]]);
+</script>
+
+<p>Note that white is <em>definitionally</em> not allowed to move in
+this space; it isn't just poor play.</p>
+
+<h4>From the Jaws</h4>
+
+<p>The moves we've been calling “suicide” moves so far are more subtle
+than the examples have covered.  This is because, in another twist,
+if playing a move would capture opposing stones, those stones are
+removed before suicide is checked for.  This means that some apparently
+suicidal moves are in fact fine.  Below, white <em>can</em> play at the
+green mark, even though it is completely surrounded by black stones:</p>
+
+<div>
+<canvas id='suicide1' width=300 height=200></canvas>
+</div>
+<script>
+drawBoardAt('suicide1', [[K,W,W,B,K],
+                         [W,B,B,G,B],
+                         [K,W,W,B,K]]);
+</script>
+
+<p>After, the board would look like:</p>
+
+<div>
+<canvas id='suicide2' width=300 height=200></canvas>
+</div>
+<script>
+drawBoardAt('suicide2', [[K,W,W,B,K],
+                         [W,K,K,W,B],
+                         [K,W,W,B,K]]);
+</script>
+
+<p>All of the examples to do with captures so far can be summed up in an
+algorithm for a given stone placement:
+
+<ol>
+<li>
+Place a stone on any unoccupied space.
+</li>
+<li>
+Check if any opposing groups are completely surrounded.  If so,
+remove them and mark them as captured.
+</li>
+<li>
+Check if any friendly groups are completely surrounded.  If so,
+the move is <em>invalid</em>.
+</li>
+</ol>
+
+This is straightforward, but the order is quite important.</p>
+
+<h4>Infinities</h4>
+
+<p>
+The last real rule we need to decide on has to do with repeated board
+states.  Since we can both add and remove stones to the board over the
+course of the game, and old captured spaces become valid places to play
+once the old stones are removed, it isn't obvious that a Go game would
+have to finish.  Consider this board, where black can take a white stone
+by playing at the green mark:
+</p>
+
+<div>
+<canvas id='ko1' width=300 height=200></canvas>
+</div>
+<script>
+drawBoardAt('ko1', [[K,W,B,K],
+                    [W,G,W,B],
+                    [K,W,B,K]]);
+</script>
+
+<p>The resulting board gives white the same option...</p>
+
+<div>
+<canvas id='ko2' width=300 height=200></canvas>
+</div>
+<script>
+drawBoardAt('ko2', [[K,W,B,K],
+                    [W,B,G,B],
+                    [K,W,B,K]]);
+</script>
+
+<p>Which would bring us back to the same on-board state as before:</p>
+
+<div>
+<canvas id='ko3' width=300 height=200></canvas>
+</div>
+<script>
+drawBoardAt('ko3', [[K,W,B,K],
+                    [W,G,W,B],
+                    [K,W,B,K]]);
+</script>
+
+<p>It’s useful to rule out such infinite loops for a definition of game
+termination and scoring.  (It’s not imperative; we might be able to show
+that it’s never strategically advantageous for both players to engage in
+an infinite loop, so we don't need to worry about them for scoring since
+we only score games in which players are trying to win.  But for a
+starting definition, it’s useful to know that all games actually end.)
+We are going to take a hard line on such “ko” states, and say that
+<em>no on-board state is allowed to repeat</em> (this is hard to keep
+track of in real games, so the rule is usually that black would have to
+make some other move before returning to capture the white stone).  We
+can update our turn-by-turn algorithm to reflect this:</p>
+
+<ol>
+<li>
+Place a stone on any unoccupied space.
+</li>
+<li>
+Check if any opposing groups are completely surrounded.  If so,
+remove them and mark them as captured.
+</li>
+<li>
+Check if any friendly groups are completely surrounded.  If so,
+the move is <em>invalid</em>.
+</li>
+<li>
+Check if the current board state is in the history of states for this
+game.  If so, the move is <em>invalid</em>.
+</li>
+<li>
+If the current board state is valid, add it to the history of states.
+</li>
+</ol>
+
+<p>
+
+This definition of a turn has some nice properties.  The best is that we
+can say that any Go game played with these rules must terminate!  It's
+obvious that there are a finite number of on-board states (a mere
+3<sup>b<sup>2</sup></sup>), where <em>b</em> is the width of the board.
+Every valid move visits a new board state (by step 4, this must be
+true), so play marches towards a state where no valid moves are left for
+either player.  We can safely call this state an end state of the game.
+
+</p>
+
+<p>In the rules so far, we've assumed that both players play every turn.
+This doesn't necessarily seem fair.  Consider this game, where we show
+the whole board nearly full:</p>
+
+
+<div>
+<canvas id='full1' width=500 height=300></canvas>
+</div>
+<script>
+drawBoardAt('full1', [[M,W,B,B,B],
+                      [W,M,W,B,G],
+                      [W,W,W,B,B],
+                      [W,W,W,B,G],
+                      [W,W,W,B,B]],
+            {full: true});
+</script>
+
+<p>Black cannot play in the two red spots because it would be suicide.
+Similarly, white cannot play in the green spots.  But if black plays in
+either of the two green spots (the only ones allowed), suddenly white
+can capture rather than suicide at the other, and can take all of
+black's stones:</p>
+
+<div>
+<canvas id='full2' width=300 height=300></canvas>
+<canvas id='full3' width=300 height=300></canvas>
+</div>
+<script>
+drawBoardAt('full2', [[G,W,B,B,B],
+                      [W,G,W,B,B],
+                      [W,W,W,B,B],
+                      [W,W,W,B,G],
+                      [W,W,W,B,B]],
+            {full: true});
+drawBoardAt('full3', [[K,W,K,K,K],
+                      [W,K,W,K,K],
+                      [W,W,W,K,K],
+                      [W,W,W,K,W],
+                      [W,W,W,K,K]],
+            {full: true});
+</script>
+
+<p>The situation would be similarly bad for white if it were white's
+turn.  Thus, this situation is a game of chicken between the players,
+and whoever is first loses.  Both players have built up a strong
+position with two holes in their group, making them uncapturable unless
+they sabatoge themselves.  To avoid this forced self-sabatoge, the rules
+allow players to <em>pass</em> the turn rather than play (there is at
+least one interesting variation here: whether players can pass one turn
+at a time and still play on subsequent turns, or if they give up their
+ability to play for the rest of the game, effectively declaring
+themselves done).  In this situation, both black and white would elect
+to pass indefinitely.  For our purposes, we'll clearly lay out the rules
+of ending the game around our per-turn algorithm above to reflect this
+case.</p>
+
+<ol>
+<li>
+  Black plays or passes.  If all moves are <em>invalid</em> for black,
+  black passes by default.
+</li>
+<li>
+  If white passed last turn and black passes, the game is over.
+  Otherwise, continue.
+</li>
+<li>
+  White plays or passes.  If all moves are <em>invalid</em> for white,
+  white passes by default.
+</li>
+<li>
+  If both players passed this turn, the game is over.  Otherwise, return
+  to 1.
+</li>
+</ol>
+
+<p>Both players passing is the usual ending condition for Go; I'm not
+aware of any non-tutorial Go game ever that led to only invalid moves
+for both players with the definition above.  What happens after both
+players pass is the actual scoring to decide who wins.</p>
+
+<h4>The Scoring</h4>
+
+<p>I'm going to build up a definition of scoring here that isn’t quite
+how Go is scored in tournaments.  In a brief discussion after, I will
+argue that the tournament scoring methods are (potentially quite
+accurate) approximations of this scoring system.  That is, all those
+folks in tournaments are really just saving themselves time and not
+going into all this pedantic nonsense that I'm spouting here.  But, my
+definition will be rigorous and precise, avoiding any need to speculate
+on what would happen if you “just played it out,” so onward
+we go.</p>
+
+<p>There are several pieces of information we can use to assign a score
+after both players have passed:</p>
+
+<ul>
+<li>The stones on the board</li>
+<li>The stones captured</li>
+<li>The empty spaces on the board</li>
+<li>The game history</li>
+</ul>
+
+<p>I’m going to throw out the game history from consideration for
+calculating scores.  There's probably something frightfully complicated
+that can be done with the history to judge how players do, but in the
+interest of simplicity, I’ll focus on the board and the captures.</p>
+
+<p>It’s worth taking a minute to think about what would make a
+definition of scoring both useful and appropriate.  I’ll assume that
+it’s uncontroversial that the goal of the game is to have some sort of
+<em>control</em> over the board, and this should be reflected in the
+score, for some definition of <em>control</em>.</p>
+
+<p>Let's think about what control might mean in terms of the end board
+state, and in terms of captures that may have happened along the way.
+Each player has an equal number of opportunities to play stones.  If no
+captures happen, the player who passes least will have more stones on
+the board.  I’ll take the position that passing represents some sort of
+weakness; the lack of the ability to make a move means the passing
+player has less <em>control</em> over the board.  The corollary is that
+having more stones on the board at the end of the game results in a
+higher score.  So in this game, white wins, since it played more stones
+and no captures happened (note that black probably passed a number of
+times at the end of the game to avoid endangering its large group):
+</p>
+
+<div>
+<p><em>White captures: 0, Black captures: 0</em></p>
+<p><em>White stones: 13, Black stones: 8</em></p>
+<canvas id='score1' width=500 height=300></canvas>
+</div>
+<script>
+drawBoardAt('score1', [[K,W,W,B,B],
+                       [W,K,W,B,K],
+                       [W,W,W,B,B],
+                       [W,W,W,B,K],
+                       [W,W,W,B,B]],
+            {full: true});
+</script>
+
+<p>Things get interesting when we consider captures.  When stones are
+captured, new space opens up on the board to play in.  All other things
+being equal (e.g. with no further captures or extra passes from one
+player), both players should be able to fill up about half the space.
+In practice, since the captured area is (by necessity) already
+surrounded, it’s usually easier for the capturer to take advantage of
+the space than the capturee.  So, even if we don't count the captures at
+the end of the game, their effect should be visible in the counts of
+stones on the board.  But if we don't count captures, we can end up with
+bizarre results.  Who should win the following game:</p>
+
+
+<div>
+<p><em>Black passes 24 times in succession, white plays 24 stones</em></p>
+<canvas id='score2' width=500 height=300></canvas>
+<p><em>Black astutely captures 24 stones...</em></p>
+<canvas id='score3' width=500 height=300></canvas>
+<p><em>Play continues and both players finally pass at:</em></p>
+<canvas id='score4' width=500 height=300></canvas>
+</div>
+<script>
+drawBoardAt('score2', [[W,W,W,W,W],
+                       [W,K,W,W,W],
+                       [W,W,W,W,W],
+                       [W,W,W,W,W],
+                       [W,W,W,W,W]],
+            {full: true});
+drawBoardAt('score3', [[K,K,K,K,K],
+                       [K,B,K,K,K],
+                       [K,K,K,K,K],
+                       [K,K,K,K,K],
+                       [K,K,K,K,K]],
+            {full: true});
+drawBoardAt('score4', [[B,K,B,W,W],
+                       [K,B,B,W,W],
+                       [B,B,W,W,K],
+                       [W,W,W,K,W],
+                       [W,W,W,K,K]],
+            {full: true});
+</script>
+
