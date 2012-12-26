@@ -1,7 +1,6 @@
 ---
 layout: blog
-title: "Scoring Go, from First Principles"
-published: false
+title: "Terminating and Scoring Go"
 ---
 
 <script src="{{ site.url }}/go.js"></script>
@@ -12,13 +11,11 @@ published: false
 <em style="color: gray; font-size: smaller">
   Posted on {{ page.date | date_to_long_string }}.</em>
 
-<h3>Scoring in Go</h3>
+<h3>Scoring and Ending Go Games</h3>
 
-<em>Disclaimer:  I am not a Go expert.  I haven't done much research on
-the topic I'm writing about, so my intent really is to build this up
-from my intuitions about the game.  I'd be happy to hear if these
-definitions have already been written down by someone somewhere
-else.</em>
+<em>Disclaimer:  I am not a Go expert, this was written for fun while my
+flight was delayed for 4 hours on Christmas Day.  The JavaScript/Canvas
+code I used to generate the Go boards is <a href="{{ site.url }}/go.js">here</a> for those who might want to use it.</em>
 
 <p>
 
@@ -56,9 +53,9 @@ I think it’s fascinating that there isn’t a canonical algorithm for
 determining the score of a Go game, or even if the game is finished.
 While I can’t hope to settle scoring for all of Go in a single post,
 it’s a fun exercise to see what happens if we try to develop
-<em>one</em> unambiguous definition of scoring for Go.  Note that coming
-up with such a definition isn't likely to change the outcome of any Go
-tournaments, past or future.  It's simply an attempt to make
+<em>one</em> unambiguous definition of termination for Go.  Note that
+coming up with such a definition isn't likely to change the outcome of
+any Go tournaments, past or future.  It's simply an attempt to make
 well-defined an arcane part of the game that is based on experience,
 history, and best practice.
 
@@ -519,36 +516,24 @@ In practice, since the captured area is (by necessity) already
 surrounded, it’s usually easier for the capturer to take advantage of
 the space than the capturee.  So, even if we don't count the captures at
 the end of the game, their effect should be visible in the counts of
-stones on the board.  But if we don't count captures, we can end up with
-bizarre results.  Who should win the following game:</p>
+stones on the board.</p>
 
+<p>For simplicity, I find it interesting to think of the game's score
+being simply the number of stones of each color left on the board at the
+end of the game.  The extra points gained by captures should be
+reflected in the extra stones of the opposite color laid down.  The
+differential in captures will be clear, and greater territory is
+reflected by the opponent either passing or making ineffectual moves
+that only lead to captured stones.</p>
 
-<div>
-<p><em>Black passes 24 times in succession, white plays 24 stones</em></p>
-<canvas id='score2' width=500 height=300></canvas>
-<p><em>Black astutely captures 24 stones...</em></p>
-<canvas id='score3' width=500 height=300></canvas>
-<p><em>Play continues and both players finally pass at:</em></p>
-<canvas id='score4' width=500 height=300></canvas>
-</div>
-<script>
-drawBoardAt('score2', [[W,W,W,W,W],
-                       [W,K,W,W,W],
-                       [W,W,W,W,W],
-                       [W,W,W,W,W],
-                       [W,W,W,W,W]],
-            {full: true});
-drawBoardAt('score3', [[K,K,K,K,K],
-                       [K,B,K,K,K],
-                       [K,K,K,K,K],
-                       [K,K,K,K,K],
-                       [K,K,K,K,K]],
-            {full: true});
-drawBoardAt('score4', [[B,K,B,W,W],
-                       [K,B,B,W,W],
-                       [B,B,W,W,K],
-                       [W,W,W,K,W],
-                       [W,W,W,K,K]],
-            {full: true});
-</script>
+<p>So, we run the game to termination as we describe above, and then
+count the number of stones of each color on the board.  The player with
+more wins, simple as that.</p>
 
+<h4>Comparing to Existing Rule Sets</h4>
+
+<p>I’m cutting this post a bit short, since it’s ballooned quite large
+already, but if I get around to it sometime I'll compare this simple
+scoring technique to the Chinese and Japanese rule systems, and discuss
+why they are appropriate approximations of the simple scheme I've
+proposed here.</p>
