@@ -1,0 +1,40 @@
+
+---
+layout: blog
+title: "Terminating and Scoring Go"
+published: false
+---
+
+<p>The <em>Chinese</em> rules of Go do <em>not</em> count the captured
+stones in the score, while the Japanese rules do.
+
+
+<div>
+<p><em>Black passes 24 times in succession, white plays 24 stones</em></p>
+<canvas id='score2' width=500 height=300></canvas>
+<p><em>Black astutely captures 24 stones...</em></p>
+<canvas id='score3' width=500 height=300></canvas>
+<p><em>Play continues and both players finally pass at:</em></p>
+<canvas id='score4' width=500 height=300></canvas>
+</div>
+<script>
+drawBoardAt('score2', [[W,W,W,W,W],
+                       [W,K,W,W,W],
+                       [W,W,W,W,W],
+                       [W,W,W,W,W],
+                       [W,W,W,W,W]],
+            {full: true});
+drawBoardAt('score3', [[K,K,K,K,K],
+                       [K,B,K,K,K],
+                       [K,K,K,K,K],
+                       [K,K,K,K,K],
+                       [K,K,K,K,K]],
+            {full: true});
+drawBoardAt('score4', [[B,K,B,W,W],
+                       [K,B,B,W,W],
+                       [B,B,W,W,K],
+                       [W,W,W,K,W],
+                       [W,W,W,K,K]],
+            {full: true});
+</script>
+
