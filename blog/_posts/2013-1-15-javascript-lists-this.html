@@ -1,0 +1,228 @@
+---
+layout: blog
+title: "JavaScript Lists --- This"
+---
+
+<h2><a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a></h2>
+
+<p>
+<em style="color: gray; font-size: smaller">
+  Originally posted on {{ page.date | date_to_long_string }}.</em>
+</p>
+
+<em>This post was inspired by a <a
+href="http://news.ycombinator.com/item?id=4985853">recent thread</a> on
+Hacker News that created some conversation about the this keyword in
+JavaScript.  I want to thank Henry for writing that post and laying out
+the base cases that I built on for this post.</em>
+
+<p>JavaScript has some confusing features.  Every now and then, I see
+blog posts detailing “how to understand closures in JavaScript” or
+“grokking closures in JavaScript.”  Most of these are written, quite
+appropriately, by folks who are learning about JavaScript's features and
+sharing their knowledge as they learn useful tricks and build up an
+understanding of the language.  As a result, these posts are often
+incomplete.  Now, you can go to the <a
+href="http://es5.github.com">JavaScript spec</a> if you want a more
+detailed answer to your question, but the spec isn't nicely laid out as
+"here are all the ways <code>this</code> could be bound" and "here's how
+variable binding (doesn't) work in JavaScript."</p>
+
+<p>I wish there was a resource that laid out features this way, so I'm
+going to try writing down a few lists of what I think are comprehensive
+descriptions of some features of JavaScript.  I'll happily update the
+post (with credit) when folks find stuff that I forgot to add to the
+list.  I'll try to order things so that corner-case uses come later in
+the list than the most frequent uses, but there will be some random
+judgment calls made by me in there.  Without further ado...</p>
+
+<h3>Binding <code>this</code></h3>
+
+<p>There are lots of ways to get the keyword <code>this</code> bound in
+JavaScript.</p>
+
+<h4>Method Invocation</h4>
+
+<p>
+In a method invocation expression, the result of evaluating the
+expression to the left of the dot or bracket will be bound as
+<code>this</code> inside the called method:
+</p>
+
+{% highlight javascript %}
+o = { x:22, fun: function() { return this.x; } };
+o.fun(); // returns 22
+o.["f" + "un"](); // returns 22
+
+function return_o() { return o; }
+return_o().fun(); // returns 22
+{% endhighlight %}
+
+<h4>Function Invocation</h4>
+
+<p>If you call a method with function call syntax, even if it used to be
+a field of an object, one of two things will happen:
+
+<ul>
+
+<li>The common case is that it will have <code>window</code> passed to
+it as <code>this</code> (it's actually just "the global object," which
+is a different thing if you're on the server running Node, but the
+common case is <code>window</code> in the browser).
+
+{% highlight javascript %}
+window.x = 42;
+o = { x:22, fun: function() { return this.x; } }
+extracted = o.fun;
+extracted(); // returns 42, not 22
+{% endhighlight %}
+</li>
+
+<li> If the target function is in <a
+href="http://www.yuiblog.com/blog/2010/12/14/strict-mode-is-coming-to-town/"><em>strict
+mode</em></a> (which you should start using immediately if you aren't),
+in which case <code>undefined</code> will be bound to
+<code>this</code> (<a href="http://es5.github.com/#x10.4.3">the "set to
+global" option is skipped</a>):
+
+{% highlight javascript %}
+window.x = 42;
+o = { x:22, fun: function() { "use strict"; return typeof this; } }
+extracted = o.fun;
+extracted(); // returns "undefined"
+{% endhighlight %}
+
+</li>
+</ul>
+
+<h4>Callbacks To ECMAScript Builtins</h4>
+
+<p> When you pass callbacks to built-in ECMAScript functions like
+<code>forEach</code>, you can supply a <code>thisArg</code>, and if you don't, <code>this</code>
+will be bound to <code>undefined</code> (<a
+href="http://es5.github.com/#x15.4.4.18">reference</a>). </p>
+
+{% highlight javascript %}
+function f() { console.log(String(this)); }
+
+[1,2].forEach(f); // prints undefined, undefined
+[1,2].forEach(f, "mythisarg"); // prints "mythisarg" "mythisarg"
+{% endhighlight %}
+
+<h4>Callbacks To DOM Builtins</h4> 
+
+<p>Some callbacks, like <code>setInterval</code> and
+<code>setTimeout</code>, pass the global object rather than
+<code>undefined</code>.  ECMAScript-defined functions have been
+specified to take and explicit this argument or pass undefined, but the
+DOM APIs (to my knowledge) still usually pass the global object when
+there is no DOM node involved.</p>
+
+{% highlight javascript %}
+function f() { console.log(this); }
+
+setTimeout(f,0); // prints the global object
+{% endhighlight %}
+
+<p>Other callbacks, like those registered on DOM nodes themselves, pass
+the node as the <code>this argument</code>.</p>
+
+{% highlight javascript %}
+document.addEventListener('click', function() { console.log(this); })
+// prints the document object when you click on the page
+{% endhighlight %}
+
+<p>It's nice to think of this case as the browser doing a method
+invocation for you, with the DOM element to the left of the dot.</p>
+
+<h4>At the Toplevel</h4>
+
+<p>
+When using this at the toplevel (which is allowed), it is bound to the
+global object (even in strict mode, it's just the <a
+href="http://es5.github.com/#x10.4.1.1">default global <code>this</code>
+binding </a>):
+</p>
+
+{% highlight javascript %}
+console.log(this) // prints the window object
+{% endhighlight %}
+
+<h4>Functions Invoked with <code>new</code></h4>
+
+<p>
+When you use the <code>new</code> keyword, <code>this</code> is bound to
+a newly-created object with its internal <code>proto</code> set to the
+<code>prototype</code> field of the constructor.
+</p>
+
+{% highlight javascript %}
+function f() {
+  console.log(Object.getPrototypeOf(this) === f.prototype);
+}
+new f(); // prints true
+{% endhighlight %}
+
+<h4>Call, Apply, and Bind</h4>
+
+<p>The builtins <code>Function.prototype.call/apply/bind</code> allow
+you to provide your own <code>this</code> argument to a function:</p>
+
+{% highlight javascript %}
+function f() { console.log(String(this)); }
+f.call("mythis", "other", "args"); // prints "mythis"
+f.apply("mythis", []); // prints "mythis"
+f.bind("mythis")(); // prints "mythis"
+{% endhighlight %}
+
+<h4>Field Access with Getters and Setters</h4>
+
+<p> If a property is a getter or a setter, <code>this</code> is bound to the
+object to the left of the dot or bracket in the field access or
+assignment expression. This sort of matches the method invocation rule
+except for the fact that "method call" is implicit; there are no () in
+the expression o.x, but it may call a getter function for x that passes
+o as this (<a href="http://es5.github.com/#x8.12.3">reference</a>).  </p>
+
+{% highlight javascript %}
+o = { foo: 42,
+      bar: "another field",
+      get x() { console.log(this.foo); },
+      set x(_) { console.log(this.bar); } };
+o.x; // prints 42
+o.x = "whatever"; // prints "another field"
+{% endhighlight %}
+
+<h4>Caveat: Primitive Coercions</h4>
+
+<p> The dot and bracket operators implicitly convert primitives like
+numbers, strings, and booleans to objects, so it's not exactly what's to
+the left of the dot (this is why I have calls to <code>String</code> in
+a few examples to make them print the way I wanted): </p>
+
+{% highlight javascript %}
+    Number.prototype.identity = function() { return this; }
+    var x = 5
+    var x2 = x.identity()
+    typeof x2 === 'object' // (true!)
+    typeof x2 === 'number' // (false!)
+{% endhighlight %}
+
+<p> Again, strict mode gives us saner behavior.  You can get the raw
+primitive if you make the function strict: </p>
+
+{% highlight javascript %}
+    Number.prototype.identity2 = function() { "use strict"; return this; }
+    var x = 5;
+    var maybe_five = x.identity2();
+    typeof maybe_five === 'object' // (false)
+    typeof maybe_five === 'number' // (true)
+{% endhighlight %}
+
+<h3>The Next List</h3>
+
+<p>
+My next list will probably be a list of ways variables can be bound in
+JavaScript, but I'm open to other suggestions.  <a
+href="mailto:joe@cs.brown.edu">Contact me</a> if you'd like to see
+something else or want to report a bug in this list.</p>
