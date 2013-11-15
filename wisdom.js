@@ -61,8 +61,11 @@
 
 '<p>Mark Miller on the economics of programming:</p>' +
 '<p><i>"In an <a href="http://en.wikipedia.org/wiki/Agoric_computing">agoric</a>' +
-' LISP, money is the root of all eval."</i></p>'
+' LISP, money is the root of all eval."</i></p>',
 
+'<p>Mickens on systems programming:</p>' +
+'<p><i>"...there is no family-friendly GRE analogy that relates what my ' +
+'code should do, and what it is actually doing."</i></p>'
   ]; 
 
   var wisCount = Math.floor(Math.random() * wisdoms.length);
