@@ -64,7 +64,7 @@
 ' LISP, money is the root of all eval.”</i></p>',
 
 '<p>Roger Ebert on animated movie violence:</p>' +
-'<p><i>"After an hour of struggle that shakes the very firmament... There are a lot of speeches about how we now see that fighting is wrong. There will be a sequel, in which no doubt there will be another hour of fighting before the same lesson is learned again."</i></p>"',
+'<p><i>“After an hour of struggle that shakes the very firmament... There are a lot of speeches about how we now see that fighting is wrong. There will be a sequel, in which no doubt there will be another hour of fighting before the same lesson is learned again.”</i></p>',
 
 '<p>Mickens on systems programming:</p>' +
 '<p><i>“...there is no family-friendly GRE analogy that relates what my ' +
