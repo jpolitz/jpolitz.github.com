@@ -60,12 +60,8 @@
 'I have done so.”</i></p>',
 
 '<p>Mark Miller on the economics of programming:</p>' +
-<<<<<<< HEAD
 '<p><i>“In an <a href="http://en.wikipedia.org/wiki/Agoric_computing">agoric</a>' +
 ' LISP, money is the root of all eval.”</i></p>',
-=======
-'<p><i>"In an <a href="http://en.wikipedia.org/wiki/Agoric_computing">agoric</a>' +
-' LISP, money is the root of all eval."</i></p>',
 
 '<p>Roger Ebert on animated movie violence:</p>' +
 '<p><i>"After an hour of struggle that shakes the very firmament... There are a lot of speeches about how we now see that fighting is wrong. There will be a sequel, in which no doubt there will be another hour of fighting before the same lesson is learned again."</i></p>"',
