@@ -29,17 +29,11 @@
 '<p>Adam Smith on strategy:</p>' +
 '<p><i>“[Have] two torpedoes in the water.”</i></p>',
 
-'<p>Jamie Zawinski on focus:</p>' +
-'<p><i>“\'How will this software get my users laid\' should be on the minds of ' +
-'anyone writing social software (and these days, almost all software is social ' +
-'software).”</i></p>',
-
 '<p>Steve Yegge on security:</p>' +
 '<p><i>“Accessibility is actually more important than Security because dialing ' +
 'Accessibility to zero means you have no product at all, whereas dialing ' +
 'Security to zero can still get you a reasonably successful product such as the ' +
 'Playstation Network.”</i></p>',
-
 
 '<p>Shriram Krishnamurthi on product management:</p>' +
 '<p><i>“Don\'t put any bugs in.  If you already have, take them out.  Thanks.”</i></p>',
