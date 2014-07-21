@@ -60,7 +60,7 @@
 '<p>Von Lipwig on necessity:</p>' +
 '<p><i>“The only way to get something to turn up when you need it is to need'
 +
-'it to turn up.”</i></p>'
+'it to turn up.”</i></p>',
 
 '<p>Mickens on systems programming:</p>' +
 '<p><i>“...there is no family-friendly GRE analogy that relates what my ' +
