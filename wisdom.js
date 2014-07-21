@@ -58,7 +58,7 @@
 ' LISP, money is the root of all eval.”</i></p>',
 
 '<p>Von Lipwig on necessity:</p>' +
-'<p><i>“The only way to get something to turn up when you need it is to need'
+'<p><i>“The only way to get something to turn up when you need it is to need '
 +
 'it to turn up.”</i></p>',
 
