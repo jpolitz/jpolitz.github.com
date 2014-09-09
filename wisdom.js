@@ -63,7 +63,7 @@
 'it to turn up.”</i></p>',
 
 '<p>Mickens on systems programming:</p>' +
-'<p><i>“...there is no family-friendly GRE analogy that relates what my ' 
+'<p><i>“...there is no family-friendly GRE analogy that relates what my ' +
 'code should do, and what it is actually doing.”</i></p>',
 
 '<p>Churchill on execution:</p>' +
