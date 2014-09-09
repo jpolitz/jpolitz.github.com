@@ -63,8 +63,11 @@
 'it to turn up.”</i></p>',
 
 '<p>Mickens on systems programming:</p>' +
-'<p><i>“...there is no family-friendly GRE analogy that relates what my ' +
-'code should do, and what it is actually doing.”</i></p>'
+'<p><i>“...there is no family-friendly GRE analogy that relates what my ' 
+'code should do, and what it is actually doing.”</i></p>',
+
+'<p>Churchill on execution:</p>' +
+'<p><i>“However beautiful the strategy, you should occasionally look at the results.”</i></p>'
   ]; 
 
   var wisCount = Math.floor(Math.random() * wisdoms.length);
