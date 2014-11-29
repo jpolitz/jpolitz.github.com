@@ -67,7 +67,7 @@
 'code should do, and what it is actually doing.”</i></p>',
 
 '<p>Churchill on execution:</p>' +
-'<p><i>“However beautiful the strategy, you should occasionally look at the results.”</i><>",
+'<p><i>“However beautiful the strategy, you should occasionally look at the results.”</i><p>',
 
 '<p><a href="http://carlos.bueno.org/2014/06/refactoring.html">Carlos Bueno</a> on short-term solutions:</p>' +
 '<p><i>“There’s nothing quite as permanent as a temporary fix.”</i></p>'
