@@ -57,7 +57,7 @@
 '<p><i>“In an <a href="http://en.wikipedia.org/wiki/Agoric_computing">agoric</a>' +
 ' LISP, money is the root of all eval.”</i></p>',
 
-'<p>Von Lipwig on necessity:</p>' +
+'<p>Von Lipwig on procrastination:</p>' +
 '<p><i>“The only way to get something to turn up when you need it is to need '
 +
 'it to turn up.”</i></p>',
