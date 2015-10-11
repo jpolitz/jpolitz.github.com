@@ -70,7 +70,10 @@
 '<p><i>“However beautiful the strategy, you should occasionally look at the results.”</i><p>',
 
 '<p><a href="http://carlos.bueno.org/2014/06/refactoring.html">Carlos Bueno</a> on short-term solutions:</p>' +
-'<p><i>“There’s nothing quite as permanent as a temporary fix.”</i></p>'
+'<p><i>“There’s nothing quite as permanent as a temporary fix.”</i></p>',
+
+'<p><a href="https://www.reddit.com/r/InternetIsBeautiful/comments/3o7ghx/for_all_the_linux_noobs_and_coders_learn_vim_here/cvv0udc">A Reddit user</a> on editors:' +
+'<p><i>“i\'ve been using vim for 5 years now<br/><br/>mostly because i can\'t figure out how to close it.”</i></p>'
   ]; 
 
   var wisCount = Math.floor(Math.random() * wisdoms.length);
