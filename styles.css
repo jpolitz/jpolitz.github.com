@@ -1,0 +1,16 @@
+li {
+  margin-bottom: 1em;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #1f1180;
+  border-bottom: 1px dotted;
+}
+
+a:hover {
+  text-decoration: none;
+  color:green; 
+  background-color:#eee;
+}

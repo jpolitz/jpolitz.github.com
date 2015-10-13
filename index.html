@@ -2,32 +2,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
+<link rel="stylesheet" href="style.css"></link>
 <meta charset="utf-8">
 <title>Joe Gibbs Politz</title>
 <a href="https://plus.google.com/u/0/106201725712570479817"
    style="display:none;"
    rel="author">Google</a>
-<style>
-
-li {
-  margin-bottom: 1em;
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: #1f1180;
-  border-bottom: 1px dotted;
-}
-
-a:hover {
-  text-decoration: none;
-  color:green; 
-  background-color:#eee;
-}
-
-
-</style>
 <script type="text/javascript">
   var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-25748313-1']);
@@ -251,19 +231,7 @@ href="http://www.cs.uwm.edu/~boyland/fool2012/">FOOL 2012</a>.<br/>
 
 <script src="jquery.min.js"></script>
 <script src='wisdom.js'></script>
-<script>
-"use strict";
-$(function() {
-  $(".video-toggle").each(function(ix, elt) {
-    elt = $(elt);
-    var video = $("#" + elt.data("video"));
-    var hider = $("#" + elt.data("hide"));
-    elt.hover(function() { video.fadeIn(1000); });
-    elt.click(function() { video.toggle(); });
-    hider.click(function() { video.fadeOut(1000); });
-  });
-});
-</script>
+<script src="video-toggle.js"></script>
 </body>
 
 </html>
