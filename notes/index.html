@@ -1,0 +1,11 @@
+---
+layout: blog
+title: "Joe Gibbs Politz / notes"
+---
+
+<p>A collection of notes and essays on various topics.</p>
+
+{% for post in site.posts %}
+  <li><a class="oldpost" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+
