@@ -42,7 +42,7 @@
 '<p><i>“Programmers are not to be measured by their ingenuity and their logic ' +
 'but by the completeness of their case analysis.”</i></p>',
 
-'<p>Sarah Politz on restraint:</p>' +
+'<p>Sarah Politz on programming language design:</p>' +
 '<p><i>“Just because you can, don\'t.”</i></p>',
 
 '<p>Michael A. Jackson on the rules of optimization:</p>' +
