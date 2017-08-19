@@ -70,7 +70,10 @@
 '<p><i>“However beautiful the strategy, you should occasionally look at the results.”</i><p>',
 
 '<p><a href="http://carlos.bueno.org/2014/06/refactoring.html">Carlos Bueno</a> on short-term solutions:</p>' +
-'<p><i>“There’s nothing quite as permanent as a temporary fix.”</i></p>'
+'<p><i>“There’s nothing quite as permanent as a temporary fix.”</i></p>',
+
+'<p>JFK and the Internet on software projects:</p>' +
+'<p><i>“We do these things not because they are easy, but because we thought they would be easy.”</i></p>'
 
   ]; 
 
