@@ -13,11 +13,6 @@
 '<p><i>“It is common sense to take a method and try it: If it fails, admit ' +
 'it frankly and try another.  But above all, try something.”</i></p>',
 
-'<p>Douglas Adams on interface design:</p>' +
-'<p><i>“A common mistake people make when trying to design something ' +
-'completely foolproof is to underestimate the ingenuity of complete ' +
-'fools.”</i></p>',
-
 '<p><a href="http://nyan.cat">Nyan Cat</a> on the utility of ' +
 'nonterminating programs:</p>' +
 '<p><i>“Nyan nyan nyan nyan.”</i></p>',
