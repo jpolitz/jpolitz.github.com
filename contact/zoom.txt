@@ -1,0 +1,30 @@
+You are invited to a Zoom meeting hosted by Joe Gibbs Politz.
+
+Join from PC, Mac, Linux, iOS or Android: https://ucsd.zoom.us/j/3144231375
+
+Or iPhone one-tap:
+    US: +16699006833,,3144231375#  or +16465588656,,3144231375#
+Or Telephone:
+    Dial(for higher quality, dial a number based on your current location):
+        US: +1 669 900 6833  or +1 646 558 8656
+    Meeting ID: 314 423 1375
+    International numbers available: https://zoom.us/u/wXe4dKjD
+
+Or an H.323/SIP room system:
+    H.323:
+        162.255.37.11 (US West)
+        162.255.36.11 (US East)
+        221.122.88.195 (China)
+        115.114.131.7 (India)
+        213.19.144.110 (EMEA)
+        202.177.207.158 (Australia)
+        209.9.211.110 (Hong Kong)
+        64.211.144.160 (Brazil)
+        69.174.57.160 (Canada)
+    Meeting ID: 314 423 1375
+
+    SIP: 3144231375@zoomcrc.com
+
+Or Skype for Business (Lync):
+    https://ucsd.zoom.us/skype/3144231375
+
