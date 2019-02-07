@@ -3,9 +3,6 @@ layout: blog
 title: "Writing in Class"
 ---
 
-<em style="color: gray; font-size: smaller">
-  {{ page.date | date_to_long_string }}</em>
-
 In many of my lectures, I draw onscreen alongside code, slides, and more.
 Sometimes folks ask me about what I use, so this post summarizes and reviews
 the different tools I've tried.
@@ -16,7 +13,7 @@ I've used two different writing surfaces:
 
 ### Wacom Bamboo CTH-470
 
-![bamboo.png](bamboo.png)
+![/img/bamboo.png](Wacom Bamboo CTH-470)
 
 This is a USB-connected writing surface that gives pen input. I've used it on
 OSX and on Ubuntu and both support it reasonably. On OSX I had to repeatedly
