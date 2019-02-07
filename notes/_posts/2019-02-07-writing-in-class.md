@@ -174,7 +174,7 @@ track past things that were written. So make sure anything you want students to
 be able to copy doesn't get scrolled away too quickly, and avoid scrolling the
 page too often, which can shatter students' visual context.
 
-## On Preparing Visuals
+### On Preparing Visuals
 
 One really nice thing you can do ahead of time is set up templates of
 time-consuming parts of drawings, and put them in the flow of the document. For
