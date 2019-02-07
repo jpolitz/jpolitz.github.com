@@ -13,7 +13,7 @@ I've used two different writing surfaces:
 
 ### Wacom Bamboo CTH-470
 
-![/img/bamboo.png](Wacom Bamboo CTH-470)
+![Wacom Bamboo CTH-47-](/img/bamboo.png)
 
 This is a USB-connected writing surface that gives pen input. I've used it on
 OSX and on Ubuntu and both support it reasonably. On OSX I had to repeatedly
@@ -54,7 +54,7 @@ for drawing in class. The main contrasts are:
   my backpack). I read papers on my iPad, too, so even if it has some tradeoffs
   with the tablet, overall I like having it.
 
-I'm including [https://astropad.com/](Astropad) here because you can't
+I'm including [Astropad](https://astropad.com/) here because you can't
 out-of-the-box use an iPad and a Pencil to write on your OSX screen in any
 reasonable way that I could find. Astropad is a pen-input screen-mirroring tool
 for OSX and iOS.  You install the app on your laptop and on your iPad, connect
@@ -67,7 +67,7 @@ it.
  
 ### Xournal
 
-[http://xournal.sourceforge.net/](Xournal) is a great piece of software for pen
+[Xournal](http://xournal.sourceforge.net/) is a great piece of software for pen
 input on X. It was awesomely configurable with the Wacom multi-button options,
 generates nice PDFs of what's drawn, and has all kinds of nice touches:
 
@@ -83,7 +83,7 @@ sense of the word).
 
 ### Write
 
-[http://www.styluslabs.com/](Write) by Stylus Labs was the first tool I tried
+[Write](http://www.styluslabs.com/) by Stylus Labs was the first tool I tried
 in earnest on OSX after giving up on configuring Xournal.
 
 Cool stuff:
@@ -124,7 +124,7 @@ under active development anymore.
 
 ### Notability
 
-[https://www.gingerlabs.com/](Notability) is a polished, non-free OSX app that
+[Notability](https://www.gingerlabs.com/) is a polished, non-free OSX app that
 I've been using for several quarters.
 
 - Generates some of the prettiest/smoothest lines and exported PDFs
