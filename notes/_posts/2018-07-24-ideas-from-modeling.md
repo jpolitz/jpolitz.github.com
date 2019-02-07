@@ -1,9 +1,8 @@
 ---
 layout: blog
+published: false
 title: "Some Ideas from Modeling Instruction"
 ---
-
-<h2><a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a></h2>
 
 <em style="color: gray; font-size: smaller">
   {{ page.date | date_to_long_string }}</em>
@@ -20,13 +19,10 @@ physics classrooms (primarily targeting 9th grade physics).
 At a high level, the connections are pretty clear – the computation that goes
 into a physics simulation is yet another way to explain and predict physical
 phenomena along with labs, graphs, visualizations, and math that physics
-classes already use. A bit of computing can go a long way towards supporting
-physical understanding with all the immediacy that a programming environment
-provies, while also bringing computing education to a broader audiece of
-students. The exciting work is in finding the computational tasks that align
-with and complement what's happening in classrooms. For this, we've been
-working in the context of _modeling instruction_ for physics, with the help of
-the AMTA.
+classes already use. The exciting work is in finding the computational tasks
+that align with and complement what's happening in classrooms. For this, we've
+been developing material in the context of _modeling instruction_ for physics,
+with the help of the AMTA.
 
 There's a lot to say about both modeling and integrating computation into
 non-CS courses. Much of my usual focus working on Bootstrap goes into the tool
@@ -40,18 +36,21 @@ instruction, but they are an important part of the toolbox modelers use.
 
 For context, we were teaching integrated physics and computation to around 20
 high-school physics teachers from around the country. Equally importantly, we
-(primarily led by Jess and Melissa) were also teaching them the modeling
-instruction by example by using those techniques to teach the rest of the
-content.
+(really Jess and Melissa) were teaching them the modeling instruction by
+example by using those techniques to teach the rest of the content.
 
 <h3>Whiteboarding</h3>
 
-Modeling instruction makes frequent use of a family of _whiteboarding_
-techniques. At first, this sounds like an obvious active learning technique –
-in small groups (3 is often best), students build up content on whiteboards and
-then possibly share it in different ways. The emphasis that became clear to me
-watching this week is on juxtoposing _multiple representations of the same
-phenomenon_ on the whiteboards in all kinds of ways.
+Modeling instruction uses a lot of techniques; I'm going to focus on one that I
+learned a lot about during this workshop, _whiteboarding_. (Whiteboarding is
+not modeling and modeling is not whiteboarding, but it is a frequently used
+technique.)
+
+Whiteboarding fosters both an environment of contributing student pedagogy and
+active learning.  In small groups (3 is often best), students build up content
+on whiteboards and then share it in different ways. The emphasis that became
+clear to me watching this week is on juxtoposing _multiple representations of
+the same phenomenon_ on the whiteboards.
 
 For example, students might collect data about a car moving on a sloped ramp,
 and then be asked to build up a whiteboard with a _motion map_ (a particular
@@ -63,14 +62,14 @@ one of them. After building the whiteboard, they are asked to identify, in each
 representation, how the notion of “speeding up” appears. They mark this on the
 whiteboards and then share this to other teams.
 
-(There are many various on how the sharing works and how to stage the boards –
+There are many various on how the sharing works and how to stage the boards –
 presenting to the whole class or with pairs of groups, going around the room
 with a rotating presenter staying at the the board to explain it, and many more
 that we didn't try in the workshop. It's nice to mix it up, and I'm sure with
-experience I'd learn which specific techniques map to which content well.) The
+experience I'd learn which specific techniques map to which content well. The
 sharing provides an opportunity for the instructor and students to find
 similarities and differences between the boards. Some of these differences are
-what we might call “mistakes”, where the graph is incorrectly drawn. Others are
+mistakes, where the graph is incorrectly drawn or inconsistent. Others are
 interesting variations in data on the same experiment, or totally different
 data from a different experiment. From these contrasts, patterns like the
 underlying idea of _constant acceleration_ or _measurement error_ being to
@@ -99,7 +98,8 @@ lessons in isolation are less effective than their combination.
   thing to talk about. Sure, they can be corrected in passing, but the meat of
   the discussion is about reconciling patterns in different data, and any
   errors simply need to be fixed to get at that understanding, rather than to
-  make the mistake-maker feel bad.
+  make the mistake-maker feel bad. If everyone does the same problem, some of
+  the main differences will be mistakes and focus shifts to right and wrong.
   - It allows the instructor to build up a bigger, combined artifact out of
   the pieces that were given to the different groups.
 
