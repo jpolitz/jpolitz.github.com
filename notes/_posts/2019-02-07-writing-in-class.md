@@ -21,8 +21,9 @@ install the driver for it for some reason, but it was easy to find on the Wacom
 web site.
 
 One really nice feature of the pen is the multi-click button, which some
-pen-based input editors support. It lets you select between three modes (e.g.
-eraser, lasso select, writing) without having to click on a menu item.
+pen-based input editors support. Your thumb rests naturally on it when you're
+holding the pen, and it lets you select between three modes (e.g.  eraser,
+lasso select, writing) without having to click on a menu item.
 
 It sometimes required a little work to calibrate exactly where the mapping
 between the screen and the tablet was, especially when plugging it into a
