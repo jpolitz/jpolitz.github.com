@@ -13,7 +13,7 @@ I've used two different writing surfaces:
 
 ### Wacom Bamboo CTH-470
 
-![Wacom Bamboo CTH-47-](/img/bamboo.png)
+<img src="/img/bamboo.jpg" alt="Wacom Bamboo CTH-47" width="50%"/>
 
 This is a USB-connected writing surface that gives pen input. I've used it on
 OSX and on Ubuntu and both support it reasonably. On OSX I had to repeatedly
@@ -60,8 +60,7 @@ reasonable way that I could find. Astropad is a pen-input screen-mirroring tool
 for OSX and iOS.  You install the app on your laptop and on your iPad, connect
 them, and the iPad becomes a mirrored screen with intelligent touch input. So
 far, Astropad has completely gotten out of the way and done what I have hoped,
-which is forward my Pencil strokes to my laptop smoothly. Not free, but worth
-it.
+which is forward my Pencil strokes to my laptop smoothly.
 
 ## Software
  
@@ -79,7 +78,7 @@ I really liked Xournal. I used it for a year or so when I still used Ubuntu as
 my primary operating system. I stopped using it when I switched to OSX, because
 the pen input was really janky through XQuartz and I never found a good way to
 run it in that context. Highly recommended as an option on Linux. Free (in both
-sense of the word).
+senses of the word).
 
 ### Write
 
@@ -137,7 +136,7 @@ I've been using for several quarters.
   happening in the background so I never lose work.
 
 The main annoyance of the interface is that if you click on the color-selector
-pallette to turn it on and off, it simply removes that chunk of the window
+palette to turn it on and off, it simply removes that chunk of the window
 space (resizing the window), instead of using that space for more writing area.
 This seems like the wrong choice to me and occasionally means I do a manual
 window resize, but is overall pretty minor.
