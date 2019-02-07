@@ -158,11 +158,13 @@ Examples:
 - When working on linked lists with removes and insertions, it's _not_ a good
   idea for me to use erase and node movement to show things happening, because
   the temporality is lost in the final picture, and students can't draw it.
-- When I want to show how a full adder can be replicated 32 times to make a
-  32-bit adder, it is **awesome** to draw the full adder, resize it to be tiny,
-  duplicate it, and organize the copies on screen. The ad hoc animation is
-  illustrative, and students wouldn't be able to draw all 32 adders anyway, so
-  I'm not hampering their note-taking, just demonstrating something.
+- When I want to show how a full adder [can be replicated 32 times to make a
+  32-bit
+  adder](https://github.com/ucsd-cse30-f17/lectures/blob/master/12-1-lec25/8am.pdf),
+  it is cool to draw the full adder, resize it to be tiny, duplicate it, and
+  organize the copies on screen. The ad hoc animation is illustrative, and
+  students wouldn't be able to draw all 32 adders anyway, so I'm not hampering
+  their note-taking, just demonstrating something.
 
 ### On Scrolling and Screen Space
 
@@ -175,17 +177,18 @@ page too often, which can shatter students' visual context.
 
 ### On Preparing Visuals
 
-One really nice thing you can do ahead of time is set up templates of
-time-consuming parts of drawings, and put them in the flow of the document. For
+One really nice thing you can do ahead of time is [set up templates of
+time-consuming parts of drawings](https://github.com/ucsd-cse131-s18/ucsd-cse131-s18.github.io/blob/master/lectures/05-16-wed/notes-handout.pdf), and put them in the flow of the document. For
 example, drawing out a grid for the stack and heap can be difficult to do by
 hand and take up unnecessary lecture time. Import a PDF or take screenshots of
 the blank grid beforehand and use that to write on in class (and consider
 handing out hard copies of the templates to students, as well!)
 
-You can also write out the text form of questions you want to ask in typed
-prose, so that you don't have to hand-write questions and students don't have
-to just rely on hearing exactly what you asked aloud. Pre-seed the document
-with peer instruction questions or discussion questions you want to ask, and
-scroll to them or drag them onto the screen when you're ready to ask them.
+You can also [write out the text form of questions you want to ask in typed
+prose](https://github.com/ucsd-cse12-w19/ucsd-cse12-w19.github.io/blob/master/lectures/lecture11-Sorts/handoutB.pdf),
+so that you don't have to hand-write questions and students don't have to just
+rely on hearing exactly what you asked aloud. Pre-seed the document with peer
+instruction questions or discussion questions you want to ask, and scroll to
+them or drag them onto the screen when you're ready to ask them.
 
 
