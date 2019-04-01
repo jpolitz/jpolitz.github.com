@@ -21,9 +21,6 @@
 '<p><i>“Everything is vague to a degree you do not realize till you have tried ' +
 'to make it precise.”</i></p>',
 
-'<p>Adam Smith on strategy:</p>' +
-'<p><i>“[Have] two torpedoes in the water.”</i></p>',
-
 '<p>Steve Yegge on security:</p>' +
 '<p><i>“Accessibility is actually more important than Security because dialing ' +
 'Accessibility to zero means you have no product at all, whereas dialing ' +
@@ -36,6 +33,9 @@
 '<p>Alan Perlis on developer quality:</p>' +
 '<p><i>“Programmers are not to be measured by their ingenuity and their logic ' +
 'but by the completeness of their case analysis.”</i></p>',
+
+'<p>Grace Hopper on data definitions:</p>' +
+'<p><i>“The [Language Structures Group] started out by trying to design a language for stating procedures, but soon discovered that what was really required was a description of the data and a statement of the relationships between the data sets.”</i></p>',
 
 '<p>Sarah Politz on programming language design:</p>' +
 '<p><i>“Just because you can, don\'t.”</i></p>',
