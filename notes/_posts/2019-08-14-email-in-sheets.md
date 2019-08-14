@@ -34,14 +34,13 @@ function EMAIL() {
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
   ui.createMenu('Share my email')
-  .addItem('Share my email', 'menuItem1')
+  .addItem('Share my email', 'getAndStoreEmail')
   .addToUi();
 }
 
-function menuItem1() {
+function getAndStoreEmail() {
   var email = Session.getEffectiveUser().getEmail();
   PropertiesService.getUserProperties().setProperty('userEmail', email);
-  SpreadsheetApp.getUi().alert(email);
 }
 ```
 
