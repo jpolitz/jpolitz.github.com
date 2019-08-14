@@ -5,10 +5,11 @@ title: "Getting a User's Email in Google Sheets (Respectfully)"
 
 For various reasons related to course infrastructure, I recently wanted to get
 the *email address of a viewing user* in a sheet. I came up with a solution I
-like that I didn't find anywhere else online as a simple snippet. Now, if
-Google Apps Script allowed this unconditionally, it would clearly be a
-ridiculous privacy and security concern for shared sheets links. So if you try
-to do it directly using
+like that I didn't find anywhere else online as a simple snippet.
+
+If Google Apps Script allowed getting a viewing user's email unconditionally,
+it would clearly be a ridiculous privacy and security concern for shared
+sheets. As a result, if you try to do it directly using
 [getEmail()](https://developers.google.com/apps-script/reference/base/user#getEmail())
 in a custom function, you get an understandable error that the script doesn't
 have permission, or in other tests I tried it returned an empty string.
