@@ -49,7 +49,7 @@ it with the permission problem. But if the user clicks the new custom menu item
 they will be prompted to allow the email permission to be shared, and then the
 `EMAIL` call will start returning the expected result.
 
-![A custom menu item](/img/custom-menu.png)
+<img alt="A custom menu item" src="/img/custom-menu.png" style="width: 100%"/>
 
 See it in action here:
 
