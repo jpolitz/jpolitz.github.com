@@ -9,21 +9,21 @@ like that I didn't find anywhere else online as a simple snippet. Now, if
 Google Apps Script allowed this unconditionally, it would clearly be a
 ridiculous privacy and security concern for shared sheets links. So if you try
 to do it directly using
-[https://developers.google.com/apps-script/reference/base/user#getEmail()](getEmail())
+[getEmail()](https://developers.google.com/apps-script/reference/base/user#getEmail())
 in a custom function, you get an understandable error that the script doesn't
 have permission, or in other tests I tried it returned an empty string.
 
 At first, I thought the only way to get the required permission was to write a
 Google Sheets Add-on, but that's way too heavyweight a UX for what I had in
 mind. However, you can *also* trigger the permissions dialog from a
-[https://developers.google.com/apps-script/guides/menus](custom menu) which is
-hinted at
-[https://developers.google.com/apps-script/guides/sheets/functions#using_apps_script_services](here).
+[custom menu](https://developers.google.com/apps-script/guides/menus) which is
+[hinted at
+here](https://developers.google.com/apps-script/guides/sheets/functions#using_apps_script_services).
 I assume this is because triggering a permission dialog on a formula running
 would suck as a UX, and some direct user action like clicking a menu helps both
 technically and to avoid clickthrough behavior from users. Since scripts also
 allow us to store data that is user-scoped with
-[https://developers.google.com/apps-script/guides/properties](properties), we
+[properties](https://developers.google.com/apps-script/guides/properties), we
 can put all this together to get a nice solution:
 
 ```
@@ -50,7 +50,7 @@ it with the permission problem. But if the user clicks the new custom menu item
 they will be prompted to allow the email permission to be shared, and then the
 `EMAIL` call will start returning the expected result.
 
-![/img/custom-menu.png](A custom menu item)
+![A custom menu item](/img/custom-menu.png)
 
 See it in action here:
 
