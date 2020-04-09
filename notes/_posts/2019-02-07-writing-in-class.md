@@ -7,6 +7,9 @@ In many of my lectures, I draw onscreen alongside code, slides, and more.
 Sometimes folks ask me about what I use, so this post summarizes and reviews
 the different tools I've tried.
 
+**Update April 2020** – Added notes about Quicktime Video recording which has
+become a new favorite, thanks Ranjit Jhala.
+
 ## Pens and Writing Surfaces
 
 I've used two different writing surfaces:
@@ -41,7 +44,7 @@ The pen itself has a pretty pleasant writing experience on the slate – it feel
 
 I used this tablet for about 2 years and it held up really well.
 
-### iPad Pro 10.5", Apple Pencil, Astropad
+### iPad Pro 10.5", Apple Pencil, Astropad, Quicktime!
 
 In 2017, I got an iPad pro 10.5" and started using that, with an Apple Pencil,
 for drawing in class. The main contrasts are:
@@ -55,6 +58,18 @@ for drawing in class. The main contrasts are:
   my backpack). I read papers on my iPad, too, so even if it has some tradeoffs
   with the tablet, overall I like having it.
 
+**Update April 2020** Ranjit Jhala pointed out to me that Quicktime has a neat
+way to support screen mirroring from iPad to OSX – Quicktime! You can open it
+up and select “New Video Recording” and then select your cord-connected iPad.
+You don't need to start the recording, just use the preview window it gives
+you. This allows you to use the iOS Notability app, which in many ways is nicer
+than its desktop version. You can still copy-paste from OSX into Notability –
+just long-press with the Pencil to paste. This looks really good and seems to
+perform extremely well. While Astropad (below) would start to slow down
+forwarding pen strokes to Desktop Notability when recording with OBS or
+screencasting in Zoom, this stays sprightly, probably because it's relying more
+on the iPad's processing power to draw.
+
 I'm including [Astropad](https://astropad.com/) here because you can't
 out-of-the-box use an iPad and a Pencil to write on your OSX screen in any
 reasonable way that I could find. Astropad is a pen-input screen-mirroring tool
@@ -62,6 +77,10 @@ for OSX and iOS.  You install the app on your laptop and on your iPad, connect
 them, and the iPad becomes a mirrored screen with intelligent touch input. So
 far, Astropad has completely gotten out of the way and done what I have hoped,
 which is forward my Pencil strokes to my laptop smoothly.
+
+
+
+
 
 ## Software
  
