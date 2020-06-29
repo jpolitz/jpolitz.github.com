@@ -43,9 +43,9 @@ courses usually have attendance policies that amount to “attend 1/2 to 2/3 of
 the lectures to get full credit, but you can still get a good grade if you
 skip them all.” So it isn't radically new for me to think about courses where
 attendance is incentivized rather than required, and I'm comfortable with
-half-full lecture halls. I value measurable *engagement* with the material
-(thanks Mia Minnes for that terminology) more than *attendance*, even in
-non-pandemic times.
+half-full or less lecture halls. I value measurable *engagement* with the
+material (thanks Mia Minnes for that terminology) more than *attendance*,
+even in non-pandemic times.
 
 **Remark 2**: I **dont't** teach well with a completely empty lecture hall.
 The back-and-forth with students is the flesh on the bones of lecture. Every
@@ -57,6 +57,9 @@ Answers are coming!”; “Remember when we did the example with the `Book` clas
 for homework? This is applying the same idea!”; “What happens if you change
 that `x` to `this.x` on line 10? Let's try it!”) that I don't know how to get
 in high fidelity asynchronously.
+
+The strategy I picked is motivated by these assumptions and tries to balance
+them.
 
 ## Watching Pre-Recorded Videos
 
@@ -87,6 +90,13 @@ href="https://github.com/ucsd-cse11-s20/09-Arrays-Main">https://github.com/ucsd-
 so they could follow along with larger code files if they wanted. Sometimes I
 would even tell them to look over a large file that wouldn't all fit on my
 screen at once in order to come up with questions or observations.
+
+We also recorded all the lecture sessions themselves with the default Zoom
+recording tools. We made these available only to UCSD students (there are no
+public copies to link to) via Canvas so students could go back and look up
+the chat log, any live-coding experiments I ran during the lecture sections,
+and so on. Some students used these, but many reported preferring the shorter
+chunked videos to more easily index their review and lookup of material.
 
 ## Active Learning
 
@@ -185,6 +195,10 @@ tip here is that when you screenshare in Zoom, there's a checkbox at the
 bottom of the share window that allows you to share your computer's audio
 over the screenshare. I used this for playing the videos.
 
+I would also have up an actual VSCode and Notability window on my desktop to
+do any live-coding tweaks or experiments that came up naturally from chat and
+student questions.
+
 ### Google Drive
 
 All of the videos were uploaded to Google Drive directly in the `.mkv` format
@@ -195,3 +209,26 @@ movie player that uses' YouTube's player, which is really good! I used Google
 Backup and Sync to copy the video files to the appropriate lecture directory
 right after recording, avoiding any extra steps of uploading to YouTube,
 managing playlists, and so on.
+
+## Improvements and Reflection
+
+The main thing I didn't take the time for is investigation of other ways to
+facilitate discussion and feedback during class. Zoom chat feels like a 70%
+solution, and a better tool could take it further. Given more time I'd like
+to evaluate <a href="https://babylon.house/">babylon.house</a> and <a
+href="https://www.peardeck.com/googleslides">PearDeck</a> to see what they
+could do for structured interaction.
+
+One of the things I struggled with when recording was how independent to make
+the videos. Callbacks to class discussions, assignments, and cross-references
+to the reading make for a richer lecture, but also make each video less
+re-usable by future instructors (including future me!) who make different
+decisions but want to re-use recordings. I'm not sure what the happy medium
+is here.
+
+The code I shared with students was usually just a single copy. What I should
+have done (more work, but probably worth it) was to have had a “before” and
+“after” directory in each repository for the code before the development in
+the videos, and then after all the details were filled in. This would
+facilitate following along and referencing later.
+
