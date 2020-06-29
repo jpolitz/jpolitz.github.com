@@ -179,7 +179,7 @@ to do with processing power and graphics cards than anything else.
 
 The overall quality of the videos is lower than I know I'm capable of, but I
 also was recording about 2 hours of content a week in under 4 total hours,
-which was a total win.
+which was huge.
 
 ### Notability
 
