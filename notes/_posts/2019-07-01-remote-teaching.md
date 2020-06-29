@@ -214,6 +214,14 @@ Backup and Sync to copy the video files to the appropriate lecture directory
 right after recording, avoiding any extra steps of uploading to YouTube,
 managing playlists, and so on.
 
+### Microphone
+
+I used an <a href="https://steelseries.com/gaming-headsets/arctis-5">Arctis
+5</a> headset. The mic has active noise canceling, which was really helpful
+for recording from home (it could cancel my dog barking from another room,
+for example). A few students reported being grateful that I had high-quality
+audio in the recordings in contrast to some of their other courses.
+
 ## Improvements and Reflection
 
 The main thing I didn't take the time for is investigation of other ways to
