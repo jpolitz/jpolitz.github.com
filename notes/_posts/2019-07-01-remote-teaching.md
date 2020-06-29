@@ -232,3 +232,7 @@ have done (more work, but probably worth it) was to have had a “before” and
 the videos, and then after all the details were filled in. This would
 facilitate following along and referencing later.
 
+I'd love to hear it if you have questions about this or find it useful.
+Twitter is usually a good place to have a discussion that gets others
+involved (I'm <a href="https://twitter.com/joepolitz">@joepolitz</a>), and
+email is fine for direct questions.
