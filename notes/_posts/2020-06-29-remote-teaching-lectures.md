@@ -99,6 +99,8 @@ the chat log, any live-coding experiments I ran during the lecture sections,
 and so on. Some students used these, but many reported preferring the shorter
 chunked videos to more easily index their review and lookup of material.
 
+Attendance ranged from 40-100 (out of 200) students throughout the quarter.
+
 ## Active Learning
 
 There were a few techniques I used for encouraging active learning for students
