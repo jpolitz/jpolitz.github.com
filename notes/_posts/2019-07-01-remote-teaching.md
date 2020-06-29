@@ -150,7 +150,7 @@ code from a lecture or reading and run it:
 ## Recording Tech
 
 I used a bunch of tech, some new to me, some familiar, to complete all the
-recordings:
+recordings. All of it was done on a stock 2019 Macbook Pro and an iPad Pro.
 
 ### OBS
 
@@ -171,6 +171,10 @@ video editing after recording was almost *never* worth my time. Since OBS
 exported immediately in the `.mkv` format that was playable in Drive, and it
 was usually faster for me to re-do a 5-minute video than to try and move that
 file into a tool like iMovie or even use `ffmpeg` to edit it.
+
+I often found it necessary to disable the preview window in OBS to avoid
+dropped frames or stuttering audio in the recording, which probabl has more
+to do with processing power and graphics cards than anything else.
 
 The overall quality of the videos is lower than I know I'm capable of, but I
 also was recording about 2 hours of content a week in under 4 total hours,
