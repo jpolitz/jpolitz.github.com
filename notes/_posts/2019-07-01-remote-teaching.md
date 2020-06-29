@@ -21,8 +21,9 @@ conversations with Kathi Fisler in the leadup to the quarter.
 This is largely just a report on what I did – the course evaluations were
 positive, and student feedback during the quarter indicated that all the
 modalities described below were used and appreciated by some students. Beyond
-that I haven't done much work to analyze data from the course, but I hope the
-strategies outlined below are useful to folks to hear about nonetheless.
+that I haven't done much work to analyze data from the course in this post,
+but I hope the strategies outlined below are useful to folks to hear about
+nonetheless.
 
 ## Schedule and Context
 
