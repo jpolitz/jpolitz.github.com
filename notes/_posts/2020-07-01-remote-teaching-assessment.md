@@ -13,7 +13,7 @@ to be entirely online. I was the sole instructor, but aided by a talented
 staff of 11 undergraduate and graduate instructional assistants. The
 enrollment was roughly 200 students.
 
-This post details how I ran **lecture sessions** for the course; a separate
+This post details how I ran **exam assessments** for the course; a separate
 post details <a
 href="/notes/2020/06/29/remote-teaching-lectures.html">lectures</a>. A lot of
 the initial development for the exam ideas came from discussion with Mia
