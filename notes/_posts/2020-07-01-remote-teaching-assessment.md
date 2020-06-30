@@ -15,7 +15,7 @@ enrollment was roughly 200 students.
 
 This post details how I ran **lecture sessions** for the course; a separate
 post details <a
-href="/notes/2020/06/29/remote-teaching-lecture.html">lectures</a>. A lot of
+href="/notes/2020/06/29/remote-teaching-lectures.html">lectures</a>. A lot of
 the initial development for the exam ideas came from discussion with Mia
 Minnes. Adalbert Gerald Soosai Raj and Greg Miranda gave me really useful
 feedback and guidance on rubrics for the videos.
