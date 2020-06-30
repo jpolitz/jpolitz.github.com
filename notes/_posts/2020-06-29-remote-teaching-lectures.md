@@ -13,9 +13,11 @@ to be entirely online. I was the sole instructor, but aided by a talented
 staff of 11 undergraduate and graduate instructional assistants. The
 enrollment was roughly 200 students.
 
-This post details how I ran **lecture sessions** for the course. A lot of
-credit for the overall approach goes to Arun Kumar and Niema Moshiri, whose
-styles I blended to arrive at my approach. I also had some helpful
+This post details how I ran **lecture sessions** for the course; a separate
+post details <a
+href="/notes/2020/07/01/remote-teaching-assessment.html">assessment</a>. A
+lot of credit for the overall approach goes to Arun Kumar and Niema Moshiri,
+whose styles I blended to arrive at my approach. I also had some helpful
 conversations with Kathi Fisler in the leadup to the quarter.
 
 This is largely just a report on what I did – the course evaluations were
