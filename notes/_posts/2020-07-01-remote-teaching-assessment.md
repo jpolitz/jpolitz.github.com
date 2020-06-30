@@ -26,16 +26,19 @@ I really dislike a heavy-handed culture of policing academic integrity, and
 prefer to design assignments that encourage collaboration. I typically lean
 somewhat on exams to provide a passing threshold for an individual assessment
 – students need to pass a midterm or a final exam or both to pass the course.
+I still check MOSS, check Chegg, and report students who violate academic
+integrity, but I also know that these are imperfect checks and like to build
+in ways for students to work together.
 
-For spring 2020 I was reluctant to lean on traditional exams this way (though
-I actually don't think it would have been a terrible idea). I didn't want to
-pursue live video proctoring solutions because of the privacy implications.
-So I considered other options that would give me confidence that the students
-I was giving grades to had actually completed the assessments their grade was
-based on. Videos where students showed their student ID and completed an
-assessment task seemed like a good solution; I could keep the videos private
-to me and my staff and delete them after the quarter, and have lots of
-confidence in who had completed the assessments.
+For spring 2020 I was reluctant to lean on traditional exams in the same way
+I usually do (though I actually don't think it would have been a terrible
+idea). I didn't want to pursue live video proctoring solutions because of the
+privacy implications. So I considered other options that would give me
+confidence that the students I was giving grades to had actually completed
+the assessments their grade was based on. Videos where students showed their
+student ID and completed an assessment task seemed like a good solution; I
+could keep the videos private to me and my staff and delete them after the
+quarter, and have lots of confidence in who had completed the assessments.
 
 ## Programming Exams
 
