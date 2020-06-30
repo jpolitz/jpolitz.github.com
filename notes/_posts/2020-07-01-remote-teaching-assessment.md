@@ -28,7 +28,8 @@ somewhat on exams to provide a passing threshold for an individual assessment
 – students need to pass a midterm or a final exam or both to pass the course.
 I still check MOSS, check Chegg, and report students who violate academic
 integrity, but I also know that these are imperfect checks and like to build
-in ways for students to work together.
+in ways for students to work together on assignments with other individual
+summative assessments.
 
 For spring 2020 I was reluctant to lean on traditional exams in the same way
 I usually do (though I actually don't think it would have been a terrible
