@@ -1,7 +1,7 @@
 ---
 layout: blog
-title: "Emergency Remote Teaching: Assessment"
-blurb: "'How I performed assessments in my course, offered remotely, in Spring 2020"
+title: "Emergency Remote Teaching: Lecture"
+blurb: "'How I ran lectures in my course, offered remotely, in Spring 2020"
 doodle: "/notes/img/lecture-screenshot.png"
 ---
 
