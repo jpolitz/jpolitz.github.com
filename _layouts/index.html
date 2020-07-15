@@ -91,13 +91,33 @@ pre {
 
 <body>
 
+  <div class="sidebar" style='float: left; text-align: right; font-family: sans-serif; padding-top: 2em; padding-right: 2em; padding-left: 2em; width: 16em; max-width: 16em;'>
+    <h1 style='font-family: sans-serif;font-size: 3em; text-align: right;'>
+	    <a href="/">JOE<br/> GIBBS<br/> POLITZ</a>
+    </h1>
+    <div
+    style='background-size:20em;background-color:black;float:right;background-image:url(/img/me.jpg); height:20em;width:15em;background-position:0em -6em; margin-bottom: 2em;'></div>
+    <p>Assistant Teaching Professor<br/><a href="http://www.cs.ucsd.edu/">UC San Diego CSE</a></p>
+    <p><a href="/contact/">Contact</a></p>
+<a class="wisdom" href="javascript:;" onclick="newWisdom()">
+  <div class="main-content" style='float: right; border: 1px solid black; border-radius: 5px; text-align: left; width: 14em; margin-top: 1em;padding: .5em; padding-bottom: 2em; background-color: #eee;'>
+    <div id="wisdom-content">
+  <p>Brian W. Kernigan on programming:</p>
+	<p><i>"Debugging is twice as hard as writing the code in the
+	first place.  Therefore, if you write the code as cleverly as
+	possible, you are, by definition, not smart enough to debug
+	it."</i></p>
+    </div>
+    <div style='right: 1em; bottom: 1em; font-size: small;text-align: right;'>(Click for more wisdom)</div>
+    </div>
+  </a>
+</div>
 
-<div style='min-width: 70em;'>
-  <div style='border-right: 1px solid #eee; float:left; padding-left:
+<div style='max-width: 44em; float: left;'>
+  <div style='border-left: 1px solid #eee; float:left; padding-left:
 5em; padding-right: 2em; font-family: sans-serif; min-width: 40em;
 max-width: 40em;'>
   <h1 style='font-family: sans-serif;font-size: 3em; text-align: left;'>
-    <a href="/">JOE GIBBS POLITZ</a>
     <p style='font-weight: 200; color: #aaa;'>{{ page.title }}</p>
   </h1>
 
@@ -108,24 +128,6 @@ max-width: 40em;'>
 </div>
       
   </div>
-  <div class="sidebar" style='float: left; text-align: left; font-family: sans-serif; padding-top: 2em; padding-right: 2em; padding-left: 2em; width: 16em;'>
-    <div
-    style='background-size:20em;background-color:black;float:left;background-image:url(/img/me.jpg); height:20em;width:15em;background-position:0em -6em; margin-bottom: 2em;'></div>
-    <p>Assistant Teaching Professor<br/><a href="http://www.cs.ucsd.edu/">UC San Diego CSE</a></p>
-    <p><a href="/contact/">Contact</a></p>
-<a class="wisdom" href="javascript:;" onclick="newWisdom()">
-  <div class="main-content" style='position: absolute; border: 1px solid black; border-radius: 5px; text-align: left; width: 14em; margin-top: 1em;padding: .5em; padding-bottom: 2em; background-color: #eee;'>
-    <div id="wisdom-content">
-  <p>Brian W. Kernigan on programming:</p>
-	<p><i>"Debugging is twice as hard as writing the code in the
-	first place.  Therefore, if you write the code as cleverly as
-	possible, you are, by definition, not smart enough to debug
-	it."</i></p>
-    </div>
-    <div style='position: absolute; right: 1em; bottom: 1em; font-size: small;text-align: right;'>(Click for more wisdom)</div>
-    </div>
-  </a>
-</div>
 </div>
 
 <script src="/jquery.min.js"></script>
