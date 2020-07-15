@@ -1,6 +1,8 @@
 ---
 layout: blog
 title: "Emergency Remote Teaching: Assessment"
+blurb: "'How I performed assessments in my course, offered remotely, in Spring 2020"
+doodle: "https://ucsd-cse11-s20.github.io/doodle.png"
 ---
 
 <em style="color: gray; font-size: smaller">
