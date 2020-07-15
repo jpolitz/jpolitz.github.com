@@ -1,8 +1,8 @@
 ---
 layout: blog
 title: "Emergency Remote Teaching: Lecture"
-blurb: "'How I ran lectures in my course, offered remotely, in Spring 2020"
-doodle: "/notes/img/lecture-screenshot.png"
+blurb: "How I ran lecture in my course, offered remotely, in Spring 2020"
+doodle: "https://jpolitz.github.io/notes/img/lecture-screenshot.png"
 ---
 
 <em style="color: gray; font-size: smaller">
