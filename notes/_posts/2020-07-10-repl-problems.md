@@ -2,6 +2,7 @@
 layout: blog
 title: "Beginner REPL Stumbles"
 doodle: https://jpolitz.github.io/notes/img/cpo-definitions.png
+description: I spend a lot of time teaching beginning programming with REPLs...
 ---
 
 <em style="color: gray; font-size: smaller">
