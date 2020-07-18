@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: "Beginner REPL Stumbles"
+doodle: /notes/img/cpo-definitions.png
 ---
 
 <em style="color: gray; font-size: smaller">
