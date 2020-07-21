@@ -245,7 +245,7 @@ fair amount of new design each quarter, both for academic integrity reasons
 and to respond to how things went the last time, so this is where a good
 chunk of my time goes.
 
-There are also myriad special cases that come up. In a class of 200, anything
+There are also many special cases that come up. In a class of 200, anything
 that happens to students only 5% of the time will come up about a dozen
 times! So I work with students who have novel situations come up for any
 necessary accommodations, which are often private and require widely varying
