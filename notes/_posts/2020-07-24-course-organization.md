@@ -225,9 +225,9 @@ Any lecture material is coming straight from me, including (especially)
 practicing any live-coding or derivations that will happen in class, and this
 is usually nontrivial prep. The same goes for any paper handouts, in-class
 exercises, and so on. Sometimes I re-use most of an idea from a past quarter,
-but most require updates and refreshers to make sure I can navigate the wrong
-answers in the peer instruction questions, make a worksheet address a topic
-that's part of a brand-new assignment, and so on.
+but most require updates or new development to make sure I can navigate the
+wrong answers in the peer instruction questions, make a worksheet address a
+topic that's part of a brand-new assignment, and so on.
 
 <div class='sidenote'>Most of the same arguments apply to exam-writing most
 of the time, though it's often useful to get some exam questions suggestions
