@@ -188,7 +188,7 @@ arguments for why we use it in the first place:
 >
 >- When someone @-mentions you on Trello or assigns you to a card, you should treat it the same as if they emailed you directly. You can adjust the notification settings and your habits for how often you check the board to make sure you're on top of things.
 >- Use SLACK for urgent notifications – if someone is late on a task, if there's a bug in a released PA writeup or student-facing document, @-mention or direct message on Slack.
->- Use Trello @-mentions or assigning to card to get someone's attention in a conversation, expect that they'll *check it* within 12 hours and respond within 24 if you're making the request from 8a-7p Mon-Fri, 8 hours response after Friday 7pm through Sunday 7pm. You don't necessarily respond by completing the task, but respond with a status update so we know where things stand.
+>- Use Trello @-mentions or assigning to card to get someone's attention in a conversation, expect that they'll respond within 24 hours if you're making the request Mon-Fri, 48 hours response after Friday 7pm through Sunday 7pm. You don't necessarily have to respond by completing the task, but respond with a status update so we know where things stand.
 >- If you are on a card with a due date, you are responsible for understanding what you need to do by that deadline and asking for clarification as necessary.
 >- Make sure your account has a recognizable picture – it doesn't have to be your face, but initials often aren't enough for quick recognition
 >- Make sure your display name in your account includes your preferred and/or real name, which helps a ton with @-mentioning people
