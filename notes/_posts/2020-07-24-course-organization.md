@@ -191,7 +191,7 @@ arguments for why we use it in the first place:
 >- Use Trello @-mentions or assigning to card to get someone's attention in a conversation, expect that they'll respond within 24 hours if you're making the request Mon-Fri, 48 hours response after Friday 7pm through Sunday 7pm. You don't necessarily have to respond by completing the task, but respond with a status update so we know where things stand.
 >- If you are on a card with a due date, you are responsible for understanding what you need to do by that deadline and asking for clarification as necessary.
 >- Make sure your account has a recognizable picture – it doesn't have to be your face, but initials often aren't enough for quick recognition
->- Make sure your display name in your account includes your preferred and/or real name, which helps a ton with @-mentioning people
+>- Make sure your display name in your account includes your preferred and/or Webreg name, which helps a ton with @-mentioning people
 >- Avoid putting identifying student information directly in Trello. However, links to Google Docs, Gradescope, and so on are fine. It's just best to avoid putting PID information directly here, and keeping it in external services.
 >
 >Why use Trello? Because Slack doesn't serve well as a TODO list, and email doesn't work as a centralized place to share information with the whole staff. Trello is a nice solution that lets us all share information in one place, keep notifications to those who need them, and tidy up the visual clutter as we finish tasks.
