@@ -248,8 +248,8 @@ chunk of my time goes.
 There are also many special cases that come up. In a class of 200, anything
 that happens to students only 5% of the time will come up about a dozen
 times! So I work with students who have novel situations come up for any
-necessary accommodations, which are often private and require widely varying
-time commitments.
+necessary accommodations, which are often private and require varying time
+commitments.
 
 Finally, I actually end up doing a fragment of a lot of the tasks I've
 delegated. I still answer Piazza questions, especially the ones the staff
