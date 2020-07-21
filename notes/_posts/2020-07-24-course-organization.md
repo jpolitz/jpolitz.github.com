@@ -253,7 +253,7 @@ commitments, and teach me a lot about how to structure my courses' policies
 in the future.
 
 Finally, I actually end up doing a fragment of a lot of the tasks I've
-delegated. I still answer Piazza questions, especially the ones the staff
+delegated. I answer many Piazza questions, especially the ones the staff
 isn't sure how to handle, I still help debug autograders, especially when my
 disturbingly deep expertise with Java reflection will help, and so on. So
 there's never a lack of things for me to jump in on and mentor the rest of
