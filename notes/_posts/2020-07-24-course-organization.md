@@ -213,8 +213,7 @@ get done and they aren't sure how to do it.
 This last point is great – once the team learns who's responsible for what
 and how the board works, folks can proactively make cards and add the
 likely-relevant team members. This gets everything moving in a way that has
-team-wide ownership and accountability, while putting all my notifications in
-one place.
+team-wide ownership and accountability.
 
 ## So What Do I Do After the First Two Weeks?
 
