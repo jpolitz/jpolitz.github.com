@@ -156,7 +156,7 @@ only exceptional or novel situations elevated to me.
 
 ## Make Task Assignments Shared and Explicit
 
-Having the task-type delegation to individual team members requires some
+Having the delegation to individual team members requires some
 management. Each new task needs to be categorized and assigned to someone,
 and everyone on the team needs to be able to see what they've been assigned
 and when it's due. I like to use <a href="https://trello.com/">Trello</a> for
