@@ -15,6 +15,10 @@ instructional assistants (IAs), usually about one per 20-30 students, which
 means the teams range from about a dozen to as many as 40. I've accumulated
 some strategies I like for managing the work of the team.
 
+I've developed and refined a lot of these techniques from co-teaching with Mia
+Minnes. Sophia Krause-Levy helped me understand the true potential of good
+Trello discipline.
+
 ## Running Productive Meetings
 
 In a meeting of 12+ IAs, I've learned that there are some things to **avoid**:
