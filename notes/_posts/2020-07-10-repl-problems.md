@@ -8,6 +8,8 @@ blurb: I spend a lot of time teaching beginning programming with REPLs...
 <em style="color: gray; font-size: smaller">
   {{ page.date | date_to_long_string }}</em>
 
+<em>Developed with Michael MacLeod.</em>
+
 I spend a lot of time teaching beginning programming with REPLs. This
 includes [Bootstrap](https://www.bootstrapworld.org) workshops with high
 school teachers using [Pyret](https://www.pyret.org), high school classrooms
