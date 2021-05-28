@@ -161,24 +161,27 @@ with forgetting to do both. Forgetting to save is a problem with
 seen that cause struggles based on a developing understanding of this state:
 
 - A learner defines a variable at interactions and expects it to be defined
-when they next edit their program, or after re-running the program to restart
-interactions.
-- A learner defines a variable in their program, but there is an
-error in the program on run, so it isn't defined at interactions. The learner
-is confused when they can't use that variable (this may lead to trying to
-define it at interactions, and so on). Different systems define different
-behavior on errors from programs, too, from defining nothing, to defining
-variables up to the error, to continuing past the error and defining some
-variables in future entries.
-- A learner makes an edit to their program and doesn't re-run it, and expects
-newly-written definitions from the program to be available at interactions.
-- A learner makes an edit to their program and doesn't re-run it, and the
-edit introduced an error that they don't notice until much later due to a
-“working” interactions area.
+  when they next edit their program, or after re-running the program to restart
+  interactions.
+- A learner defines a variable in their program, but there is an error in the
+  program on run, so it isn't defined at interactions. The learner is confused
+  when they can't use that variable (this may lead to trying to define it at
+  interactions, and so on). Different systems define different behavior on
+  errors from programs, too, from defining nothing, to defining variables up to
+  the error, to continuing past the error and defining some variables in future
+  entries.
+- <div class='sidenote'>DrRacket (along with its predecessor DrScheme) has a
+  clear warning for the case of an edited definitions window that has not been
+  re-run.</a>A learner makes an edit to their program and
+  doesn't re-run it, and expects newly-written definitions from the program to
+  be available at interactions.
+- A learner makes an edit to their program and doesn't re-run it, and the edit
+  introduced an error that they don't notice until much later due to a
+  “working” interactions area.
 - A learner gets used to clicking a distinct “Run” button/shortcut to run the
-program, and starts clicking it to try and run individual interactions
-(rather than pressing Enter), which resets the interactions area by
-re-running the program.
+  program, and starts clicking it to try and run individual interactions
+  (rather than pressing Enter), which resets the interactions area by
+  re-running the program.
 
 Any of these patterns can easily get a learner stuck enough that an
 instructor's advice is needed to get unstuck. They all have to do with
