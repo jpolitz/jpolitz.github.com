@@ -172,7 +172,7 @@ seen that cause struggles based on a developing understanding of this state:
   entries.
 - <div class='sidenote'>DrRacket (along with its predecessor DrScheme) has a
   clear warning for the case of an edited definitions window that has not been
-  re-run.</a>A learner makes an edit to their program and
+  re-run.</div> A learner makes an edit to their program and
   doesn't re-run it, and expects newly-written definitions from the program to
   be available at interactions.
 - A learner makes an edit to their program and doesn't re-run it, and the edit
