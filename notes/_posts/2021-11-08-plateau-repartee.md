@@ -12,3 +12,5 @@ The live demo (which may have some updates since the paper and/or talk, dependin
 There is also a [direct link to the code](https://pyret-anchor.s3.amazonaws.com/anchor/index.html?program=%23%20These%20are%20required%20for%20technical%20reasons%0Ainclude%20cpo%0Ainclude%20image%23.CHUNK%23%0Aring1%20%3D%20circle(50%2C%20%27solid%27%2C%20%27red%27)%23.CHUNK%23%0Aring2%20%3D%20overlay(circle(40%2C%20%27solid%27%2C%20%27white%27)%2C%20ring1)%23.CHUNK%23%0Aring3%20%3D%20overlay(circle(30%2C%20%27solid%27%2C%20%27red%27)%2C%20ring2)%23.CHUNK%23%0Aring4%20%3D%20overlay(circle(20%2C%20%27solid%27%2C%20%27blue%27)%2C%20ring3)%23.CHUNK%23%0Ashield%20%3D%20overlay(star(20%2C%20%27solid%27%2C%20%27white%27)%2C%20ring4)) used for the demo in the paper and the talk.
 
 A _draft_ of the paper is here: [https://jpolitz.github.io/docs/plateau-2021-repartee.pdf](https://jpolitz.github.io/docs/plateau-2021-repartee.pdf)
+
+The earlier blog post on this site that Joe Gibbs Politz and Michael MacLeod wrote summarizing the goals of the project is here: [https://jpolitz.github.io/notes/2020/07/10/repl-problems.html](https://jpolitz.github.io/notes/2020/07/10/repl-problems.html)
