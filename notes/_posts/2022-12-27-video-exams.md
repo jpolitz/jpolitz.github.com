@@ -9,7 +9,7 @@ published: true
 <em>Joint work with Rachel Lim and Mia Minnes.</em>
 
 <div class="sidenote">This post is a teaser for a <a href="/docs/sigcse-2023-video-exams.pdf">SIGCSE 2023</a> paper.</div>
-I've been using [video exams](/notes/2020-07-01-remote-teaching-assessment.html)
+I've been using [video exams](/notes/2020/07/01/remote-teaching-assessment.html)
 for a few years. The basic idea is that we have students record screencasts of
 themselves tracing a program they wrote, and submit that video as (part of)
 their “exam.” We grade them on the accuracy of their traces alongside typical
