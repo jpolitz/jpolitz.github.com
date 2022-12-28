@@ -87,5 +87,5 @@ excited about is getting this kind of information as a natural part of an
 assessment that's reasonable to give in my class. The richness of video gives us
 a temporal dimension that turns out to have valuable signal about how students
 are understanding their programs. Check out the [full
-paper](/docs/sigcse-2023-video-exams.pdf) for more, including analysis of
-another exam question with interesting misconceptions about recursion.
+paper](/docs/sigcse-2023-video-exams.pdf) for more on these questions, including
+analysis of another exam question with interesting misconceptions about recursion.
