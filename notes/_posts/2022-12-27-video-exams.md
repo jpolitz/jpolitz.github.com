@@ -6,6 +6,8 @@ doodle: "/img/code-trace-types.png"
 published: true
 ---
 
+<em>Joint work with Rachel Lim and Mia Minnes.</em>
+
 <div class="sidenote">This post is a teaser for a <a href="/docs/sigcse-2023-video-exams.pdf">SIGCSE 2023</a> paper.</div>
 I've been using [video exams](/notes/2020-07-01-remote-teaching-assessment.html)
 for a few years. The basic idea is that we have students record screencasts of
@@ -65,11 +67,11 @@ represents something about students' choice or ability to match Java's semantics
 closely in their trace, could be a signal related to overall performance.
 
 
-This is pretty
-cool – I can already see ways to write questions that get at precisely the
-differences between these traces, and how to give students some direct
-instruction and examples that distinguish them. This is just one result from a
-set of questions we had about what we can learn from these exams, including:
+This is pretty cool – I can already see ways to write questions that get at
+precisely the differences between these traces, and how to give students some
+direct instruction and examples that distinguish them. This is just one result
+from a set of questions we had about what we can learn from these exams,
+including:
 
 <div class="sidenote">We wouldn't have done all this work without Rachel Lim
 pushing for it and driving the process. Thanks, Rachel!</div> 
