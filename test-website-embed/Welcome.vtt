@@ -1,0 +1,488 @@
+WEBVTT
+
+00:00.750 --> 00:01.200
+Joe: Hi everyone.
+
+00:01.260 --> 00:02.410
+My name's Joe Politz.
+
+00:02.430 --> 00:06.240
+I'm teaching faculty at UC San
+Diego in the computer science
+
+00:06.240 --> 00:07.020
+and engineering department.
+
+00:07.940 --> 00:10.620
+If you're watching this, I'm
+expecting that you're an incoming
+
+00:10.620 --> 00:13.800
+transfer student this fall into
+the computer science department.
+
+00:15.530 --> 00:22.080
+And what I want to talk about is some
+material I have planned for this summer
+
+00:23.099 --> 00:26.610
+to help you prepare a little bit for that.
+
+00:28.300 --> 00:34.975
+So I teach a lot of the lower division
+programming courses in the department.
+
+00:35.855 --> 00:39.375
+And so I'm one of, you
+know, many instructors.
+
+00:39.375 --> 00:41.805
+We have a lot of great, great instructors
+here, but I've taught enough of the
+
+00:41.805 --> 00:45.625
+courses that I have a decent handle on
+a lot of the material in that sequence.
+
+00:47.175 --> 00:49.275
+And so I wanna talk
+about that a little bit.
+
+00:50.235 --> 00:52.905
+Because you may or may not have
+credit for some of those courses.
+
+00:53.275 --> 00:58.350
+And this summer might get you up to speed,
+review, introduce some content that will
+
+00:58.760 --> 01:00.405
+help you with getting started in the fall.
+
+01:01.805 --> 01:07.235
+So incoming first year
+students or freshmen to UCSD
+
+01:07.455 --> 01:09.555
+CSE take one of two courses.
+
+01:09.555 --> 01:15.165
+They either take CSE8A
+and  then 8B or CSE 11.
+
+01:15.165 --> 01:19.554
+So sort of two tracks.
+
+01:19.785 --> 01:23.730
+And then CSE 11 and 8B sort of
+end at the same place, just a two
+
+01:23.730 --> 01:25.350
+course versus a one course sequence.
+
+01:26.010 --> 01:31.800
+CSE 11 is a called our
+accelerated introduction.
+
+01:33.970 --> 01:40.060
+And it is about object oriented
+programming and it's taught in Java.
+
+01:40.090 --> 01:52.845
+CSE 12 is basic data structures
+also taught in Java and then
+
+01:52.850 --> 01:55.310
+these feed into other courses
+that lead into the upper division.
+
+01:55.670 --> 01:59.655
+So CSE 30 is our systems
+programming course.
+
+01:59.660 --> 02:03.495
+So assembly and C programming
+sort of how computers work.
+
+02:04.555 --> 02:09.465
+CSE 100 is an advanced data structures
+course and sort of after this, a lot
+
+02:09.465 --> 02:10.945
+of the upper division courses open up.
+
+02:11.905 --> 02:17.380
+And then our math sequence within
+the CSE coded courses is CSE 20,
+
+02:17.399 --> 02:21.600
+which is discrete math and CSE 21,
+which is algorithms and complexity.
+
+02:21.605 --> 02:23.640
+And those are requirements for CSE 100.
+
+02:24.570 --> 02:32.230
+So one other course CSE15L it's
+our lab course and that course is
+
+02:32.230 --> 02:35.630
+about some UCSD specific systems.
+
+02:36.450 --> 02:39.000
+But also about just
+programming systems and.
+
+02:39.000 --> 02:43.625
+Some of the tools we use on a day to
+day basis in some of the other courses
+
+02:44.195 --> 02:47.955
+there's nothing really outside of
+UCSD that corresponds to that credit.
+
+02:49.545 --> 02:53.025
+So it's unlikely that any of you
+have credit for it already, and
+
+02:53.025 --> 02:54.015
+I'm teaching that in the fall.
+
+02:54.015 --> 02:59.395
+So it's also very likely that you'll
+see me teaching that in the fall.
+
+02:59.855 --> 03:03.120
+This summer I'm focusing on
+stuff from CSE 11 and CSE 12,
+
+03:03.120 --> 03:04.650
+cuz it's nicely consolidated.
+
+03:04.650 --> 03:05.670
+It's all in Java.
+
+03:05.910 --> 03:08.015
+There's some preexisting
+material I can share with you.
+
+03:08.515 --> 03:12.340
+And it's also the place where
+there's sort of the most variety
+
+03:12.340 --> 03:13.620
+and who has credit for what.
+
+03:13.980 --> 03:18.570
+And also a place where it's nice to talk
+about having a solid foundation based
+
+03:18.570 --> 03:21.140
+on how we approach those courses here.
+
+03:21.580 --> 03:25.170
+So my goals for this
+summer are really twofold.
+
+03:25.170 --> 03:27.290
+One is provide those resources.
+
+03:28.670 --> 03:31.005
+Which are gonna come in two main forms.
+
+03:32.445 --> 03:43.305
+So we have a online version of the CSE11
+materials and that includes videos and
+
+03:43.305 --> 03:45.525
+assignments and an online textbook.
+
+03:45.525 --> 03:48.285
+So that link.
+
+03:49.515 --> 03:52.105
+Has been provided to you in email.
+
+03:52.105 --> 03:55.875
+And so that's something I want you to be
+able to see, you can work through this.
+
+03:55.875 --> 03:57.624
+It's all, it's all free and open online.
+
+03:58.084 --> 04:01.035
+And then be able to ask questions about
+it and things like that this summer.
+
+04:01.655 --> 04:07.824
+And then also I want to
+provide weekly materials, oops,
+
+04:11.384 --> 04:16.695
+weekly materials, which include videos
+like this one that will actually
+
+04:16.695 --> 04:18.315
+be like about a programming topic.
+
+04:21.060 --> 04:29.490
+and then a quiz or problem of the week
+where you'll actually complete some quiz
+
+04:29.789 --> 04:33.900
+questions about a topic or do a small
+programming assignment, sort of in the
+
+04:33.900 --> 04:35.489
+style of our programming assignments here.
+
+04:35.869 --> 04:38.789
+And then we'll have the opportunity
+to talk about and go over that.
+
+04:39.210 --> 04:40.680
+So those are the kinds of resources.
+
+04:40.740 --> 04:44.520
+And then the other thing I want to have
+is some time for us to do Q and a, this.
+
+04:45.765 --> 04:49.665
+and so there's a discord that
+you'll all be invited to join.
+
+04:49.665 --> 04:50.985
+So discord is like a chat server.
+
+04:50.985 --> 04:54.045
+We can go on and have a user
+account and chat with other people.
+
+04:54.535 --> 04:59.865
+And so I want to be able to be there so
+you can ask content questions, right?
+
+04:59.865 --> 05:04.275
+Just like, ask me about Java interfaces
+or something you read in the online
+
+05:04.275 --> 05:06.825
+textbook or something like that.
+
+05:06.965 --> 05:12.320
+Also, you know, like course and advising
+questions that you might have for me
+
+05:12.320 --> 05:18.539
+that are useful to ask of a faculty
+member you can and should ask our
+
+05:18.539 --> 05:20.159
+advising staff advising questions.
+
+05:20.159 --> 05:20.940
+They're amazing.
+
+05:20.940 --> 05:23.640
+And they know a lot more than me,
+about a lot of things about our
+
+05:23.640 --> 05:27.630
+internal systems but sometimes about
+like the interaction of content and
+
+05:27.630 --> 05:28.890
+prerequisites and things like that.
+
+05:28.890 --> 05:30.085
+I'll have a useful perspective.
+
+05:30.825 --> 05:37.110
+And that's also related to talking about
+like petitions and incoming credit.
+
+05:37.530 --> 05:41.970
+Again, the advising staff know
+a lot about this and in many, or
+
+05:41.970 --> 05:43.570
+maybe most cases more than I do.
+
+05:44.150 --> 05:46.550
+But I also know the content
+of our courses really well.
+
+05:46.550 --> 05:50.730
+And so I can talk about if
+you should ask for credit for
+
+05:50.730 --> 05:53.469
+particular courses or if you'd have
+a good case and things like that.
+
+05:53.469 --> 05:58.320
+So part of my goal this summer is also
+just to give you that information and
+
+05:58.320 --> 06:03.000
+give you some advice on the way to
+sort of start with the most appropriate
+
+06:03.000 --> 06:04.410
+credit for whatever your background is.
+
+06:05.800 --> 06:07.420
+So those are my goals.
+
+06:07.870 --> 06:14.100
+In terms of reaching me I'm gonna be
+sending you an email similar to the
+
+06:14.100 --> 06:15.990
+one this  video is in every week.
+
+06:17.110 --> 06:23.890
+You can email me at jpolitz@eng.ucsd.edu.
+
+06:23.940 --> 06:26.970
+It's useful to me if you mention
+in somewhere in the subject or
+
+06:26.970 --> 06:29.250
+early in the email that you're
+an incoming transfer student.
+
+06:29.250 --> 06:31.310
+So I, I, I know who it's coming from.
+
+06:32.530 --> 06:43.020
+And also if you want to chat on zoom,
+on my website, I have a contact page,
+
+06:43.140 --> 06:51.900
+so that's the URL and I have open
+zoom office hours on Tuesdays from
+
+06:51.900 --> 06:53.549
+9-10am and  the link is at that page.
+
+06:54.469 --> 06:56.635
+There's actually several faculty
+that do these open office
+
+06:56.635 --> 06:58.515
+hours throughout the year.
+
+06:58.515 --> 07:02.475
+And, and some of us do them in the summer
+as well for incoming students or existing
+
+07:02.475 --> 07:03.975
+students to ask advising questions.
+
+07:03.975 --> 07:06.735
+And so that's a time where at least
+for me, you can just come find me.
+
+07:06.765 --> 07:10.785
+I'm, I'm always available at that
+time for you to stop by say hello,
+
+07:10.875 --> 07:12.195
+ask questions, things like that.
+
+07:12.855 --> 07:17.055
+And then in terms of a like a call to
+action for you, for things you can get
+
+07:17.055 --> 07:24.015
+started on right now,  I sent along
+with this a survey, just to get some
+
+07:24.015 --> 07:26.835
+information about what courses you
+have credit for, what you're interested
+
+07:26.835 --> 07:31.655
+in this summer, what some of your
+goals are for the summer coming in.
+
+07:31.695 --> 07:34.575
+And I've also per posted
+the first activity.
+
+07:34.575 --> 07:42.155
+So there's a quiz on Gradescope and
+there's an invite code for Gradescope in
+
+07:42.155 --> 07:43.575
+the message that this video comes with.
+
+07:44.205 --> 07:47.369
+And so you can go do the first quiz.
+
+07:47.830 --> 07:51.699
+A note about this quiz is that it's
+intended to be somewhat challenging.
+
+07:51.949 --> 07:55.710
+You might not have seen the kinds of
+questions that are asked in this quiz.
+
+07:55.710 --> 07:58.259
+I'm using it in part to
+sort of calibrate like.
+
+07:58.680 --> 08:01.320
+What people know what people
+don't know and things like that.
+
+08:01.320 --> 08:02.700
+So there's absolutely no problem.
+
+08:02.700 --> 08:05.700
+If you're completely bewildered by
+some of the questions in this quiz.
+
+08:06.510 --> 08:10.080
+It's great if they make sense to you,
+but you know there's a lot of you
+
+08:10.085 --> 08:13.760
+and, and all of you have different
+background, so don't it it's completely
+
+08:13.960 --> 08:16.349
+expected that there's a lot of
+questions that, that there's several
+
+08:16.355 --> 08:17.490
+questions that could be really hard.
+
+08:18.330 --> 08:25.629
+And then of course, if you're interested
+in being on there sign up for disc.
+
+08:27.885 --> 08:31.884
+Because that's a place where we can
+chat and do do Q&A and stuff like that.
+
+08:32.835 --> 08:35.204
+So that's what you can do to get started.
+
+08:35.204 --> 08:36.194
+That's how you can reach me.
+
+08:36.194 --> 08:38.295
+And those are my goals for the summer.
+
+08:38.295 --> 08:42.164
+And you should be expecting
+weekly emails from me like this.
+
+08:43.335 --> 08:43.664
+Thanks.
+
+08:43.664 --> 08:46.585
+And looking forward to working with you
+with you this summer and in the fall.

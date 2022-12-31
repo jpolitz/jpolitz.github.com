@@ -1,0 +1,42 @@
+
+<html>
+
+<body>
+<div>
+<video controls>
+<source src="./cropped-welcome.mp4" type="video/mp4" />
+<track src="./Welcome.vtt" label="English captions" kind="captions" srclang="en">
+</video>
+<div id="captions"></div>
+</div>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdR7gLOve0JfBVVY8wptI-iHJxyxthj8e7vMHuofyIp_opJ_w/viewform?embedded=true" width="640" height="422" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+</body>
+<script>
+// https://stackoverflow.com/questions/61826237/is-there-a-simple-way-to-position-subtitles-below-the-hlml5-video
+(function(){
+var video = document.querySelector('video');
+var span1 = document.querySelector('#captions');
+span1.innerHTML = '';
+if (!video.textTracks) return;
+
+var track = video.textTracks[0];
+track.mode = 'hidden';
+var idx = 0;
+
+track.oncuechange = function(e) {
+  var cue = this.activeCues[0];
+  if (cue) {
+    if (idx >= 0) {
+      span1.classList.remove('on');
+      span1.innerHTML = '';
+      span1.appendChild(cue.getCueAsHTML());
+      span1.classList.add('on');
+    }
+    idx = ++idx % 2;
+  }
+};
+})();
+</script>
+
+</html>
