@@ -61,8 +61,8 @@ paper](/docs/sigcse-2023-video-exams.pdf)).
 
 Interestingly, the choice of ordering wasn't a factor in our rubric, but it does
 seem to have some relationship to students' performance. Of the different
-strategies (A, B, C, and other), it was only for ordering B that a majority of
-students passed the exam in our sample. So the choice of ordering, which
+strategies (A, B, C, and other), it was only for ordering A that a majority of
+students did not pass the exam in our sample. So the choice of ordering, which
 represents something about students' choice or ability to match Java's semantics
 closely in their trace, could be a signal related to overall performance.
 
