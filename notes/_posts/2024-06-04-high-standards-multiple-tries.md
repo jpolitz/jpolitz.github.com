@@ -1,6 +1,7 @@
 ---
 layout: blog
 published: true
+future: true
 title: "High Standards, Multiple Tries: Illinois Summer Teaching Workshop 2024"
 ---
 
