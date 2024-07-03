@@ -9,6 +9,8 @@ title: "High Standards, Multiple Tries: Illinois Summer Teaching Workshop 2024"
 
 This page is for resources for the talk “High Standards, Multiple Tries – How I've Been Grading”.
 
+Slides: [pptx](/docs/high-standards-multiple-tries.pptx)
+
 Several course websites that use (variants of) the grading scheme I mentioned:
 
 - [https://ucsd-cse15l-w24.github.io/#grading](https://ucsd-cse15l-w24.github.io/#grading) (This is specifically the instance from the talk)
