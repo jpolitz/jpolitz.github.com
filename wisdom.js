@@ -68,8 +68,10 @@
 '<p><i>“We do these things not because they are easy, but because we thought they would be easy.”</i></p>',
 
 '<p><a href="https://twitter.com/helenhousandi/status/1628092423174750208">Helen 侯-Sandí</a> on social media:</p>' +
-"<p>“Every day I watch fully-grown adults re-learn that anybody can post anything they want to on god's green internet, like I can log on and post \"the sky is highlighter yellow and it's making my eyes turn purple\" and your job is to ignore me for it”</p>"
+"<p>“Every day I watch fully-grown adults re-learn that anybody can post anything they want to on god's green internet, like I can log on and post \"the sky is highlighter yellow and it's making my eyes turn purple\" and your job is to ignore me for it”</p>",
 
+'<p>John Dewey on putting theory into practice:</p>' +
+'<p>“No conclusion of scientific research can be converted into an immediate rule of educational art. For there is no educational practice whatever which is not highly complex; that is to say, which does not contain many other conditions and factors than are included in the scientific finding... The value of the science... resides in the enlightenment and guidance it supplies to observation and judgment of actual situations as they arise.”</p>'
   ]; 
 
   var wisCount = Math.floor(Math.random() * wisdoms.length);
