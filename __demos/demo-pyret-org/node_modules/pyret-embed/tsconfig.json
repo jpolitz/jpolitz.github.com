@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es2024",
+        "lib": ["dom", "es2024"],
+        "declaration": true,
+        "declarationDir": "./types",
+        "outDir": "./dist",
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    },
+    "include": ["src/pyret.ts"]
+}

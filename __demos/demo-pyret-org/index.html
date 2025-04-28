@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pyret</title>
+    <meta name="description" content="The Pyret programming language">
+    <meta name="author"      content="The Pyret Crew">
+    <meta property="og:author" content="The Pyret Crew">
+    <meta property="og:image" content="http://www.pyret.org/img/pyret-logo.png">
+    <meta property="og:image:secure_url" content="https://www.pyret.org/img/pyret-logo.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="444">
+    <meta property="og:image:height" content="445">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@|"@"|pyretlang" />
+    <meta name="twitter:title" content="@|title|" />
+    <meta name="twitter:image" content="https://www.pyret.org/img/pyret-logo.png" />
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/img/pyret-icon.png">
+    <link rel="canonical" href="@|full-uri|">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.019/css/hack.min.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap-css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <script src="/bootstrap-css/bootstrap-5.0.2-dist/js/bootstrap.min.js">
+    <script type="module" src="/node_modules/pyret-embed/dist/pyret.js"></script>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a href="/index.html" class="navbar-brand">
+          <img class="navbar-logo" src="/site/img/pyret-logo.png"></img>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse"
+             role="navigation"
+             id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link fancyhover-above" href="/docs/latest/">Documentation</a></li>
+            <li class="nav-item"><a class="nav-link fancyhover-above" href="https://github.com/brownplt/pyret-lang">Code</a></li>
+          </ul>
+        </div>
+    </header>
+    <body><root><div class="container"><div class="jumbotron"><div class="row d-flex justify-content-center"><div class="col-md-4"><img class="title-logo" src="/site/img/pyret-banner.png"/></div>
+<div class="col-md-6"><p>Pyret is a programming language designed for
+computing education across many contexts. It has a robust
+web-based runtime to support access in many educational
+settings and learning environments. Check out the examples
+below and learn more about its uses for:</p>
+<p><a class="btn btn-primary btn-m hvr-border-fade" href="#devs">K-12 Teachers</a>
+<a class="btn btn-primary btn-m hvr-border-fade" href="#devs">Undergrad Instructors</a>
+<a class="btn btn-primary btn-m hvr-border-fade" href="#devs">Developers</a></p></div></div></div></div>
+
+<div class="container-fluid">
+<a name="examples"></a>
+<h2>Examples</h2>
+
+
+<div class="row d-flex justify-content-center"><div class="col-md-6 tab-box"><ul class="nav nav-pills" id="examplesTabs" role="tablist"><li class="nav-item" role="presentation"><button aria-controls="testing" aria-selected="true" class="nav-link active" data-bs-target="#testing" data-bs-toggle="pill" id="testing-tab" role="tab" type="button">Testing</button></li>
+<li class="nav-item" role="presentation"><button aria-controls="rational" aria-selected="false" class="nav-link" data-bs-target="#rational" data-bs-toggle="pill" id="rational-tab" role="tab" type="button">Numbers</button></li><li class="nav-item" role="presentation"><button aria-controls="images" aria-selected="false" class="nav-link" data-bs-target="#images" data-bs-toggle="pill" id="images-tab" role="tab" type="button">Images</button></li><li class="nav-item" role="presentation"><button aria-controls="data" aria-selected="false" class="nav-link" data-bs-target="#data" data-bs-toggle="pill" id="data-tab" role="tab" type="button">Data Structures</button></li><li class="nav-item" role="presentation"><button aria-controls="physics" aria-selected="false" class="nav-link" data-bs-target="#physics" data-bs-toggle="pill" id="physics-tab" role="tab" type="button">Physics</button></li></ul>
+<div class="tab-content" id="examplesTabsContent"><div aria-labelled-by="testing-tab" class="tab-pane fade show active" id="testing" role="tabpanel"><p class="example-info"><root>Writing <a href="https://pyret.org/docs/latest/testing.html">tests via
+examples</a> (unit tests) is directly supported by the syntax and runtime of
+Pyret. No separate library or build file configuration needed, writing and
+running the tests come with writing and running a program.</root></p></div>
+<div aria-labelled-by="rational-tab" class="tab-pane fade" id="rational" role="tabpanel"><p class="example-info"><root>Pyret's <a href="https://pyret.org/docs/latest/numbers.html#(part._numbers)">number system</a>
+supports <em>exact rational</em> arithmetic for many operations.  This avoids having
+floating point as a curricular dependency early on. When approximations become
+inevitable, they have an explicit representation:
+<a href="https://pyret.org/docs/latest/numbers.html#%28part._numbers_.Roughnum%29">Roughnum</a>s.
+</root></p></div><div aria-labelled-by="images-tab" class="tab-pane fade" id="images" role="tabpanel"><p class="example-info"><root>Programs that create <a href="https://pyret.org/docs/horizon/image.html" target="_blank">images</a> give immediate visual feedback, and support learning outcomes around composition of values. Bootstrap:Algebra has lessons like <a href="https://www.bootstrapworld.org/materials/fall2024/en-us/lessons/project-flags/index.shtml?pathway=algebra-pyret" target="_blank">Make a Flag</a> and <a href="https://www.bootstrapworld.org/materials/fall2024/en-us/lessons/hoc-winter-parley/index.html" target="_blank">Hour of Code</a> using these ideas.
+</root></p></div><div aria-labelled-by="data-tab" class="tab-pane fade" id="data" role="tabpanel"><p class="example-info"><root>Pyret has algebraic data types and matching in the style of most modern
+languages. Easy construction along with built-in testing, make it
+straightforward to incrementally build up data structure definitions.</root></p></div><div aria-labelled-by="physics-tab" class="tab-pane fade" id="physics" role="tabpanel"><p class="example-info"><root><a href="https://pyret.org/docs/horizon/reactors.html#(part._reactors)" target="_blank">Pyret reactors</a> and <a href="https://pyret.org/docs/horizon/image.html" target="_blank">images</a> can be used to build physical simulations. These ideas are used in the <a href="https://www.bootstrapworld.org/materials/physics/" target="_blank">Bootstrap:Physics</a> curriculum, and they are supported by both <a href="https://cs.brown.edu/~sk/Publications/Papers/Published/plpk-reactor-design/" target="_blank">language development</a> and <a href="https://www.mdpi.com/2227-7102/14/8/861" target="_blank">curricular research</a>.
+</root></p></div></div></div></div>
+
+<div class="row" style="border: 3px solid #0c46ff"><div class="embed-container" id="examples-frame" style="height: 30em"></div></div>
+</div>
+
+<div class="container-fluid"><a name="k-12"></a>
+<h2>For K-12 Teachers</h2>
+
+<div class="row d-flex justify-content-center"><div class="col-md-6"> FILL all about bootstrap, one-click, web-based, CSP projects </div></div></div>
+
+<div class="container-fluid"><a name="ugrad"></a>
+<h2>For Undergraduate Instructors</h2>
+
+<div class="row d-flex justify-content-center"><div class="col-md-6"> FILL all about DCIC, one-click, no installation, pathway to Python, autograding, etc </div></div></div>
+
+<div class="container-fluid">
+<a name="devs"></a>
+<h2>For Developers</h2>
+
+<div class="row d-flex justify-content-center"><div class="col-md-6"> 
+<h3>Visual Studio Code and Github</h3>
+
+<p>Pyret has a <a href="https://marketplace.visualstudio.com/items?itemName=PyretProgrammingLanguage.pyret-parley">Visual
+Studio Code extension</a> that opens files in the same visual editor as the
+examples above. It works in Github Codespaces, github.dev, and desktop
+Visual Studio Code.</p>
+
+<h3>Embedding Pyret</h3>
+
+<p>All the examples above embed an instace of Pyret through its <a href="https://github.com/jpolitz/pyret-embed-examples">embedding library</a>.
+
+You can embed Pyret on your own websites and projects by
+installing that <code>npm</code> package, which has an API for controlling and
+listening to the embedded instance.
+
+You can embed from our copies of the compiler and runtime, or serve
+your own. No Pyret code runs on the server: it's strictly a bundle
+of client-side HTML, CSS, and JavaScript (we've done <a href="https://cs.brown.edu/~sk/Publications/Papers/Published/bnpkg-stopify/">a
+little bit of engineering</a> in this space to make this possible).</p>
+
+<h3>Command-line Pyret</h3>
+
+<p>Pyret runs from the command line via the <code><a href="https://www.npmjs.com/package/pyret-npm">pyret-npm</a></code> package.
+Nearly all libraries (including images) run the same offline and
+in-browser. This can be especially important for grading student
+code submissions in an automated way. THIS DOCUMENT (fill) says more
+about it.</p>
+
+<h3>Programming Assignments and Starter Code</h3>
+
+<p>Pyret has specific libraries and features (FILL: url-file tutorial,
+Github example) for creating and deploying starter code for students
+seamlessly. We developed these features and workflows in our own
+courses, with our own TAs, and for our own curricula.</p>
+ </div></div>
+</div>
+
+<script type="module">import { makeEmbed } from "/node_modules/pyret-embed/dist/pyret.js";    // I think this has to be metaprogrammed, because import is syntax (can't import
+
+// with a value in a loop in JS)
+import { testing } from "/examples/testing.js";
+import { rational } from "/examples/rational.js";
+import { images } from "/examples/images.js";
+import { data } from "/examples/data.js";
+import { physics } from "/examples/physics.js";
+
+
+const startFrameContainer = document.getElementById("examples-frame")
+
+const embed = await makeEmbed('examples-editor', startFrameContainer, "/node_modules/pyret-embed/dist/build/web/editor.embed.html#footerStyle=hide&warnOnExit=false");
+embed.sendReset(testing);
+
+const tabs = { testing, rational, images, data, physics }
+Object.keys(tabs).forEach((t) => {
+    const tabEl = document.querySelector(`button[data-bs-target="#${t}"]`);
+    tabEl.addEventListener('shown.bs.tab', function(event) {
+        if(event.target.id === `${t}-tab`) {
+            const container = document.getElementById(`${t}-frame`);
+            embed.sendReset(tabs[t]);
+        }
+    });
+});</script>
+</root></body>
+  </body>
+</html>
