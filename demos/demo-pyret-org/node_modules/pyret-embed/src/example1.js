@@ -1,13 +1,15 @@
 
+import { makeEmbedConfig } from "../dist/pyret.js";
 async function example1() {
   const iframeContainer = document.getElementById("example1");
-  const embed = await makeEmbed('basic1', iframeContainer);
-
-  embed.sendReset({
-    definitionsAtLastRun: "use context starter2024\n\n'Hello!'",
-    interactionsSinceLastRun: [],
-    editorContents: "use context starter2024\n\n'Hello!'",
-    replContents: ""
+  makeEmbedConfig({
+    container: iframeContainer,
+    state: {
+      editorContents: "use context starter2024\n\n'Hello!'",
+      replContents: "",
+      definitionsAtLastRun: "use context starter2024\n\n'Hello!'",
+      interactionsSinceLastRun: []
+    },
   });
 }
 

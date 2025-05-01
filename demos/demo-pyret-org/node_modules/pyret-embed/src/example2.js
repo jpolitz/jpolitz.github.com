@@ -1,3 +1,4 @@
+import { makeEmbed } from "../dist/pyret.js";
 async function example2() {
   const iframeContainer = document.getElementById("example2");
   const embed = await makeEmbed('basic2', iframeContainer);
@@ -25,6 +26,6 @@ async function example2() {
 
 window.addEventListener('load', example2);
 
-codeContainer = document.getElementById("example2-code");
+let codeContainer = document.getElementById("example2-code");
 codeContainer.innerText = String(example2);
 

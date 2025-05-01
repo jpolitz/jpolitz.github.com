@@ -1,5 +1,11 @@
 /* custom.css */
 
+:root {
+  /* from code.pyret.org */
+  --pyret-run-blue: #317bcf;
+  --pyret-stop-red: #CF3B31;
+}
+
 body > div:first-of-type {
   padding-top: 66px;
 }
@@ -7,9 +13,11 @@ body > div:first-of-type {
 h2 {
   text-align: center;
   color: white;
-  background-color: #0c46ff;
+  background-color: var(--pyret-run-blue);
   margin-top: 2em;
   padding: 0.25em;
+  box-shadow: inset 0 0 0 3px white;
+  border: 3px solid var(--pyret-run-blue);
 }
 
 a:active, a:focus {
@@ -127,7 +135,7 @@ img.title-logo {
   z-index: -1;
   left: 0;
   right: 0;
-  background: #0c46ff;
+  background: var(--pyret-run-blue);
   height: 4px;
   -webkit-transition-property: transform;
   transition-property: transform;
@@ -275,14 +283,53 @@ h3 {
 }
 
 .tab-box {
-  border: 3px solid #0c46ff;
-  border-bottom: 3px solid white;
-  border-radius: 1em 1em 0px 0px;
-  padding: 1em;
+  /*border: 3px solid var(--pyret-stop-red);
+  border-radius: 0.25rem 0.25rem 0px 0px;
   box-sizing: border-box;
   margin-bottom: -3px;
+  border-bottom: 0px;
+  background-color: white;*/
+  padding: 1em;
+}
+
+.tab-top {
+  border-top: 3px solid var(--pyret-stop-red);
+  background: linear-gradient(180deg, #eee, white);
 }
 
 #examplesTabsContent {
   padding-top: 1em;
+}
+
+.nav-pills .nav-link {
+  color: #111;
+}
+
+.nav-pills .nav-link:hover {
+  color: var(--pyret-stop-red);
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+.nav-pills .nav-link.active:hover {
+  text-shadow: none;
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--pyret-stop-red);
+  color: white;
+}
+
+.embed-container iframe {
+  overscroll-behavior: contain;
+  overflow-anchor: auto;
+}
+
+.nav-border {
+  border-bottom: 0;
+  margin-bottom: -3px;
+  background: #eee;
+  border-radius: 0.25rem 0.25rem 0 0;
+  border: 3px solid var(--pyret-stop-red);
+  border-bottom: 0;
+  padding-top: 0.25rem;
 }
