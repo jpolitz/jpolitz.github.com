@@ -48,11 +48,6 @@ pre {
   position: fixed;
 }
 
-.jumbotron {
-  /* 48px from Bootstrap + 66px from Navbar (30px padding + 36px image)*/
-  padding-top: 114px !important;
-}
-
 img.navbar-logo {
   height: 2em;
 }
@@ -246,35 +241,8 @@ div.carousel-inner pre {
   height : 25em;
 }
 
-#content {
 
-}
 
-.jumbotron p {
-  font-family : 'Garamond';
-  font-size: 14pt;
-}
-
-#content p {
-  font-family : 'Garamond';
-  font-size : 14pt;
-}
-
-#content ul {
-  font-family : 'Garamond';
-  font-weight: 300;
-  font-size : 14pt;
-}
-
-#content ol {
-  font-family : 'Garamond';
-  font-size : 14pt;
-}
-
-.paragraph-content {
-  font-family : 'Garamond';
-  font-size : 14pt;
-}
 
 h3 {
   font-size: 18px;
@@ -326,4 +294,11 @@ h3 {
   border: 3px solid var(--pyret-stop-red);
   border-bottom: 0;
   padding-top: 0.25rem;
+}
+
+/* This is created by Pollen, why not use it! */
+root {
+  /* 48px from Bootstrap + 66px from Navbar (30px padding + 36px image)*/
+  padding-top: 114px !important;
+  display: block;
 }
