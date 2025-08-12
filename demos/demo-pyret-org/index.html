@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <base href="."</base>
-    <title>The Pyret Programming Language</title>
+    <base href="."></base>
+    <title>Pyret</title>
     <meta name="description" content="The Pyret programming language">
     <meta name="author"      content="The Pyret Crew">
     <meta property="og:author" content="The Pyret Crew">
@@ -14,7 +14,7 @@
     <meta property="og:image:height" content="445">
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@|"@"|pyretlang" />
-    <meta name="twitter:title" content="The Pyret Programming Language" />
+    <meta name="twitter:title" content="Pyret" />
     <meta name="twitter:image" content="https://www.pyret.org/img/pyret-logo.png" />
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="./img/pyret-icon.png">
@@ -28,9 +28,19 @@
     <link rel="stylesheet" type="text/css" href="./css/custom.css">
     <script src="./bootstrap-css/bootstrap-5.0.2-dist/js/bootstrap.min.js">
     <script type="module" src="./node_modules/pyret-embed/dist/pyret.js"></script>
+    <style>
+      .more-navbar-space li {
+        margin-left: 1.5rem;
+      }
+    </style>
+    <style>
+        footer a {
+            color: #f9e79f; /* Soft Yellow */
+        }
+    </style>
   </head>
   <body>
-    <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top more-navbar-space">
       <div class="container">
         <a href="./index.html" class="navbar-brand">
           <img class="navbar-logo" src="./img/pyret-banner.png"></img>
@@ -43,87 +53,365 @@
              id="navbarSupportedContent">
           <ul class="navbar-nav me-auto">
             <li class="nav-item"><a class="nav-link fancyhover-above" href="/docs/latest/">Documentation</a></li>
-            <li class="nav-item"><a class="nav-link fancyhover-above" href="https://github.com/brownplt/pyret-lang">Code</a></li>
             <li class="nav-item"><a class="nav-link fancyhover-above" href="./pyret-code/">Why Pyret?</a></li>
+            <li class="nav-item"><a class="nav-link fancyhover-above" href="./crew/">The Pyret Crew</a></li>
+            <li class="nav-item"><a class="nav-link fancyhover-above" href="./discuss/">Scuttlebutt</a></li>
+            <li class="nav-item"><a class="nav-link fancyhover-above" href="https://github.com/brownplt/pyret-lang">Source Code</a></li>
           </ul>
         </div>
     </header>
-    <body><root><div class="container"><div class="jumbotron"><div class="row d-flex justify-content-center"><div class="col-md-2"><img class="title-logo" src="./img/pyret-logo.png"/></div>
-<div class="col-md-4"><p>Pyret is a programming language designed for
-computing education across many contexts, with a robust
-web-based runtime and programming environment
-to support broad access. Several curricula have been
-co-designed with Pyret at many levels.</p>
-<p><a class="btn btn-primary btn-m hvr-border-fade" href="#examples">Examples</a>
-<a class="btn btn-primary btn-m hvr-border-fade" href="#k12">K-12</a>
-<a class="btn btn-primary btn-m hvr-border-fade" href="#ugrad">Undergraduate</a>
-<a class="btn btn-primary btn-m hvr-border-fade" href="#devs">Developers</a></p></div></div></div></div>
-<div class="container-fluid">
-<a name="examples" style="scroll-margin-top: 100px"></a>
-<h2>Pyret in Action</h2>
-<div class="row d-flex justify-content-center"><div class="col-md-8 d-flex justify-content-center align-items-center"><space style="padding-right: 1em;">Choose a category:</space>
-<ul class="nav nav-pills" id="categoryTabs" role="tablist"><li class="nav-item" role="presentation"><button aria-controls="cat-general" aria-selected="true" class="nav-link active" data-bs-target="#cat-general" data-bs-toggle="pill" id="cat-general-tab" role="tab" type="button">General</button></li>
-<li class="nav-item" role="presentation"><button aria-controls="cat-k12" aria-selected="false" class="nav-link" data-bs-target="#cat-k12" data-bs-toggle="pill" id="cat-k12-tab" role="tab" type="button">K-12</button></li><li class="nav-item" role="presentation"><button aria-controls="cat-ugrad" aria-selected="false" class="nav-link" data-bs-target="#cat-ugrad" data-bs-toggle="pill" id="cat-ugrad-tab" role="tab" type="button">Undergraduate</button></li><li class="nav-item" role="presentation"><button aria-controls="cat-beyond" aria-selected="false" class="nav-link" data-bs-target="#cat-beyond" data-bs-toggle="pill" id="cat-beyond-tab" role="tab" type="button">Beyond</button></li></ul></div></div>
+    <body><root><div class="jumbotron"><div class="container"><div class="row d-flex justify-content-center"><div class="col-md-6"><img class="title-logo" src="img/pyret-banner.png"/>
+<p>Pyret is a programming language designed to serve as an outstanding
+choice for programming education. It works effectively at many levels, with
+several curricula in
+active use incorporating Pyret. The language is under active
+design and
+development, and free to use or modify.</p>
+<p><a class="btn btn-primary btn-m hvr-border-fade" href="#getting-started">Quick Examples</a>
+<a class="btn btn-primary btn-m hvr-border-fade" href="#curricula">Curricula &amp; Books</a>
+<a class="btn btn-primary btn-m hvr-border-fade" href="#devs">For Developers</a>
+<a class="btn btn-primary btn-m hvr-border-fade show-all-examples" href="javascript:void(0)">More Examples</a></p></div>
+<div class="col-md-6"><button class="runnable-pyret" id="pyret-example-images82876-run">Run it!</button>
+<script type="module">import { makeEmbed } from "./node_modules/pyret-embed/dist/pyret.js";
+import { images } from "./examples/images.js";
 
-<div class="row d-flex justify-content-center categories-tab-top"><div class="tab-content" id="categoriesTabContent"><div aria-labelled-by="cat-general-tab" class="tab-pane active show" id="cat-general" role="tabpanel"><div class="row d-flex justify-content-center examples-pills"><div class="col-md-8 nav-border"><ul class="nav nav-pills" id="examplesTabs" role="tablist"><ul class="nav nav-pills" id="examplesTabs" role="tablist"><li class="nav-item" role="presentation"><button aria-controls="cat-general-testing" aria-selected="true" class="nav-link active" data-bs-target="#cat-general-testing" data-bs-toggle="pill" id="cat-general-testing-tab" role="tab" type="button">Testing</button></li>
-<li class="nav-item" role="presentation"><button aria-controls="cat-general-images" aria-selected="false" class="nav-link" data-bs-target="#cat-general-images" data-bs-toggle="pill" id="cat-general-images-tab" role="tab" type="button">Images</button></li></ul></ul></div></div><div class="row d-flex justify-content-center examples-tab-top"><div class="col-md-8 tab-box"><div class="tab-content" id="examplesTabsContent"><div aria-labelled-by="testing-tab" class="tab-pane show active" example-name="testing" id="cat-general-testing" role="tabpanel"><p class="example-info">Writing <a href="https://pyret.org/docs/latest/testing.html">tests via
-examples</a> (unit tests) is directly supported by the syntax and runtime of
-Pyret. No separate library or build file configuration needed, writing and
-running the tests come with writing and running a program.</p></div>
-<div aria-labelled-by="images-tab" class="tab-pane" example-name="images" id="cat-general-images" role="tabpanel"><p class="example-info">Programs that create <a href="https://pyret.org/docs/horizon/image.html" target="_blank">images</a> give immediate visual feedback, and support learning outcomes around composition of values. Bootstrap:Algebra has lessons like <a href="https://www.bootstrapworld.org/materials/fall2024/en-us/lessons/project-flags/index.shtml?pathway=algebra-pyret" target="_blank">Make a Flag</a> and <a href="https://www.bootstrapworld.org/materials/fall2024/en-us/lessons/hoc-winter-parley/index.html" target="_blank">Hour of Code</a> using these ideas.
-</p></div></div></div></div></div><div aria-labelled-by="cat-k12-tab" class="tab-pane" id="cat-k12" role="tabpanel"><div class="row d-flex justify-content-center examples-pills"><div class="col-md-8 nav-border"><ul class="nav nav-pills" id="examplesTabs" role="tablist"><ul class="nav nav-pills" id="examplesTabs" role="tablist"><li class="nav-item" role="presentation"><button aria-controls="cat-k12-rational" aria-selected="true" class="nav-link active" data-bs-target="#cat-k12-rational" data-bs-toggle="pill" id="cat-k12-rational-tab" role="tab" type="button">Rationals</button></li>
-<li class="nav-item" role="presentation"><button aria-controls="cat-k12-images" aria-selected="false" class="nav-link" data-bs-target="#cat-k12-images" data-bs-toggle="pill" id="cat-k12-images-tab" role="tab" type="button">Images</button></li><li class="nav-item" role="presentation"><button aria-controls="cat-k12-data_science" aria-selected="false" class="nav-link" data-bs-target="#cat-k12-data_science" data-bs-toggle="pill" id="cat-k12-data_science-tab" role="tab" type="button">Data Science</button></li><li class="nav-item" role="presentation"><button aria-controls="cat-k12-physics" aria-selected="false" class="nav-link" data-bs-target="#cat-k12-physics" data-bs-toggle="pill" id="cat-k12-physics-tab" role="tab" type="button">Physics</button></li></ul></ul></div></div><div class="row d-flex justify-content-center examples-tab-top"><div class="col-md-8 tab-box"><div class="tab-content" id="examplesTabsContent"><div aria-labelled-by="rational-tab" class="tab-pane show active" example-name="rational" id="cat-k12-rational" role="tabpanel"><p class="example-info">Pyret's <a href="https://pyret.org/docs/latest/numbers.html#(part._numbers)">number system</a>
+if(!window.singleEmbed) {
+    const startFrameContainer = document.getElementById("single-examples-frame")
+    window.singleEmbed = makeEmbed('single-example-editor', startFrameContainer, "./node_modules/pyret-embed/dist/build/web/editor.embed.html#footerStyle=hide&warnOnExit=false");
+}
+const embed = await window.singleEmbed;
+const button = document.getElementById("pyret-example-images82876-run");
+const modalElt = document.getElementById('example-modal');
+const modal = bootstrap.Modal.getOrCreateInstance(modalElt);
+button.addEventListener("click", () => {
+    embed.sendReset(images);
+    modal.show();
+});</script>
+<div class="runnable-pyret"><pre class="pyret-example" id="pyret-example-images82877"></pre>
+<script type="module">import { example } from "./examples/images.js";
+const preElt = document.getElementById("pyret-example-images82877");
+preElt.innerText = example;</script></div></div></div></div></div>
+
+<script src="site/js/codemirror.js"></script>
+<script src="site/js/runmode.js"></script>
+<script src="site/js/pyret.js"></script>
+
+
+<div class="container"><a class="anchor-target" id="getting-started"></a>
+<h2>Designed for Getting Started</h2>
+
+<div class="row d-flex justify-content-center feature"><div class="col-md-6"> <p> <b>Pyret is designed from the ground up to run entirely in regular browsers with no installation at all</b>,
+avoiding frustrating student-hours lost to installers and platform choice and IDE configuration
+and more. Indeed, Pyret is running right on this very page – check out the
+examples with the “Run It!” buttons!</p> </div></div>
+
+<div class="row d-flex justify-content-center feature"><div class="col-md-6 align-self-center"> <div><button class="runnable-pyret" id="pyret-example-examples82878-run">Run it!</button>
+<script type="module">import { makeEmbed } from "./node_modules/pyret-embed/dist/pyret.js";
+import { examples } from "./examples/examples.js";
+
+if(!window.singleEmbed) {
+    const startFrameContainer = document.getElementById("single-examples-frame")
+    window.singleEmbed = makeEmbed('single-example-editor', startFrameContainer, "./node_modules/pyret-embed/dist/build/web/editor.embed.html#footerStyle=hide&warnOnExit=false");
+}
+const embed = await window.singleEmbed;
+const button = document.getElementById("pyret-example-examples82878-run");
+const modalElt = document.getElementById('example-modal');
+const modal = bootstrap.Modal.getOrCreateInstance(modalElt);
+button.addEventListener("click", () => {
+    embed.sendReset(examples);
+    modal.show();
+});</script>
+<pre class="pyret-example">examples "cube function":
+  cb(0) is 0
+  cb(3) is 27
+  cb(-5) is -125
+end
+
+fun cb(n):
+  n * n * n
+end</pre></div> </div>
+<div class="col-md-4 align-self-center"> <p>Pyret provides a pleasant syntax for writing illustrative examples
+of how functions should behave. These serve not only as
+documentation, but are also useful for students to demonstrate their
+understanding of a problem before they start programming.</p> </div></div>
+<hr/>
+
+<div class="row d-flex justify-content-center align-middle feature"><div class="col-md-4 align-self-center justify-content-center"> <p>Programs that create images give immediate visual feedback. Functions
+that operate on images enable students to learn about function
+composition in an medium that is both engaging and educational.</p> </div>
+<div class="col-md-6 align-self-center justify-content-center"> <button class="runnable-pyret" id="pyret-example-images82879-run">Run it!</button>
+<script type="module">import { makeEmbed } from "./node_modules/pyret-embed/dist/pyret.js";
+import { images } from "./examples/images.js";
+
+if(!window.singleEmbed) {
+    const startFrameContainer = document.getElementById("single-examples-frame")
+    window.singleEmbed = makeEmbed('single-example-editor', startFrameContainer, "./node_modules/pyret-embed/dist/build/web/editor.embed.html#footerStyle=hide&warnOnExit=false");
+}
+const embed = await window.singleEmbed;
+const button = document.getElementById("pyret-example-images82879-run");
+const modalElt = document.getElementById('example-modal');
+const modal = bootstrap.Modal.getOrCreateInstance(modalElt);
+button.addEventListener("click", () => {
+    embed.sendReset(images);
+    modal.show();
+});</script>
+<pre class="pyret-example">treetop = triangle(60, "solid", "darkgreen")
+trunk = square(20, "solid", "brown")
+tree = above(treetop, trunk)</pre>
+<img src="img/tree.png" style="display: block; margin: auto;"/> </div></div>
+<hr/></div>
+
+    <div class="modal" id="example-modal" role="dialog" tabindex="-1"><div class="modal-dialog modal-fullscreen modal-centered" role="document"><div class="modal-content"><button aria-label="Close" class="btn-close" type="button"></button>
+<div class="embed-container" id="single-examples-frame" style="width: 100%; height: 100%"></div></div></div></div>
+
+    <div class="modal" id="all-examples-modal" role="dialog" tabindex="-1"><div class="modal-dialog modal-fullscreen modal-centered" role="document"><div class="modal-content"><div class="container-fluid"><div class="tab-pane"><div class="row d-flex justify-content-center examples-pills"><div class="col-md-8 nav-border"><ul class="nav nav-pills" id="examplesTabs" role="tablist"><ul class="nav nav-pills" id="examplesTabs" role="tablist"><li class="nav-item" role="presentation"><button aria-controls="images" aria-selected="true" class="nav-link active" data-bs-target="#images" data-bs-toggle="pill" id="images-tab" role="tab" type="button">Images</button></li>
+<li class="nav-item shown-pill" role="presentation"><button aria-controls="rational" aria-selected="false" class="nav-link" data-bs-target="#rational" data-bs-toggle="pill" id="rational-tab" role="tab" type="button">Rationals</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="examples" aria-selected="false" class="nav-link" data-bs-target="#examples" data-bs-toggle="pill" id="examples-tab" role="tab" type="button">Examples</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="tables" aria-selected="false" class="nav-link" data-bs-target="#tables" data-bs-toggle="pill" id="tables-tab" role="tab" type="button">Tables</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="data" aria-selected="false" class="nav-link" data-bs-target="#data" data-bs-toggle="pill" id="data-tab" role="tab" type="button">Data Structures</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="annotations" aria-selected="false" class="nav-link" data-bs-target="#annotations" data-bs-toggle="pill" id="annotations-tab" role="tab" type="button">Type Annotations</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="testing" aria-selected="false" class="nav-link" data-bs-target="#testing" data-bs-toggle="pill" id="testing-tab" role="tab" type="button">Testing</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="reactors" aria-selected="false" class="nav-link" data-bs-target="#reactors" data-bs-toggle="pill" id="reactors-tab" role="tab" type="button">Reactors</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="spies" aria-selected="false" class="nav-link" data-bs-target="#spies" data-bs-toggle="pill" id="spies-tab" role="tab" type="button">Spies</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="lambdas" aria-selected="false" class="nav-link" data-bs-target="#lambdas" data-bs-toggle="pill" id="lambdas-tab" role="tab" type="button">Lambdas</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="forloops" aria-selected="false" class="nav-link" data-bs-target="#forloops" data-bs-toggle="pill" id="forloops-tab" role="tab" type="button">Loops</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="sets" aria-selected="false" class="nav-link" data-bs-target="#sets" data-bs-toggle="pill" id="sets-tab" role="tab" type="button">Sets</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="constructors" aria-selected="false" class="nav-link" data-bs-target="#constructors" data-bs-toggle="pill" id="constructors-tab" role="tab" type="button">Constructors</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="tuples" aria-selected="false" class="nav-link" data-bs-target="#tuples" data-bs-toggle="pill" id="tuples-tab" role="tab" type="button">Tuples</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="mutation" aria-selected="false" class="nav-link" data-bs-target="#mutation" data-bs-toggle="pill" id="mutation-tab" role="tab" type="button">Mutation and State</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="contexts" aria-selected="false" class="nav-link" data-bs-target="#contexts" data-bs-toggle="pill" id="contexts-tab" role="tab" type="button">Contexts</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="equality" aria-selected="false" class="nav-link" data-bs-target="#equality" data-bs-toggle="pill" id="equality-tab" role="tab" type="button">Equality</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="modules" aria-selected="false" class="nav-link" data-bs-target="#modules" data-bs-toggle="pill" id="modules-tab" role="tab" type="button">Modules</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="partial" aria-selected="false" class="nav-link" data-bs-target="#partial" data-bs-toggle="pill" id="partial-tab" role="tab" type="button">Partial Functions</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="ext_data" aria-selected="false" class="nav-link" data-bs-target="#ext_data" data-bs-toggle="pill" id="ext_data-tab" role="tab" type="button">External Data</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="pbt" aria-selected="false" class="nav-link" data-bs-target="#pbt" data-bs-toggle="pill" id="pbt-tab" role="tab" type="button">Property-Based Testing</button></li><li class="nav-item shown-pill" role="presentation"><button aria-controls="oop" aria-selected="false" class="nav-link" data-bs-target="#oop" data-bs-toggle="pill" id="oop-tab" role="tab" type="button">Object-Oriented Programming</button></li></ul></ul></div></div><div class="row d-flex justify-content-center examples-tab-top"><div class="col-md-8 tab-box"><div class="tab-content" id="examplesTabsContent"><div aria-labelled-by="images-tab" class="tab-pane show active" example-name="images" id="images" role="tabpanel"><p class="example-info"><p>Programs that create <a href="https://pyret.org/docs/horizon/image.html" target="_blank">images</a> give immediate visual feedback.
+Functions that operate on images enable students to learn about function composition in an medium that is both engaging and educational:
+composing images rather than numbers provides an immediate visual artifact, which makes it easier to spot errors and match a result to an intended design.</p>
+
+<p>Multiple curricula take advantage of these features. In Bootstrap, lessons like
+<a href="https://www.bootstrapworld.org/materials/latest/en-us/lessons/project-flags/index.shtml?pathway=algebra-pyret" target="_blank">Make a Flag</a>
+and
+<a href="https://www.bootstrapworld.org/materials/latest/en-us/lessons/hoc-winter-parley/index.html" target="_blank">Hour of Code</a>
+are centered around it. Likewise,
+<a href="https://www.dcic-world.org/" target="_blank">DCIC</a> also uses them for a quick and attractive introduction to programming.</p>
+</p></div>
+<div aria-labelled-by="rational-tab" class="tab-pane" example-name="rational" id="rational" role="tabpanel"><p class="example-info"><p>Pyret's
+<a href="https://pyret.org/docs/latest/numbers.html#(part._numbers)" target="_blank">number system</a>
 supports <em>exact rational</em> arithmetic for many operations.  This avoids having
 floating point as a curricular dependency early on. When approximations become
 inevitable, they have an explicit representation:
-<a href="https://pyret.org/docs/latest/numbers.html#%28part._numbers_.Roughnum%29">Roughnum</a>s.
-</p></div>
-<div aria-labelled-by="images-tab" class="tab-pane" example-name="images" id="cat-k12-images" role="tabpanel"><p class="example-info">Programs that create <a href="https://pyret.org/docs/horizon/image.html" target="_blank">images</a> give immediate visual feedback, and support learning outcomes around composition of values. Bootstrap:Algebra has lessons like <a href="https://www.bootstrapworld.org/materials/fall2024/en-us/lessons/project-flags/index.shtml?pathway=algebra-pyret" target="_blank">Make a Flag</a> and <a href="https://www.bootstrapworld.org/materials/fall2024/en-us/lessons/hoc-winter-parley/index.html" target="_blank">Hour of Code</a> using these ideas.
-</p></div><div aria-labelled-by="data_science-tab" class="tab-pane" example-name="data_science" id="cat-k12-data_science" role="tabpanel"><p class="example-info">In <a href="https://www.bootstrapworld.org/materials/data-science/">Boostrap's Data
-Science</a> curriculum, students work with programs that load and analyze raw data
-using Pyret <a href="https://pyret.org/docs/latest/tables.html">Tables</a>.  The
-material has been used both integrated into math classes and as part of AP
-Computer Science Principles. Data can be easily loaded from CSV files at public
-URLs, or from <a href="https://pyret.org/docs/latest/gdrive-sheets.html">Google Sheets</a>.
+<a href="https://pyret.org/docs/latest/numbers.html#%28part._numbers_.Roughnum%29" target="_blank">Roughnum</a>s.</p>
+</p></div><div aria-labelled-by="examples-tab" class="tab-pane" example-name="examples" id="examples" role="tabpanel"><p class="example-info"><p>Pyret provides a pleasant syntax for writing illustrative examples of
+how functions should behave. These serve not only as documentation,
+but are also useful for students to demonstrate their understanding of
+a problem before they start programming. The
+<a href="https://blog.brownplt.org/2024/01/01/examplar.html" target="_blank">Examplar</a>
+   project is built entirely around this feature.</p>
 
-
-</p></div><div aria-labelled-by="physics-tab" class="tab-pane" example-name="physics" id="cat-k12-physics" role="tabpanel"><p class="example-info"><a href="https://pyret.org/docs/horizon/reactors.html#(part._reactors)" target="_blank">Pyret reactors</a> and <a href="https://pyret.org/docs/horizon/image.html" target="_blank">images</a> can be used to build physical simulations. These ideas are used in the <a href="https://www.bootstrapworld.org/materials/physics/" target="_blank">Bootstrap:Physics</a> curriculum, and they are supported by both <a href="https://cs.brown.edu/~sk/Publications/Papers/Published/plpk-reactor-design/" target="_blank">language development</a> and <a href="https://www.mdpi.com/2227-7102/14/8/861" target="_blank">curricular research</a>.
-</p></div></div></div></div></div><div aria-labelled-by="cat-ugrad-tab" class="tab-pane" id="cat-ugrad" role="tabpanel"><div class="row d-flex justify-content-center examples-pills"><div class="col-md-8 nav-border"><ul class="nav nav-pills" id="examplesTabs" role="tablist"><ul class="nav nav-pills" id="examplesTabs" role="tablist"><li class="nav-item" role="presentation"><button aria-controls="cat-ugrad-testing" aria-selected="true" class="nav-link active" data-bs-target="#cat-ugrad-testing" data-bs-toggle="pill" id="cat-ugrad-testing-tab" role="tab" type="button">Testing</button></li>
-<li class="nav-item" role="presentation"><button aria-controls="cat-ugrad-data" aria-selected="false" class="nav-link" data-bs-target="#cat-ugrad-data" data-bs-toggle="pill" id="cat-ugrad-data-tab" role="tab" type="button">Data Structures</button></li><li class="nav-item" role="presentation"><button aria-controls="cat-ugrad-images" aria-selected="false" class="nav-link" data-bs-target="#cat-ugrad-images" data-bs-toggle="pill" id="cat-ugrad-images-tab" role="tab" type="button">Images</button></li></ul></ul></div></div><div class="row d-flex justify-content-center examples-tab-top"><div class="col-md-8 tab-box"><div class="tab-content" id="examplesTabsContent"><div aria-labelled-by="testing-tab" class="tab-pane show active" example-name="testing" id="cat-ugrad-testing" role="tabpanel"><p class="example-info">Writing <a href="https://pyret.org/docs/latest/testing.html">tests via
-examples</a> (unit tests) is directly supported by the syntax and runtime of
-Pyret. No separate library or build file configuration needed, writing and
-running the tests come with writing and running a program.</p></div>
-<div aria-labelled-by="data-tab" class="tab-pane" example-name="data" id="cat-ugrad-data" role="tabpanel"><p class="example-info">Pyret has algebraic data types and case matching in the style of most modern
+  <p>Examples can be written
+as part of the function definition or just after or
+before. Stand-alone example blocks optionally take a descriptive
+     string, which not only improve documentation but are also helpful
+     for understanding failures.</p>
+</p></div><div aria-labelled-by="tables-tab" class="tab-pane" example-name="tables" id="tables" role="tabpanel"><p class="example-info"><p>Pyret incorporates
+  <a href="https://pyret.org/docs/latest/tables.html" target="_blank">Tables</a>
+     as a basic, built-in datatype.
+<a href="https://cs.brown.edu/~sk/Publications/Papers/Published/kf-data-centric/" target="_blank">We have argued</a>
+   that tables are perhaps <em>the</em> key datatype for early programming,
+and <a href="https://dcic-world.org/" target="_blank">DCIC</a> gives them pride of place,
+   so having high-quality programming support for tables is critical.</p>
+</p></div><div aria-labelled-by="data-tab" class="tab-pane" example-name="data" id="data" role="tabpanel"><p class="example-info"><p>Pyret has
+  <a href="https://pyret.org/docs/latest/A_Tour_of_Pyret.html#%28part._definitions-tour%29" target="_blank">algebraic data types</a>
+  and
+  <a href="https://pyret.org/docs/latest/A_Tour_of_Pyret.html#%28part._cases-tour%29" target="_blank">case matching</a>
+in the style of most modern
 languages. Direct construction, along with built-in testing, make it
-straightforward to incrementally build up data structure definitions.</p></div><div aria-labelled-by="images-tab" class="tab-pane" example-name="images" id="cat-ugrad-images" role="tabpanel"><p class="example-info">Programs that create <a href="https://pyret.org/docs/horizon/image.html" target="_blank">images</a> give immediate visual feedback, and support learning outcomes around composition of values. Bootstrap:Algebra has lessons like <a href="https://www.bootstrapworld.org/materials/fall2024/en-us/lessons/project-flags/index.shtml?pathway=algebra-pyret" target="_blank">Make a Flag</a> and <a href="https://www.bootstrapworld.org/materials/fall2024/en-us/lessons/hoc-winter-parley/index.html" target="_blank">Hour of Code</a> using these ideas.
-</p></div></div></div></div></div><div aria-labelled-by="cat-beyond-tab" class="tab-pane" id="cat-beyond" role="tabpanel"><div class="row d-flex justify-content-center examples-pills"><div class="col-md-8 nav-border"><ul class="nav nav-pills" id="examplesTabs" role="tablist"><ul class="nav nav-pills" id="examplesTabs" role="tablist"><li class="nav-item" role="presentation"><button aria-controls="cat-beyond-testing" aria-selected="true" class="nav-link active" data-bs-target="#cat-beyond-testing" data-bs-toggle="pill" id="cat-beyond-testing-tab" role="tab" type="button">Testing</button></li>
-<li class="nav-item" role="presentation"><button aria-controls="cat-beyond-data" aria-selected="false" class="nav-link" data-bs-target="#cat-beyond-data" data-bs-toggle="pill" id="cat-beyond-data-tab" role="tab" type="button">Data Structures</button></li></ul></ul></div></div><div class="row d-flex justify-content-center examples-tab-top"><div class="col-md-8 tab-box"><div class="tab-content" id="examplesTabsContent"><div aria-labelled-by="testing-tab" class="tab-pane show active" example-name="testing" id="cat-beyond-testing" role="tabpanel"><p class="example-info">Writing <a href="https://pyret.org/docs/latest/testing.html">tests via
-examples</a> (unit tests) is directly supported by the syntax and runtime of
-Pyret. No separate library or build file configuration needed, writing and
-running the tests come with writing and running a program.</p></div>
-<div aria-labelled-by="data-tab" class="tab-pane" example-name="data" id="cat-beyond-data" role="tabpanel"><p class="example-info">Pyret has algebraic data types and case matching in the style of most modern
-languages. Direct construction, along with built-in testing, make it
-straightforward to incrementally build up data structure definitions.</p></div></div></div></div></div></div></div>
+straightforward to incrementally build up data structure definitions.</p>
+</p></div><div aria-labelled-by="annotations-tab" class="tab-pane" example-name="annotations" id="annotations" role="tabpanel"><p class="example-info"><p>Pyret allows you to optionally write annotations on any variable binding.
+These are checked dynamically.</p>
 
-<div class="row embed-row"><div class="embed-container" id="examples-frame" style="height: 30em"></div></div>
+<p>Dynamic checking can create a lot of run-time overhead (even changing a program's
+big-O characteristics). Pyret uses a pleasant trade-off: it checks the
+outermost annotation only. This takes constant time and catches most errors,
+but lets a few subtler ones to be checked later.</p>
+
+<p>Pyret also ships with an <em>experimental</em> type checker, which covers most
+but not all of the language's features (tables are particularly tricky).
+You can access the type-checker by clicking on the Run button's drop-down
+to select the type-checker. Observe how the default program, even with the
+call to <code>s2cp</code> commented out, results in an error!</p>
+
+<p><em>Note: after trying out the type-checker, <strong>please revert to the regular Run button</strong>.
+Otherwise, you may get odd errors in some of the other feature tabs, which were
+intentionally not designed to pass the type-checker.</em></p>
+</p></div><div aria-labelled-by="testing-tab" class="tab-pane" example-name="testing" id="testing" role="tabpanel"><p class="example-info"><p>   Pyret provides an extensive set of features for
+   <a href="https://pyret.org/docs/latest/testing.html" target="_blank">writing tests</a>.
+   You
+don't need a separate library or “build file” or write or run them.
+It's part of the programming language, because we believe it is
+imporant to write robust programs, and testing is a major component of
+  that.</p>
+</p></div><div aria-labelled-by="reactors-tab" class="tab-pane" example-name="reactors" id="reactors" role="tabpanel"><p class="example-info"><p><a href="https://pyret.org/docs/horizon/reactors.html#(part._reactors)" target="_blank">Reactors</a> are a mechanism for
+describing interactive computations. Reactors, especially in conjunction with
+   <a href="https://pyret.org/docs/horizon/image.html" target="_blank">images</a>,
+can be used to build physical simulations.
+These features are used in several curricula such as
+<a href="https://www.bootstrapworld.org/materials/physics/" target="_blank">Bootstrap:Physics</a>,
+<a href="https://www.bootstrapworld.org/materials/reactive/" target="_blank">Bootstrap:Reactive</a>, and
+<a href="https://dcic-world.org/" target="_blank">DCIC</a>.
+They are supported by both
+<a href="https://cs.brown.edu/~sk/Publications/Papers/Published/plpk-reactor-design/" target="_blank">language development</a>
+and
+<a href="https://cs.brown.edu/~sk/Publications/Papers/Published/vmflpk-bootstrap-physics/" target="_blank">curricular research</a>.</p>
+
+<p>To understand the design, flexibility, and careful interaction of reactors with other language features like testing and tables,
+see our
+<a href="https://cs.brown.edu/~sk/Publications/Papers/Published/plpk-reactor-design/" target="_blank">detailed paper</a>.</p>
+</p></div><div aria-labelled-by="spies-tab" class="tab-pane" example-name="spies" id="spies" role="tabpanel"><p class="example-info"><p>In many languages, the only easy way to examine values during program execution is
+by using print commands, leading to what is often called “printf-debugging”.
+Pyret recognizes the value of examining dynamic values and provides an elegant
+way of doing this:
+<a href="https://pyret.org/docs/latest/s_spies.html" target="_blank">spies</a>.
+Unlike with a “printf”, spying presents well-formatted output: you can trace back
+to the source, the output looks different to distinguish from other printed output,
+values in the display are clickable, etc.</p>
+</p></div><div aria-labelled-by="lambdas-tab" class="tab-pane" example-name="lambdas" id="lambdas" role="tabpanel"><p class="example-info"><p>Pyret has full, proper, lexically-scoped higher-order functions
+(colloquially referred to as “lambdas”).
+Because they are used in many contexts, the language has three different syntaxes for it.
+Pick the one you find most convenient!</p>
+</p></div><div aria-labelled-by="forloops-tab" class="tab-pane" example-name="forloops" id="forloops" role="tabpanel"><p class="example-info"><p>Pyret has
+<a href="https://pyret.org/docs/latest/A_Tour_of_Pyret.html#%28part._.For_loops%29" target="_blank">“for loops”</a>.
+They are more useful and powerful
+than those in most other programming languages.</p>
+</p></div><div aria-labelled-by="sets-tab" class="tab-pane" example-name="sets" id="sets" role="tabpanel"><p class="example-info"><p>Though many libraries in Pyret use lists, Pyret also has built-in support for sets, which are more appropriate in some
+settings than lists. In Pyret, sets behave as one would truly want them to: there is no such thing as the “first” element (as with lists),
+and instead programs use <code>pick</code> to extract an element.</p>
+
+<p>What happens if you <code>pick</code> multiple times? Pyret does not want programs to get dependent on a particular behavior—sets,
+after all, do not have an order, but if the implementation acted <emph>as if</emph> they did, programs would grow to depend on that.
+Therefore,  a
+<a href="https://pyret.org/docs/latest/pick.html#%28part._.The_.Pick_.Datatype%29" target="_blank"><code>Pick</code></a>
+is <emph>like</emph> a “first and rest”, except
+there's no guarantee which “first” element you will get; the “rest” corresponds to all the other elements
+depending on what was chosen “first”.</p>
+</p></div><div aria-labelled-by="constructors-tab" class="tab-pane" example-name="constructors" id="constructors" role="tabpanel"><p class="example-info"><p>Unlike in many other languages, you may have noticed that <code>[…]</code> is
+not reserved for lists; instead, programs need to write <code>[list: …]</code>
+to construct a list. This is because Pyret does not want to over-privilege
+a single datatype; different programs depend on different collections of them,
+and it is nice to be able to define them comfortably.</p>
+
+<p>Thus, in Pyret, several datatypes have convenient constructors besides lists:
+sets and dictionaries are good examples. But programs can also define
+their own constructors! The process is a bit unwieldy so that custom
+constructors also have good performance. But this unwieldy code only needs
+to be written once, by the constructor creator; users of the constructor
+do not see this.</p>
+</p></div><div aria-labelled-by="tuples-tab" class="tab-pane" example-name="tuples" id="tuples" role="tabpanel"><p class="example-info"><p>Pyret has support for tuples, which are collections of ordered data of fixed size. Elements of tuples are accessed by position.
+Tuples can also be destructured at variable binding.</p>
+
+<p>However, we caution against using tuples too much. We feel that tuples are best used either within a function itself, or when a
+called function needs to return multiple distinct values that will immediately be destructured and named. If a tuple
+flows intact through a program, after a while it becomes very difficult to tell what it represents, and it may even be
+confused with other tuples that have at least as many elements.
+In the latter cases, it's better to use an object with named fields, or (if the datum is sufficiently significant and
+visible in many parts of the program) a fresh datatype.</p>
+</p></div><div aria-labelled-by="mutation-tab" class="tab-pane" example-name="mutation" id="mutation" role="tabpanel"><p class="example-info"><p>Pyret has both mutable variables and mutable structures. Pyret
+values are immutable by default (which reduces surprise and makes
+testing much easier), but mutation is available when needed:
+students just need to invoke it explicitly.</p>
+
+<p>Pyret support for mutable structures is especially smart.
+Mutable fields are displayed with black-and-yellow striping
+(what some students have labeled the “bumblebee”). This indicates
+that the value you are seeing may change. Furthermore, clicking on
+the bumblebee updates it to its current value!</p>
+</p></div><div aria-labelled-by="contexts-tab" class="tab-pane" example-name="contexts" id="contexts" role="tabpanel"><p class="example-info"><p>Modules are useful for providing new services (such as functions and types). However, sometimes users—especially educators—will
+want to <emph>limit</emph> the set of visible services. For instance, certain functions may make a homework trivial, so they may
+want to <emph>remove</emph> those functions from the set of visible services.</p>
+
+<p>For this, Pyret provides <a href="https://pyret.org/docs/latest/use.html#%28part._s~3ause~3acontext%29" target="_blank"><emph>contexts</emph></a>.
+A context definition is a description of the entire namespace. It starts with an empty
+namespace and adds to it until it has the desired contents, which it then exports.
+Thus a context determines not only what names are bound and not bound, but also what they are bound to.</p>
+</p></div><div aria-labelled-by="equality-tab" class="tab-pane" example-name="equality" id="equality" role="tabpanel"><p class="example-info"><p>Pyret has a very sophisticated story when it comes to equality.
+You can read much more about it
+<a href="https://pyret.org/docs/latest/equality.html" target="_blank">on this page</a>.</p>
+</p></div><div aria-labelled-by="modules-tab" class="tab-pane" example-name="modules" id="modules" role="tabpanel"><p class="example-info"><p>Pyret provides modules, with a rich set of features to
+<a href="https://pyret.org/docs/latest/modules.html" target="_blank">control what is exported</a>.
+For instance, here is a module
+<a href="https://raw.githubusercontent.com/brownplt/pyret.org/786f1539e41d47694ef69312a93804672da0bbf1/examples/code/home-page-modules.arr" target="_blank">stored on GitHub</a>
+that provides some support for tic-tac-toe.</p>
+</p></div><div aria-labelled-by="partial-tab" class="tab-pane" example-name="partial" id="partial" role="tabpanel"><p class="example-info"><p>Programmers often need to define partial functions. Rather than return “sentinel” values
+(which might fail only much later in the computation or, worse, be interpreted as valid
+ response and never fail at all), Pyret offers two standard mechanisms.
+One is to raise an exception, while the other is use the <code>Option</code> type.</p>
+
+<p>Exceptions make more sense when dealing with truly unexpected situations and/or
+ones from which there is no meaningful path to recovery.
+Options make more sense when the situation is reasonable to expect and/or is there
+some meaningful value that can be provided.
+Both can be used with testing.</p>
+</p></div><div aria-labelled-by="ext_data-tab" class="tab-pane" example-name="ext_data" id="ext_data" role="tabpanel"><p class="example-info"><p>  In several curricula, including
+  <a href="https://www.bootstrapworld.org/materials/data-science/" target="_blank">Boostrap Data Science</a>,
+ students work with programs that load and analyze raw data.
+Data can be easily loaded from CSV files at public
+  URLs, or from
+  <a href="https://pyret.org/docs/latest/gdrive-sheets.html" target="_blank">Google Sheets</a>.</p>
+</p></div><div aria-labelled-by="pbt-tab" class="tab-pane" example-name="pbt" id="pbt" role="tabpanel"><p class="example-info"><p>As programs get more sophisticated, it is often not enough to write
+ unit tests; we need to test properties. Pyret gives you
+ <a href="https://pyret.org/docs/latest/testing.html#%28part._.Unary_.Test_.Operators%29" target="_blank">primitives</a>
+for expressing the idea of values satisfying predicates.</p>
+
+<p>Pyret does not, however, provide data generators for property-based
+testing, because writing those is usually instructive and also a
+good way to learn about and explore biases in data.</p>
+</p></div><div aria-labelled-by="oop-tab" class="tab-pane" example-name="oop" id="oop" role="tabpanel"><p class="example-info"><p>Pyret has objects and methods. Students can therefore transition from
+functions (which have a simpler calling semantics) to objects (which
+are more complex, but have conveniences), and eventually also define
+their own methods.</p>
+</p></div></div></div></div></div>
+<div class="embed-container" id="examples-frame" style="width: 100%; min-height: 20em; height: 100%"></div>
+</div></div></div></div>
+
+
+
+
+
+
+<div class="container">  <a class="anchor-target" name="curricula"></a>
+  <h2>Curricula and Books</h2>
+
+  <div class="row d-flex justify-content-center feature"><div class="col-md-6 align-self-center"> <p>For <b>grades 6-12 (secondary) students</b>, our partners at <a href="https://www.bootstrapworld.org/">Bootstrap</a> are the leading designers
+of <em>integrated</em> computing curricula. All the Bootstrap curricula
+build primarily atop Pyret. Bootstrap covers numerous areas (with ties
+to algebra, data science, AI, physics, and more) and provides
+comprehensive materials that have been tested in thousands of classrooms
+and by tens of thousands of students every year. Bootstrap is also, by
+design, <em>modular</em>: you don't have to adopt a whole course, but can
+instead choose modules that fit best with what you're already teaching.
+Head over to Bootstrap to learn more!</p> </div>
+<div class="col-md-4 align-self-center"> <div><div><img src="img/algebra.png" style="width: 10rem"/>
+<img src="img/data-science.png" style="width: 10rem"/></div>
+<div><img src="img/physics.png" style="width: 10rem"/>
+<img src="img/reactive.png" style="width: 10rem"/></div></div> </div></div>
+<hr/>
+
+<div class="row d-flex justify-content-center align-middle feature"><div class="col-md-4 align-self-center justify-content-center"> <img src="img/dcic.png" style="width: 100%;"/> </div>
+<div class="col-md-6 align-self-center justify-content-center"> <p>Our book, <a href="https://dcic-world.org/"><em>Data-Centric Introduction to Computing</em></a> (DCIC),
+     provides a modern introduction to computing education. You can see some of the research
+     [<a href="https://cs.brown.edu/~sk/Publications/Papers/Published/fkt-teach-scope-mut/">1</a>,
+     <a href="https://cs.brown.edu/~sk/Publications/Papers/Published/lkft-switch-fun-lang/">2</a>,
+     <a href="https://cs.brown.edu/~sk/Publications/Papers/Published/lk-smol-tutor/">3</a>]
+     that has driven its design and content.</p>
+
+<p>DCIC takes the position that introductory data <em>science</em> offers an interesting, accessible, and
+meaningful introduction to programming that addresses many problems that plague current
+introductory curricula. It then transitions from that to data <em>structures</em>.
+You can read our
+<a href="https://cs.brown.edu/~sk/Publications/Papers/Published/kf-data-centric/">critique</a>
+that inspired the book.
+Pyret offers various features that support this introduction and transition.</p>
+
+<p>In particular, DCIC takes the position — driven by a
+ significant body of literature in educational and
+ cognitive science — that students learn programming better
+ when they can compare and contrast related but different
+ things. Thus DCIC teaches not one but two programming
+ languages: Python in addition to Pyret. But the
+ progression from Pyret to Python is (a) staged carefully
+ to minimize difficulties, and (b) includes seeing them
+ side-by-side. Pyret, in turn, is designed to facilitate
+ this kind of comparison with Python</p> </div></div>
+<hr/>
 </div>
 
-
-<div class="container-fluid"><a name="k12" style="scroll-margin-top: 100px"></a>
-<h2>For K-12 Teachers</h2>
-
-<div class="row d-flex justify-content-center"><div class="col-md-6"> FILL all about bootstrap, one-click, web-based, CSP projects </div></div></div>
-
-<div class="container-fluid"><a name="ugrad" style="scroll-margin-top: 100px"></a>
-<h2>For Undergraduate Instructors</h2>
-
-<div class="row d-flex justify-content-center"><div class="col-md-6"> FILL all about DCIC, one-click, no installation, pathway to Python, autograding, etc </div></div></div>
 
 <div class="container-fluid">
 <a name="devs"></a>
 <h2>For Developers</h2>
 
-<div class="row d-flex justify-content-center"><div class="col-md-6"> 
+<div class="row d-flex justify-content-center feature"><div class="col-md-6"> 
 <h3>Visual Studio Code and Github</h3>
 
 <p>Pyret has a <a href="https://marketplace.visualstudio.com/items?itemName=PyretProgrammingLanguage.pyret-parley">Visual
@@ -164,46 +452,91 @@ courses, with our own TAs, and for our own curricula.</p>
 <script type="module">console.log("Welcome to the pyret.org console!");
 console.log("It can be a bit noisy in here because the embedded instances log some information (which you might be interested in – have a look!)")
 console.log("You may enjoy trying out some of the API affordances right from here.");
-console.log("For example, you can run `window.pyretEmbed.sendReset({ definitionsAtLastRun: '\"Hello, api!\"', interactionsSinceLastRun: [ ], editorContents: '\"Hello, api!\"', replContents: '' });`");
+console.log("For example, when looking at the all-examples overlay, you can run `window.pyretEmbed.sendReset({ definitionsAtLastRun: '\"Hello, api!\"', interactionsSinceLastRun: [ ], editorContents: '\"Hello, api!\"', replContents: '' });`");
 console.log("Noisy application logs below......");
 console.log("-----------------------------------");</script>
 
 <script type="module">import { makeEmbed } from "./node_modules/pyret-embed/dist/pyret.js";
-
-// I think this has to be metaprogrammed, because import is syntax (can't import
-// with a value in a loop in JS)
-import { data } from "./examples/data.js";
-import { rational } from "./examples/rational.js";
 import { images } from "./examples/images.js";
-import { data_science } from "./examples/data_science.js";
+import { rational } from "./examples/rational.js";
+import { examples } from "./examples/examples.js";
+import { tables } from "./examples/tables.js";
+import { data } from "./examples/data.js";
+import { annotations } from "./examples/annotations.js";
 import { testing } from "./examples/testing.js";
-import { physics } from "./examples/physics.js";
+import { reactors } from "./examples/reactors.js";
+import { spies } from "./examples/spies.js";
+import { lambdas } from "./examples/lambdas.js";
+import { forloops } from "./examples/forloops.js";
+import { sets } from "./examples/sets.js";
+import { constructors } from "./examples/constructors.js";
+import { tuples } from "./examples/tuples.js";
+import { mutation } from "./examples/mutation.js";
+import { contexts } from "./examples/contexts.js";
+import { equality } from "./examples/equality.js";
+import { modules } from "./examples/modules.js";
+import { partial } from "./examples/partial.js";
+import { ext_data } from "./examples/ext_data.js";
+import { pbt } from "./examples/pbt.js";
+import { oop } from "./examples/oop.js";
 
 
-const startFrameContainer = document.getElementById("examples-frame")
+let initialized = false;
+async function createAllExamples() {
+    if(initialized){ return; }
+    initialized = true;
+    const startFrameContainer = document.getElementById("examples-frame")
+    const embed = await makeEmbed('examples-editor', startFrameContainer, "./node_modules/pyret-embed/dist/build/web/editor.embed.html#footerStyle=hide&warnOnExit=false");
+    window.pyretEmbed = embed;
 
-const embed = await makeEmbed('examples-editor', startFrameContainer, "./node_modules/pyret-embed/dist/build/web/editor.embed.html#footerStyle=hide&warnOnExit=false");
-embed.sendReset(testing);
-window.pyretEmbed = embed;
-
-const tabs = { data, rational, images, data_science, testing, physics }
-const catElements = document.querySelectorAll(`#categoryTabs [data-bs-toggle="pill"]`);
-catElements.forEach(tabElement => {
-    tabElement.addEventListener('show.bs.tab', (event) => {
-        const target = document.querySelector(tabElement.attributes["data-bs-target"].value);
-        const exampleElt = target.querySelector(`.active`);
-        exampleElt.dispatchEvent(new Event("show.bs.tab"));
+    const tabs = { images, rational, examples, tables, data, annotations, testing, reactors, spies, lambdas, forloops, sets, constructors, tuples, mutation, contexts, equality, modules, partial, ext_data, pbt, oop }
+    const tabElements = document.querySelectorAll(`#examplesTabs [data-bs-toggle="pill"]`);
+    tabElements.forEach(tabElement => {
+        tabElement.addEventListener('show.bs.tab', (event) => {
+            console.log("Show firing", event, event.target, event.relatedTarget, tabElement);
+            const target = document.querySelector(tabElement.attributes["data-bs-target"].value);
+            if(target.attributes["example-name"]) {
+                embed.sendReset(tabs[target.attributes["example-name"].value]);
+            }
+        });
     });
-});
-const tabElements = document.querySelectorAll(`#examplesTabs [data-bs-toggle="pill"]`);
-tabElements.forEach(tabElement => {
-    tabElement.addEventListener('show.bs.tab', (event) => {
-        const target = document.querySelector(tabElement.attributes["data-bs-target"].value);
-        if(target.attributes["example-name"]) {
-            embed.sendReset(tabs[target.attributes["example-name"].value]);
-        }
+    embed.sendReset(tabs[images]);
+}
+const showAll = document.getElementsByClassName("show-all-examples");
+console.log("showall", showAll);
+const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById("all-examples-modal"));
+for(let i = 0; i < showAll.length; i += 1) {
+    showAll[i].addEventListener("click", () => {
+        modal.show();
+        createAllExamples();
     });
-});</script>
+}</script>
+
+<script type="module">const preElts = document.getElementsByClassName("pyret-example");
+for(let i = 0; i < preElts.length; i += 1) {
+    const preElt = preElts[i];
+    const example = preElt.innerText;
+    CodeMirror.runMode(example, "pyret", preElt);
+    preElt.classList.add("cm-s-default");
+}</script>
 </root></body>
+          <footer class="bg-dark text-white text-center py-2">
+              <div class="container">
+
+                <p>
+                ☠️
+                Remember:
+                <a href="https://en.wikipedia.org/wiki/International_Talk_Like_a_Pirate_Day" target="_blank">
+                International Talk Like a Pirate Day</a>
+                is September 19 every year!
+                ☠️
+                </p>
+
+                <p class="fst-italic">Site built using
+                  <a href="https://docs.racket-lang.org/pollen/">Pollen</a> and
+                  <a href="https://www.racket-lang.org/">Racket</a>.
+                </p>
+              </div>
+          </footer>
   </body>
 </html>

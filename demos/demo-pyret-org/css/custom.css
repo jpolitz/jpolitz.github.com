@@ -14,10 +14,20 @@ h2 {
   text-align: center;
   color: white;
   background-color: var(--pyret-run-blue);
-  margin-top: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding: 0.25em;
   box-shadow: inset 0 0 0 3px white;
   border: 3px solid var(--pyret-run-blue);
+}
+
+.anchor-target {
+  scroll-margin-top: 5em;
+}
+
+
+ul.custom-bullets {
+    list-style-type: square; /* Options: disc, circle, square, none */
 }
 
 a:active, a:focus {
@@ -46,6 +56,7 @@ pre {
   margin-bottom: 0px;
   width: 100%;
   position: fixed;
+  height: 5em;
 }
 
 img.navbar-logo {
@@ -259,8 +270,13 @@ h3 {
   background: linear-gradient(180deg, #eee, white);
 }
 
-#examplesTabsContent {
-  padding-top: 1em;
+div.examples-tab-top {
+  margin: 0;
+  padding: 0;
+}
+div.examples-pills {
+  margin: 0;
+  padding: 0;
 }
 
 .examples-pills .nav-pills .nav-link {
@@ -299,6 +315,80 @@ h3 {
 /* This is created by Pollen, why not use it! */
 root {
   /* 48px from Bootstrap + 66px from Navbar (30px padding + 36px image)*/
-  padding-top: 114px !important;
+  padding-top: 5em !important;
   display: block;
+}
+
+blockquote {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+
+li.shown-pill {
+  display: block;
+}
+
+li.hidden-pill {
+  display: none;
+}
+
+#examplesTabsContent p {
+  font-family: "Garamond";
+  font-size: 12pt;
+}
+
+.modal-fullscreen {
+  margin-top: 2em;
+  margin-left: 2em;
+  width: calc(100vw - 4em);
+  height: max(auto, calc(100vh - 4em));
+}
+
+.jumbotron p {
+  font-family: 'Garamond';
+  font-size: 14pt;
+}
+
+.jumbotron {
+  padding: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #eee;
+  box-sizing: border-box;
+}
+
+pre.pyret-example {
+  display: block;
+  padding: 9.5px;
+  margin: 0px 0px 10px;
+  font-size: 13px;
+  line-height: 1.428571;
+  color: rgb(51, 51, 51);
+  word-break: break-all;
+  overflow-wrap: break-word;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+}
+
+button.runnable-pyret {
+  background-color: var(--pyret-run-blue);
+  color: #eee;
+  border: none;
+  border-radius: 0.25rem;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.feature p {
+  font-family: 'Garamond';
+  font-size: 14pt;
+}
+
+div.feature {
+  padding-bottom: 1em;
+  padding-top: 1em;
 }
