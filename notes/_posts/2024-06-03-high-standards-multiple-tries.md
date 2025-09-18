@@ -606,7 +606,7 @@ Some considerations:
 
 <div class='sidenote'>For example by adding both <a
 href="https://github.com/ucsd-cse29/pa1-utf8?tab=readme-ov-file#pa1-resubmission-due-date-1028-at-10pm">a
-new function to implement and a new design question</a></sidenote>
+new function to implement and a new design question</a></div>
 - I've sometimes given _new_ tasks along with resubmissions, especially when
   chunks of the work are automatically graded, or on written work where the
   answer is “given away” by the feedback. In those cases resubmitting the
