@@ -413,7 +413,7 @@ publicly-available assignments:
     <i>(UCSD CSE 11)</i><br/>
     [<a href="https://ucsd-cse11-f21.github.io/">Fall 2021</a>]
   </li>
-</li>
+</ul>
 
 
 
