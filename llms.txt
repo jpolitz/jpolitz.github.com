@@ -5,3 +5,8 @@
 > computing education, design courses with reusable open materials, and build
 > tools and languages for teaching programming.
 
+## Pages
+
+- [Home](https://jpolitz.github.io/): Courses, recent projects, and publications.
+- [Contact](https://jpolitz.github.io/contact/): Email, office hours, and advising info.
+- [Notes](https://jpolitz.github.io/notes/): Blog posts and longer write-ups.
