@@ -1,0 +1,7 @@
+# Joe Gibbs Politz
+
+> Associate Professor of Teaching at UC San Diego CSE. Development co-lead of
+> the Pyret programming language. I work on programming languages and
+> computing education, design courses with reusable open materials, and build
+> tools and languages for teaching programming.
+
